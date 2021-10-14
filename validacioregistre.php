@@ -17,5 +17,9 @@ $contrasenya=$_GET['contrasenya'];
 
 $sql = "INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES ('".$dni."', '".$nom."', '".$cognom."', '".$telefon."', '".$mail."', '0', '".$usuari."', '".$contrasenya."', '0');";
 //http://localhost/hotelcendrassos/validacioregistre.php?mail=eduardsellaslleo%40gmail.com&nom=Eduard&cognom=Sellas+Lleo&dni=41563450s&telefon=616161166&usuari=edu&contrasenya=Hola1234
-
+if ($conn->query($sql) === TRUE) {
+    echo "OK";      
+  }else {
+    echo "ERROR";
+  }
 echo($sql);

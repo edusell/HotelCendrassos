@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen> 
+    <title>Document</title>
+
+</head>
+<body>
+    <form id='registre' novalidate>
+
+
+          <br>
+          <table id="formtaula">
+            <tr>
+              <td></td>
+              <td>
+                <label for="mail">
+                  <span>Correu electronic: </span>
+                  <input type="email" id="mail" name="mail" required minlength="8">
+                  <span id="emailerr" class="error" aria-live="polite"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nom">
+                  <span>Nom: </span>
+                  <input type="text" id="nom" name="nom" required minlength="1">
+                  <span id='nomerr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+              <td>
+                <label for="cognom">
+                  <span>Cognoms: </span>
+                  <input type="text" id="cognom" name="cognom" required>
+                  <span id='cognomerr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="dni">
+                  <span>DNI: </span>
+                  <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
+                  <span id='dnierr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+              <td>
+                <label for="telefon">
+                  <span>Telefon:&nbsp&nbsp&nbsp&nbsp</span>
+                  <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
+                  <span id='telefonerr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="usuari">
+                  <span>usuari: </span>
+                  <input type="text" id="usuari" name="usuari" required minlength="8">
+                  <span id='usuarierr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+              <td>
+                <label for="contrasenya">
+                  <span>contrasenya: </span>
+                  <input type="password" id="contrasenya" name="contrasenya" required minlength="8">
+                  <span id='contrasenyaerr' class="error" aria-live="polite"></span>
+                </label>
+              </td>
+            </tr>
+
+
+          </table>         
+        
+      </form>
+      <button onclick="validar()">Enviar</button>
+    
+      <script>
+          function validar(){
+            //validar correu
+            var email = document.getElementById('mail').value;
+            //document.write(email);
+            if(!email.includes('@')){
+              document.getElementById('emailerr').textContent = 'Introudiu un correu electronic correcte';
+            } else{document.getElementById('emailerr').textContent = '';}
+
+            //validar nom
+            var nom = document.getElementById('nom').value;
+
+            if(hasNumber(nom) || nom.length==0){
+              document.getElementById('nomerr').textContent = 'Introudiu un nom valid';
+            }else{document.getElementById('nomerr').textContent = '';}
+
+            //validar cognom
+            var cognom = document.getElementById('cognom').value;
+            if(hasNumber(cognom) || cognom.length==0){
+              document.getElementById('cognomerr').textContent= 'Introduiu un cognom correcte';
+            }else{document.getElementById('cognomerr').textContent = '';}
+
+            //validar telefon
+            var telefon = document.getElementById('telefon').value;
+            if(telefon.length==0){
+            document.getElementById('telefonerr').textContent='introduiu un numero de telefon';
+          }else{document.getElementById('telefonerr').textContent = '';}
+
+          //validar DNI
+            var dni = document.getElementById('dni').value;
+            if(!hasNumber(dni) || dni.length<9 || dni.length>9){
+              document.getElementById('dnierr').textContent='introduiu un DNI valid';
+            }else{document.getElementById('dnierr').textContent = '';}
+
+           //validar usuari
+           var usuari = document.getElementById('usuari').value;
+            if(usuari.length==0 || usuari.length>20){
+              document.getElementById('usuarierr').textContent='inroduiu un usuari valid';
+            }else{document.getElementById('usuarierr').textContent = '';}
+
+             //validar password
+           var contrasenya = document.getElementById('contrasenya').value;
+            if(contrasenya.length<8 || contrasenya.length>50 || !hasNumber(contrasenya) || !tiene_minusculas(contrasenya) || !tiene_letras(contrasenya) || !tiene_mayusculas(contrasenya)){
+              document.getElementById('contrasenyaerr').textContent='inroduiu una contrasenya valida';
+            }else{document.getElementById('contrasenyaerr').textContent = '';}
+          }  
+
+          function hasNumber(myString) {
+            return /\d/.test(myString);
+          }
+
+          
+
+          function tiene_letras(texto){
+            var letras="abcdefghyjklmnñopqrstuvwxyz";
+            texto = texto.toLowerCase();
+            for(i=0; i<texto.length; i++){
+              if (letras.indexOf(texto.charAt(i),0)!=-1){
+                return 1;
+              }
+            }
+            return 0;
+          }
+
+          
+
+          function tiene_minusculas(texto){
+            var letras="abcdefghyjklmnñopqrstuvwxyz";
+            for(i=0; i<texto.length; i++){
+              if (letras.indexOf(texto.charAt(i),0)!=-1){
+                return 1;
+              }
+            }
+            return 0;
+            }
+            
+            
+
+          function tiene_mayusculas(texto){
+            var letras_mayusculas="ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
+            for(i=0; i<texto.length; i++){
+              if (letras_mayusculas.indexOf(texto.charAt(i),0)!=-1){
+                return 1;
+              }
+            }
+            return 0;
+          }
+      </script>
+</body>
+</html>

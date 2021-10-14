@@ -52,7 +52,7 @@
     padding-right: 10%;
 }
 .logo{
-    background-image: url("logo-hotel.png");
+    background-image: url("logos\logo-hotel.png");
     background-size: cover;
     background-repeat:no-repeat;
     float: left;
@@ -82,6 +82,7 @@
 body::-webkit-scrollbar { 
     display: none;
   }
+
 
 
 

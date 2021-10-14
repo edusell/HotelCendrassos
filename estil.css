@@ -21,42 +21,20 @@ body {
     width: 80%;
 }
 td{
-    width: 20%;
-    text-align: right;
+    width: 50%;
 }
+
 tbody#formtaula{
     width: 100%;
 }
-
-input[type=email]{
-  
+input{
     width: 250px;
+    border-radius: 5px;
+    
+}
 
-  }
-  
-  /* Este es nuestro diseño para los campos no válidos */
-  input:invalid{
-    border-color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-  }
-  
-  input:focus:invalid {
-    outline: none;
-  }
-  
-  /* Este es el diseño para nuestros mensajes de error */
-  .error {
-    width : 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
+  .incorrecte{
+      border: 3px solid;
+    border-color: rgb(182, 61, 61);
+    color: rgb(182, 0, 0);
+}

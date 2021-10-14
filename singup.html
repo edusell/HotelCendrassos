@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen> 
     <title>Document</title>
 
 </head>
 <body>
-    <form id='registre' novalidate>
+      
+    <form id='registre' action="validacioregistre.php" method='GET' novalidate>
 
 
           <br>
@@ -18,7 +21,7 @@
               <td></td>
               <td>
                 <label for="mail">
-                  <span>Correu electronic: </span>
+                  <span>Correu electronic: </span><br>
                   <input type="email" id="mail" name="mail" required minlength="8">
                   <span id="emailerr" class="error" aria-live="polite"></span>
                 </label>
@@ -27,14 +30,14 @@
             <tr>
               <td>
                 <label for="nom">
-                  <span>Nom: </span>
+                  <span>Nom: </span><br>
                   <input type="text" id="nom" name="nom" required minlength="1">
                   <span id='nomerr' class="error" aria-live="polite"></span>
                 </label>
               </td>
               <td>
                 <label for="cognom">
-                  <span>Cognoms: </span>
+                  <span>Cognoms: </span><br>
                   <input type="text" id="cognom" name="cognom" required>
                   <span id='cognomerr' class="error" aria-live="polite"></span>
                 </label>
@@ -43,14 +46,14 @@
             <tr>
               <td>
                 <label for="dni">
-                  <span>DNI: </span>
+                  <span>DNI: </span><br>
                   <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
                   <span id='dnierr' class="error" aria-live="polite"></span>
                 </label>
               </td>
               <td>
                 <label for="telefon">
-                  <span>Telefon:&nbsp&nbsp&nbsp&nbsp</span>
+                  <span>Telefon:</span><br>
                   <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
                   <span id='telefonerr' class="error" aria-live="polite"></span>
                 </label>
@@ -59,15 +62,15 @@
             <tr>
               <td>
                 <label for="usuari">
-                  <span>usuari: </span>
+                  <span>Usuari: </span><br>
                   <input type="text" id="usuari" name="usuari" required minlength="8">
                   <span id='usuarierr' class="error" aria-live="polite"></span>
                 </label>
               </td>
               <td>
                 <label for="contrasenya">
-                  <span>contrasenya: </span>
-                  <input type="password" id="contrasenya" name="contrasenya" required minlength="8">
+                  <span>Contrasenya: </span><br>
+                  <input type="password" id="contrasenya" name="contrasenya" required minlength="8"><br>
                   <span id='contrasenyaerr' class="error" aria-live="polite"></span>
                 </label>
               </td>
@@ -78,52 +81,69 @@
         
       </form>
       <button onclick="validar()">Enviar</button>
+      
+
     
       <script>
           function validar(){
+            var submit = 0;
             //validar correu
             var email = document.getElementById('mail').value;
             //document.write(email);
             if(!email.includes('@')){
-              document.getElementById('emailerr').textContent = 'Introudiu un correu electronic correcte';
-            } else{document.getElementById('emailerr').textContent = '';}
+              document.getElementById('mail').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('mail').classList.remove("incorrecte");}
 
             //validar nom
             var nom = document.getElementById('nom').value;
 
             if(hasNumber(nom) || nom.length==0){
-              document.getElementById('nomerr').textContent = 'Introudiu un nom valid';
-            }else{document.getElementById('nomerr').textContent = '';}
+              document.getElementById('nom').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('nom').classList.remove("incorrecte");}
 
             //validar cognom
             var cognom = document.getElementById('cognom').value;
             if(hasNumber(cognom) || cognom.length==0){
-              document.getElementById('cognomerr').textContent= 'Introduiu un cognom correcte';
-            }else{document.getElementById('cognomerr').textContent = '';}
+              document.getElementById('cognom').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('cognom').classList.remove("incorrecte");}
 
             //validar telefon
             var telefon = document.getElementById('telefon').value;
-            if(telefon.length==0){
-            document.getElementById('telefonerr').textContent='introduiu un numero de telefon';
-          }else{document.getElementById('telefonerr').textContent = '';}
+            if(telefon.length!=9 || !hasNumber(telefon)){
+              document.getElementById('telefon').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('telefon').classList.remove("incorrecte");}
 
           //validar DNI
             var dni = document.getElementById('dni').value;
             if(!hasNumber(dni) || dni.length<9 || dni.length>9){
-              document.getElementById('dnierr').textContent='introduiu un DNI valid';
-            }else{document.getElementById('dnierr').textContent = '';}
+              document.getElementById('dni').classList.add("incorrecte");
+            } else{document.getElementById('dni').classList.remove("incorrecte");}
 
            //validar usuari
            var usuari = document.getElementById('usuari').value;
             if(usuari.length==0 || usuari.length>20){
-              document.getElementById('usuarierr').textContent='inroduiu un usuari valid';
-            }else{document.getElementById('usuarierr').textContent = '';}
+              document.getElementById('usuari').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('usuari').classList.remove("incorrecte");}
 
              //validar password
            var contrasenya = document.getElementById('contrasenya').value;
             if(contrasenya.length<8 || contrasenya.length>50 || !hasNumber(contrasenya) || !tiene_minusculas(contrasenya) || !tiene_letras(contrasenya) || !tiene_mayusculas(contrasenya)){
-              document.getElementById('contrasenyaerr').textContent='inroduiu una contrasenya valida';
-            }else{document.getElementById('contrasenyaerr').textContent = '';}
+              document.getElementById('contrasenya').classList.add("incorrecte");
+              submit = 1;
+            } else{document.getElementById('contrasenya').classList.remove("incorrecte");}
+
+            if(submit==0){
+              enviar()
+            }
+          
+          }
+          function enviar(){
+            document.getElementById("registre").submit();
           }  
 
           function hasNumber(myString) {

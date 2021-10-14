@@ -25,10 +25,10 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="slider_habitacions\habitacio1.jpg" class="d-block w-100" alt="...">
+            <img src="logos\slider_habitacions\habitacio1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="slider_menu_principal\imatge2.jpg" class="d-block w-100" alt="...">
+            <img src="logos\slider_menu_principal\imatge2.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <div class="reserva">
@@ -44,15 +44,15 @@
         <h1>Descobreix les avantatges</h1>
         <div class="avantatges_logos">
             <div>
-                <img src="logo-parking.png" alt="..." width="60" height="60">
+                <img src="logos\logo-parking.png" alt="..." width="60" height="60">
                 <p>Servei parking vigilat</p>
             </div>
             <div>
-                <img src="logo-bicicleta.png" alt="..." width="60" height="60">
+                <img src="logos\logo-bicicleta.png" alt="..." width="60" height="60">
                 <p>Servei parking bicicleta</p>
             </div>
             <div>
-                <img src="logo_piscina.png" alt="..." width="60" height="60">
+                <img src="logos\logo_piscina.png" alt="..." width="60" height="60">
                 <p>Servei piscina</p>
             </div>
         </div>
@@ -60,10 +60,10 @@
     <div class="footer">
         <footer>
             <div class="logos_footer">
-            <img src="footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="footer\instagram_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
 
 
 

@@ -26,10 +26,10 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="slider_habitacions\habitacio1.jpg" class="d-block w-100" alt="...">
+            <img src="logos\slider_habitacions\habitacio1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="slider_habitacions\habitacio2.jpg" class="d-block w-100" alt="...">
+            <img src="logos\slider_habitacions\habitacio2.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <div class="reserva">
@@ -47,10 +47,10 @@
     <div class="footer">
         <footer>
         <div class="logos_footer">
-            <img src="footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="footer\instagram_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
+            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
 
 
 

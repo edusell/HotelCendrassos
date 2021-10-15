@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="reserva">
-                <form>
+                <form action="recerca.php" method='GET'>
                     <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
                     <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
                     <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>

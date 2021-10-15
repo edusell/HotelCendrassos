@@ -1,3 +1,12 @@
+<?php
+if(!isset($_GET['arribada_hotel'],$_GET['sortida_hotel'],$_GET['ocupants'])){
+    header('Location: pagina_principal.php');
+}
+
+$arribada=$_GET['arribada_hotel'];
+$sortida=$_GET['sortida_hotel'];
+$ocupants=$_GET['ocupants'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +31,7 @@
         <div class="habitacions">
 
         <?php
+        echo($arribada);
         include 'database.php';
 
         $sql = "select h.id_habitacio , t.m_tipus , t.serveis_tipus , t.ocupants_tipus , t.desc_tipus ,t.id_tipus ,t.nom_tipus FROM habitacio h , tipushabitacio t where t.id_tipus=h.id_tipus_habitacio;";
@@ -29,11 +39,18 @@
 
 
         while($row = $habitacions->fetch_assoc()) {
-            if($ROW['id_tipus']=1){
-                $img = 'habitacio_doble.jpg';
+            if($ocupants>$row['ocupants_tipus']){
+                break;
+            }
+
+            if($row['id_tipus']==1){
+                $img = 'habitacio_familiar.jpg';
             } else {
                 $img = 'habitacio_doble.jpg';
             }
+
+            $sql='select r.data_arrivada , r.data_sortida , h.id_reserva , h.id_habitacio FROM reserva r, reservahabitacio h WHERE r.id_reserva=h.id_reserva AND h.id_habitacio='.$row['habitacio_id'];
+            print $sql;
 
             print '<div class="habitacio">';
             print '<img src="img/'.$img.'" alt="Girl in a jacket" height="300px">';

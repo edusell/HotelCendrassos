@@ -63,14 +63,15 @@
                             print "<img src='logos\habitacions_logos\silueta-persona.png'>";
                             print"<p><b>MAX ".$row['ocupants_tipus']." p</b></p>";
                             print "<img src='logos\habitacions_logos\information.png'>";
-                            print"<p><b>".$row['m_tipus']."</b></p>";
+                            print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
                         print"</div>";
+                        print"<div class='preu'>".$row['preu']." </div>";
                     print"</div>";
               print"</div>";
             print"</div>";
-            print "</div>";
-                             }
+            print "</div>";}
         ?>
+
         </div> 
 
     <div class="footer">

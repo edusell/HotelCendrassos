@@ -153,7 +153,8 @@ CREATE TABLE `tipushabitacio` (
   `ocupants_tipus` int(2) NOT NULL,
   `desc_tipus` varchar(250) NOT NULL,
   `nom_tipus` varchar(50) NOT NULL,
-  `id_hotel_tipus` int(10) NOT NULL
+  `id_hotel_tipus` int(10) NOT NULL,
+  `preu` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

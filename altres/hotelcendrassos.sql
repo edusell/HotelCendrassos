@@ -110,7 +110,7 @@ INSERT INTO `hotel` (`id_hotel`, `nom_hotel`, `descripcio_hotel`) VALUES
 CREATE TABLE `reserva` (
   `id_reserva` int(10) NOT NULL,
   `num_ocupants` int(2) NOT NULL,
-  `data_arrivada` date NOT NULL,
+  `data_arribada` date NOT NULL,
   `data_sortida` date NOT NULL,
   `DNI` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -119,7 +119,7 @@ CREATE TABLE `reserva` (
 -- Bolcament de dades per a la taula `reserva`
 --
 
-INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arrivada`, `data_sortida`, `DNI`) VALUES
+INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arribada`, `data_sortida`, `DNI`) VALUES
 (1, 2, '2021-10-21', '2021-10-23', '22222222S');
 
 -- --------------------------------------------------------

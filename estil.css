@@ -1,16 +1,19 @@
-body {
-    font: 1em sans-serif;
+.container-login{
+    height: 500px;
     width: 100%;
-    padding: 0;
-    margin : 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
+
+.but-login{
+    margin: 0 auto 0 auto;
+}
 
 
 
-  /*FORMULARI */
+
+/*FORMULARI */
   #registre{
       
       width: 70%;

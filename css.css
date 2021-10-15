@@ -82,6 +82,75 @@
 body::-webkit-scrollbar { 
     display: none;
   }
+.habitacions{
+    width: 100%;
+    background-color: rgb(34, 34, 37);
+    height: 100px;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 20px;
+}
+.container_tipus_habitacions{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    background-color:rgb(76, 76, 78) ;
+    
+
+}
+.tipus_habitacions{
+    margin-top: 4%;
+    width: 80%;
+    height: 350px;
+    background-color: rgb(143, 143, 146);
+    padding-left: 50px;
+    padding-top: 10px;
+    
+}
+.tipus_habitacions h3{
+    text-align: center;
+
+}
+.imatges_habitacions{
+    width: 350px;
+    height: 233px;
+    background-image: url("img/habitacio_doble.jpg") ;
+    background-size: cover;
+    padding-top: 50px;
+    padding-right: 10px;
+}
+.container_imatges_habitacions{
+    display: flex;
+    flex-direction: column row;
+    gap: 15px;
+    
+}
+.text{
+    font-size: 1.2em;
+    width: 50%;
+    height: 400px;
+    text-align: justify;
+}
+.especificacions{
+    width: 100%;
+    height: 2em;
+    display: flex;
+    background-color: rgb(235, 203, 23);
+    position: relative;
+    border-radius: 10px 10px;
+    align-items: center;  
+}
+
+.especificacions img{
+    width: 30px;
+    height: 30px;
+}
+.especificacions  p{
+    font-weight: bold;    
+    padding-top: 10px;
+}
+
 
 
 

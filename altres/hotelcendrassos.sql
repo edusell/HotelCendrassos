@@ -161,7 +161,7 @@ CREATE TABLE `tipushabitacio` (
 --
 
 INSERT INTO `tipushabitacio` (`id_tipus`, `m_tipus`, `serveis_tipus`, `ocupants_tipus`, `desc_tipus`, `nom_tipus`, `id_hotel_tipus`) VALUES
-(1, 25, 'servei de nateja i esmorzar', 5, 'habitacio familiar dos llits de matrimoni i un individual', 'habitacio familiar', 1),
+(1, 25, 'servei de nateja i esmorzar', 5, "Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d'allò més agradable.", 'habitacio doble', 1),
 (2, 30, 'servei de nateja  i esmorzar', 2, 'atic', 'atic', 1);
 
 -- --------------------------------------------------------

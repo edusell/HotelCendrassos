@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container_principal menu_superior">
-        <div class="item logo"></div>
+    <div class="item logo"></div>
         <div class="item"><a href="habitacions.php">Habitacions</a></div>
         <div class="item">Serveis</div>
         <div class="item">Galeria</div>
@@ -65,7 +65,8 @@
                             print "<img src='logos\habitacions_logos\information.png'>";
                             print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
                         print"</div>";
-                        print"<div class='preu'>".$row['preu']." </div>";
+                        print"<div class='preu'>".$row['preu']."€ </div>";
+                        print"<a href='habitacions.php#arribada_hotel'><div class='boto'>Reserva</div></a>";
                     print"</div>";
               print"</div>";
             print"</div>";

@@ -16,7 +16,7 @@ nav{
     border: 1px solid black;
 }
 td{
-    width: 12.5%;
+    width: auto;
     border: 0px solid black;
     border-spacing: 0px;
     border-right: 1px;
@@ -32,7 +32,7 @@ td{
 
 }
 .reserves{
-    width: 90%;
+    width: 95%;
     border: 1px solid black;
     overflow-y: scroll;
     height: 80%;
@@ -40,6 +40,19 @@ td{
     margin-right: auto;
     background-color: white;
 }
-.taulareserves{
+#taulareserves{
     gap: 0px;
+    
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+#taulareserves td{
+    gap: 0px;
+    border: 0px solid black;
+    border-bottom: 1px;
+}
+#taulareserves tr{
+    border-bottom: 1px solid black;
 }

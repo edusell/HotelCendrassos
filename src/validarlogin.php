@@ -8,13 +8,13 @@ if(!isset($_POST['usuari'],$_POST['contrasenya'])){
 
 $sql= "SELECT rol FROM usuari WHERE username='".$_POST['usuari']."' AND password='".$_POST['contrasenya']."' LIMIT 1;";
 
-$rol = $conn->query($sql)
+$rol = $conn->query($sql);
 
     while($row = $rol->fetch_assoc()) {
         if($row['rol']==0){
-            header('Location:pagina_principal.php');
+            header('Location:../public/pagina_principal.php');
         } else{
-            header('Location:admin.php');
+            header('Location:../public/admin.php');
         }
         
     }

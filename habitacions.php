@@ -21,8 +21,6 @@
 
     <?php $data_avui = date("Y-m-d");?>
 
-
-
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -41,8 +39,40 @@
                 </form>
               </div>
         </div>
+        <div class="habitacions">
+            <h1>Tipus de habitacions</h1>
+        </div>
+        <?php include 'database.php';
+                             $sql = "SELECT * FROM tipushabitacio";
+                             $tipus_habitacions = $conn->query($sql);
+                             while($row = $tipus_habitacions->fetch_assoc()) {
+                                if($row['id_tipus']==1){
+                                    $img = 'habitacio_familiar.jpg';
+                                } else {
+                                    $img = 'habitacio_doble.jpg';
+                                }
 
+        print "<div class='container_tipus_habitacions'>";
+            print '<div class="tipus_habitacions">';
+              print"<h3>".$row['nom_tipus']."</h3>";
+              print'<div class="container_imatges_habitacions">';
+                print'<div class="imatges_habitacions"></div>';
+                    print'<div class="text">';
+                        print"<p>".$row['desc_tipus']."</p>";
+                        print"<div class='especificacions'>";
+                            print "<img src='logos\habitacions_logos\silueta-persona.png'>";
+                            print"<p><b>MAX ".$row['ocupants_tipus']." p</b></p>";
+                            print "<img src='logos\habitacions_logos\information.png'>";
+                            print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
+                        print"</div>";
+                        print"<div class='preu'>".$row['preu']." </div>";
+                    print"</div>";
+              print"</div>";
+            print"</div>";
+            print "</div>";}
+        ?>
 
+        </div> 
 
     <div class="footer">
         <footer>
@@ -51,7 +81,6 @@
             <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
             <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
             <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-
 
 
             </div>

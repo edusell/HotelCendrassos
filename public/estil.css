@@ -11,13 +11,10 @@
 }
 
 
-
-
 /*FORMULARI */
   #registre{
-      
-      width: 70%;
-      border: 1px black solid;
+      width: 100%;
+     
       display: block;
 }
 #formtaula{

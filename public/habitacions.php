@@ -42,7 +42,7 @@
         <div class="habitacions">
             <h1>Tipus de habitacions</h1>
         </div>
-        <?php include 'database.php';
+        <?php include '..\src\database.php';
                              $sql = "SELECT * FROM tipushabitacio";
                              $tipus_habitacions = $conn->query($sql);
                              while($row = $tipus_habitacions->fetch_assoc()) {

@@ -72,10 +72,22 @@ td{
 }
 #taulahabitacions{
 overflow-y: scroll;
+border-spacing: 0px;
+border-collapse: collapse;
+}
+#taulahabitacions tr{
+    gap: 0px;
+    border-bottom: 1px solid black;
+    min-width: 50px;
+}
+#habitacions{
+    overflow-y: scroll;
 }
 #taulahabitacions td{
     gap: 0px;
-    border: 0px solid black;
-    border-bottom: 1px;
+    border-bottom: 1px solid black;
     min-width: 50px;
+}
+#desc{
+    width: 50%;
 }

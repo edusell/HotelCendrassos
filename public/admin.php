@@ -33,9 +33,9 @@
                         include '../src/database.php';
                         
                         $sql = "select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida, u.nom,u.cognom,u.tel,u.correu,h.id_habitacio,t.nom_tipus FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus;";
-                        $reserves = $conn->query($sql);
+
+                        foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
                         
-                        while($row = $reserves->fetch_assoc()) {
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
                             print "<td>".$row['id_reserva']."</td>";
@@ -55,12 +55,13 @@
                   </table>
                </form>
                <button type='submit' form='reserves'>Borrar</button>
+               <button type='submit' form='reserves'>Crear</button>
             </td>
          </tr>
          <tr>
             <td class='estructura'> habitacions
-
-            <table id='taulareserves'>
+              <div id='habitacions' class='reserves'>
+            <table id='taulahabitacions'>
                      <tr>
                         <td>
                         <td>num</td>
@@ -73,9 +74,9 @@
                      <?php
                         
                         $sql = "select id_habitacio,m_tipus,ocupants_tipus,preu,nom_tipus, desc_tipus from habitacio h, tipushabitacio t WHERE h.id_tipus_habitacio=t.id_tipus;";
-                        $habitacions = $conn->query($sql);
+                        //$habitacions = $conn->query($sql);
                         
-                        while($row = $habitacions->fetch_assoc()) {
+                        foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_habitacio']."'></td>";
                             print "<td>".$row['id_habitacio']."</td>";
@@ -83,12 +84,13 @@
                             print "<td>".$row['ocupants_tipus']."</td>";
                             print "<td>".$row['preu']."</td>";
                             print "<td>".$row['nom_tipus']."</td>";
-                            print "<td>".$row['desc_tipus']."</td>";
+                            print "<td id='desc'>".$row['desc_tipus']."</td>";
                             print "<tr>";
                         }
                         
                         ?>
                   </table>
+                  </div>      
 
             </td>
             <td class='estructura estructurausuari'>

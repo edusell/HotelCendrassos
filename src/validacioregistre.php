@@ -22,4 +22,4 @@ if ($conn->query($sql) === TRUE) {
   }else {
     echo "ERROR";
   }
-echo($sql);
+//echo($sql);

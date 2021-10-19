@@ -17,7 +17,7 @@
                <form id="reserves" action="../src/borrarreserva.php" method="post" class='reserves'>
                   <table id='taulareserves'>
                      <tr>
-                        <td>
+                        <td></td>
                         <td>id_reserva</td>
                         <td>Nom</td>
                         <td>Cognom</td>
@@ -52,10 +52,27 @@
                         }
                         
                         ?>
+                        <form action="crearreservaman.php">
+                        <tr id='hide'>
+                          
+                        <td></td>
+                        <td>DNI<input type='text'></input></td>
+                        <td>ID_habitacio<input type='text'></td>
+                        <td><input type='button'></input></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                     </tr>
                   </table>
+                  </form>
                </form>
                <button type='submit' form='reserves'>Borrar</button>
-               <button type='submit' form='reserves'>Crear</button>
+               <button onclick='crearreserva()'>Crear</button>
             </td>
          </tr>
          <tr>
@@ -74,8 +91,9 @@
                      <?php
                         
                         $sql = "select id_habitacio,m_tipus,ocupants_tipus,preu,nom_tipus, desc_tipus from habitacio h, tipushabitacio t WHERE h.id_tipus_habitacio=t.id_tipus;";
-                        //$habitacions = $conn->query($sql);
+                        $habitacions = $conn->query($sql);
                         
+              
                         foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_habitacio']."'></td>";
@@ -152,7 +170,7 @@
                                     $sql= 'select id_departament,nom_departament from departament;';
                                     $rols = $conn->query($sql);
                         
-                                    while($row = $rols->fetch_assoc()) {
+                                    foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
                                     print '<option value="'.$row['id_departament'].'">'.$row['nom_departament'].'</option>';
                                     }
 
@@ -169,6 +187,10 @@
       </table>
    </body>
    <script>
+     document.getElementById('hide').style.visibility = "hidden";
+      function crearreserva(){
+        document.getElementById('hide').style.visibility = "visible";
+      }
       function validar(){
         var submit = 0;
         //validar correu

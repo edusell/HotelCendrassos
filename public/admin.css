@@ -91,3 +91,6 @@ border-collapse: collapse;
 #desc{
     width: 50%;
 }
+#hide{
+    border-bottom: 0px solid black;
+}

@@ -17,16 +17,34 @@ $contrasenya=$_GET['contrasenya'];
 
 $stm = $conn->prepare("INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES ( :dni , :nom, :cognom, :tel , :mail , '0', :usuari , :pass , '0');");
 
-$sql = $stm->execute([
-  ':dni' => $dni,
-  ':nom' => $nom,
-  ':cognom' => $cognom,
-  ':usuari' => $usuari,
-  ':mail' => $mail,
-  ':tel' => $telefon,
-  ':pass' => $contrasenya,
+$stm1 = $conn->prepare("select COUNT(*) from usuari where DNI = :dni;");
+$sql1 = $stm1->execute([
+  ':dni' => $dni
 ]);
-if($stm -> rowCount() > 0){
-  echo 'ja existeix';
+
+//Verificar si existeix el usuari a registrar
+if($stm1->rowCount()>0){
+  header("Location: ../public/registre.html");
+  
+}else{
+  $sql = $stm->execute([
+    ':dni' => $dni,
+    ':nom' => $nom,
+    ':cognom' => $cognom,
+    ':usuari' => $usuari,
+    ':mail' => $mail,
+    ':tel' => $telefon,
+    ':pass' => $contrasenya,
+  ]);
 }
+
+
+
+
+
+
+
+
+
+
 

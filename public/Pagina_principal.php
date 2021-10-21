@@ -7,20 +7,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="css.css"rel="stylesheet" type="text/css">
     <title>Document</title>
+    <?php $data_avui = date("Y-m-d");?>
 </head>
 <body>
-        <div class="container_principal menu_superior">
-            <div class="item logo" ></div>
-            <div class="item"><a href="habitacions.php">Habitacions</a></div>
-            <div class="item">Serveis</div>
-            <div class="item">Galeria</div>
-            <div class="item">contacta</div>
-            <div class="item">Inicia sesio</div>
-            <div class="item">Registrarte</div>
-        </div>
-        <?php $data_avui = date("Y-m-d");?>
-
-
+<div class="topnav" id="myTopnav">
+  <a href="Pagina_principal.php" class="active">INICI</a>
+  <a href="habitacions.php">HABITACIONS</a>
+  <a href="galeria.php">GALERIA</a>
+  <a href="contacte.html">CONTACTE</a>
+  <a href="login.html" class=logoinici></a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -40,6 +39,9 @@
                 </form>
               </div>
         </div>
+    <div class=submenu>
+        <p>Hola</p>
+    </div>    
     <div class="avantatges">
         <h1>Descobreix les avantatges</h1>
         <div class="avantatges_logos">
@@ -79,4 +81,14 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 </html>

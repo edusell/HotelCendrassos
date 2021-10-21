@@ -26,6 +26,7 @@ $sql = $stm->execute([
   ':tel' => $telefon,
   ':pass' => $contrasenya,
 ]);
+
 if($stm -> rowCount() > 0){
   echo 'ja existeix';
 }

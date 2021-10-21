@@ -39,9 +39,11 @@
                 </form>
               </div>
         </div>
-    <div class=submenu>
+    <div class='submenu'>
         <p>Hola</p>
-    </div>    
+
+
+      <!--
     <div class="avantatges">
         <h1>Descobreix les avantatges</h1>
         <div class="avantatges_logos">
@@ -58,9 +60,13 @@
                 <p>Servei piscina</p>
             </div>
         </div>
+    </div>-->
+    <div id=provasticki style='height: 1000px;'>
+
     </div>
-    <div class="footer">
-        <footer>
+    </div>  
+    <div class="footerpr">
+       <!-- <footer>
             <div class="logos_footer">
             <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
             <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
@@ -70,14 +76,14 @@
 
 
             </div>
-            <ul class="footer_ul">
+            <ul>
                 <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>
                 <li><a href="serveis.php"><p class="footer_seccions">Serveis</p></li>
                 <li><a href="Habitacions.php"><p class="footer_seccions">Serveis</p></li>
                 <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
                 <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
             </ul>
-        </footer>
+        </footer>-->
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -43,9 +43,19 @@
             <h1>Tipus de habitacions</h1>
         </div>
         <?php include '..\src\database.php';
+
+            $stm1 = $conn->prepare("select COUNT(*) from usuari where DNI = :dni;");
+            
+
                              $sql = "SELECT * FROM tipushabitacio";
                              $tipus_habitacions = $conn->query($sql);
-                             while($row = $tipus_habitacions->fetch_assoc()) {
+
+
+
+
+                             //while($row = $tipus_habitacions->fetch_assoc()) {
+
+                                foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
                                 if($row['id_tipus']==1){
                                     $img = 'habitacio_familiar.jpg';
                                 } else {

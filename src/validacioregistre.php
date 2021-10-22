@@ -29,7 +29,7 @@ $caracts_numero_tlf=false;
 $errvalid=false;
 $permitidos = "0123456789";
   for ($i=0; $i<strlen($telefon); $i++){
-    if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){
+    if (strpos($permitidos, substr($nombre_usuario,$i,1))==false){
       $caracts_numero_tlf = true;
     }
  }
@@ -55,7 +55,7 @@ if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
   header("Location: ../public/registre.php?mail_err=true");
   $errvalid=true;
 }
-if($stm1->rowCount()>0){
+if($sql1->rowCount()>0){
   header("Location: ../public/registre.php?dni=true");
   $errvalid=true;
 }

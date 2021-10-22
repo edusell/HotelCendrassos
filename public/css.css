@@ -75,7 +75,7 @@ transition: 0.5s;
   margin-top: 4%;
   width: 70%;
   height: 300px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   padding-left: 50px;
   padding-top: 10px;
   border-radius: 20px;
@@ -86,7 +86,7 @@ transition: 0.5s;
 }
 .recerca{
   background-color:rgb(76, 76, 78);
-  background-image: url(img/fons_recerca.jpg);
+  background-image: url(img/fons.jpg);
   background-size: cover;
   background-attachment: fixed;
 }

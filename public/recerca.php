@@ -44,21 +44,12 @@ $ocupants=$_GET['ocupants'];
         ]);
 
 
-        //print_r($stm1);
         
         while($row = $stm1->fetch(PDO::FETCH_ASSOC)) {//recorrem el select
          
-            $stm1 = $conn->prepare('select r.data_arrivada , r.data_sortida , h.id_reserva , h.id_habitacio FROM reserva r, reservahabitacio h WHERE r.id_reserva=h.id_reserva AND h.id_habitacio= :id ;');
-            $reserves = $stm1->execute([
-                ':id' => $row['id_habitacio']
-            ]);
             
-
-            if($row['id_tipus']==1){
                 $img = 'habitacio_familiar.jpg';
-            } else {
-                $img = 'habitacio_doble.jpg';
-            }
+
             
             print "<div class='container_reserva_habitacions'>";
             print '<div class="recerca_habitacions">';
@@ -71,7 +62,8 @@ $ocupants=$_GET['ocupants'];
                             print "<img src='logos\habitacions_logos\silueta-persona.png'>";
                             print"<p><b>MAX ".$row['ocupants_tipus']." p</b></p>";
                             print "<img src='logos\habitacions_logos\information.png'>";
-                            print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
+                            print"<p><b>".$row['m_tipus']."m<sup>2 </sup></b></p>";
+                            print"<p><b> Nº".$row['id_habitacio']."</b></p>";
                         print"</div>";
                         print"<div class='preu_recerca'>".$row['preu']."€ </div>";
                         print"<a href='habitacions.php#arribada_hotel'><div class='boto_reserva'>Reserva</div></a>";

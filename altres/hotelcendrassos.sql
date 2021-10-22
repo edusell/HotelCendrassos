@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 22-10-2021 a les 16:15:32
+-- Temps de generació: 22-10-2021 a les 16:51:52
 -- Versió del servidor: 10.4.14-MariaDB
 -- Versió de PHP: 7.2.34
 
@@ -143,7 +143,9 @@ CREATE TABLE `reservahabitacio` (
 --
 
 INSERT INTO `reservahabitacio` (`id_reserva`, `id_habitacio`) VALUES
-(1, 2);
+(1, 2),
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -170,7 +172,7 @@ CREATE TABLE `tipushabitacio` (
 INSERT INTO `tipushabitacio` (`id_tipus`, `m_tipus`, `serveis_tipus`, `ocupants_tipus`, `desc_tipus`, `nom_tipus`, `id_hotel_tipus`, `preu`, `imatge`) VALUES
 (1, 25, 'servei de nateja i esmorzar', 5, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO DOBLE', 1, 50, ''),
 (2, 30, 'servei de nateja  i esmorzar', 2, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'ATIC', 1, 70, ''),
-(3, 15, 'Servei d\'esmorzar', 0, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO BASICA', 1, 25, 'c:\\'),
+(3, 15, 'Servei d\'esmorzar', 2, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO BASICA', 1, 25, 'c:\\'),
 (4, 33, 'Servei d\'esmorzar', 2, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO NORMAL', 1, 34, 'c:\\');
 
 -- --------------------------------------------------------

@@ -1,26 +1,109 @@
 body{
   min-height: 100vh;
 }
+/*FOOTER PRINCIPAL*/
+
+
+/*SERVEIS / AVANTATGES*/
+.serveis{
+  width: 100%;
+  height: 200px;
+}
+.doble{
+  width: 60%;
+}
+.fonsimg{
+  background-color: hsl(175deg 82% 17%);
+  padding: 20px;
+  width: 340px;
+}
+.fonsimg img{
+  width: 300px;
+}
+.avantatges{
+  width: 100%;
+  background-color: rgb(60, 60, 71);
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  padding-top: 50px;
+  float: right;
+}
+.avantatges_logos{
+  
+  display: flex;
+  flex-direction: column row;
+  padding-top: 50px;
+  justify-content: center;
+  align-self:center,baseline,space-evenly;
+  justify-content: space-between;
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*SOBRENOSALTRES INICI*/
+.nosaltres{
+  width: 50%;
+  height: 300px;
+  background-color: rgb(60, 60, 71);
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  padding-top: 50px;
+  margin-top: 300px;
+  
+}
+
+
 
 /*SUBMENU PG PRINCIPAL*/
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 10px;
-  background-color: yellow;
-  padding: 50px;
-  font-size: 20px;
-  z-index: 1;
+  top: 0;
+  background-color: #333;
+  height: 50px;
+  z-index: 10;
+}
+.container-submenu{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .submenu{
-  width: 100%;
-  height: 50px;
-  background-color: white;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0px;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
-
+.submenul{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.submenu:hover{
+background-color: #686868;
+color: white;
+text-decoration: none;
+}
+.conainer100{
+  width: 100%;
+}
+#provasticki{
+  height: 1000px;
+  background-image: url(img/sobrenos.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+}
 
 /*MENU*/
 .logoinici{
@@ -37,7 +120,6 @@ body{
   background-image: url("logos/logo-hotel.png");
   background-size: contain;
   background-repeat:no-repeat;
-  float: left;
 }
 .navbar{
   display: flex;
@@ -145,27 +227,7 @@ a{
     border-radius: 10px;
     flex-shrink:1;
 }
-.avantatges{
-    width: 100%;
-    height: 300px;
-    background-color: rgb(60, 60, 71);
-    text-align: center;
-    color: whitesmoke;
-    font-weight: bold;
-    padding-top: 50px;
-}
-.avantatges_logos{
-    
-    display: flex;
-    flex-direction: column row;
-    padding-top: 50px;
-    justify-content: center;
-    align-self:center,baseline,space-evenly;
-    justify-content: space-between;
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
+
 .footer{
     background-color: rgb(47, 47, 51);
     width: 100%;

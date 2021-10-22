@@ -97,10 +97,9 @@
                                print "<td id='desc'>".$row['desc_tipus']."</td>";
                                print "<tr>";
                            }
-                           
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="../src/creartipushabitacio.php" method='post'>
+                  <form  id='creartipushabitacio' action="../src/creartipushabitacio.php"  method='post' enctype='multipart/form-data' >
                   <tr id='hide'>
                   <td colspan=2></td>
                   <td><input class='addnum' type='number' name='m'></td>
@@ -108,13 +107,15 @@
                   <td><input class='addnum' type='number' name='preu'></td>
                   <td><input class='addtxt' type='text' name='nom'></td>
                   <td><input class='addtxt' type='text' name='descripcio'></td>
+                  <td><input class='addtxt' type='file' name='imatge' accept=".jpg, .jpeg, .png"></td>
                   </tr>
                   </form>
                 </table>
                </div>
                <button type='submit' form='borrartipus'>Borrar</button>
                <button id='creartipus' onclick='crearhabitacio()'>Crear</button>
-               <button form='creartipushabitacio' id='hidebut'>envia</button>   
+               <button form='creartipushabitacio' id='hidebut'>envia</button>  
+               
                <br><br>  
             </td>
             <td class='estructura estructurausuari'>

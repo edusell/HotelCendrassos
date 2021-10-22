@@ -4,6 +4,112 @@ body{
 /*FOOTER PRINCIPAL*/
 
 
+/* RECERCA.PHP */
+.boto_reserva{
+  float: right;
+  min-width: 120px;
+  height: 50px;
+  text-align: center;
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-top: 3%;
+  background-color: rgba(73, 73, 73, 0.027);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.boto_reserva:hover{
+background-color: rgba(207, 207, 207, 0.164);
+padding-left: 10px;
+transition: 0.5s;
+}
+
+.preu_recerca{
+  background-color: rgb(153, 153, 153);
+  min-width: 100px;
+  height: 50px;
+  bottom: 10px;
+  float: left;
+  text-align: center;
+  border-radius: 10px 10px;  
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.especificacions_recerca img{
+  width: 30px;
+  height: 30px;
+}
+.especificacions_recerca  p{
+  font-weight: bold;    
+  padding-top: 10px;
+}
+.especificacions_recerca{
+  width: 100%;
+  height: 2em;
+  display: flex;
+  background-color: rgb(158, 158, 158);
+  position: relative;
+  border-radius: 10px 10px;
+  align-items: center; 
+  gap:10px;
+}
+
+.imatges_recerca{
+  width: 350px;
+  height: 233px;
+  background-image: url("img/habitacio_doble.jpg") ;
+  background-size: cover;
+  padding-right: 10px;
+}
+
+.container_imatges_recerca{
+  display: flex;
+  flex-direction: column row;
+  gap: 5px;
+  
+}
+.recerca_habitacions{
+  margin-top: 4%;
+  width: 70%;
+  height: 300px;
+  backdrop-filter: blur(10px);
+  padding-left: 50px;
+  padding-top: 10px;
+  border-radius: 20px;
+  
+}
+.recerca_habitacions h3{
+  text-align: center;
+}
+.recerca{
+  background-color:rgb(76, 76, 78);
+  background-image: url(img/fons_recerca.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container_reserva_habitacions{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  background-color:rgba(255, 255, 255, 0);
+}
+.habitacions{
+  width: 100%;
+  background-color: rgb(34, 34, 37);
+  height: 50px;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+
+
+
 /*SERVEIS / AVANTATGES*/
 .serveis{
   width: 100%;
@@ -259,14 +365,7 @@ a{
 body::-webkit-scrollbar { 
     display: none;
   }
-.habitacions{
-    width: 100%;
-    background-color: rgb(34, 34, 37);
-    height: 100px;
-    color: whitesmoke;
-    text-align: center;
-    padding-top: 20px;
-}
+
 .container_tipus_habitacions{
     display: flex;
     justify-content: center;

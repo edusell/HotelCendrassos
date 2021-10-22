@@ -17,7 +17,7 @@ $ocupants=$_GET['ocupants'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body class='recerca'>
 <div class="container_principal menu_superior">
             <div class="item logo" ></div>
             <div class="item"><a href="habitacions.php">Habitacions</a></div>
@@ -28,10 +28,13 @@ $ocupants=$_GET['ocupants'];
             <div class="item">Registrarte</div>
         </div>
         <div class="habitacions">
+            <?= 'DATA ENTRADA:'.$arribada.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
+        </div>
 
         <?php
-        echo($arribada.','.$sortida);
+        
         include '../src/database.php';
+        try{
 
         $stm1 = $conn->prepare("select h.id_habitacio , t.m_tipus ,t.preu, t.serveis_tipus , t.ocupants_tipus , t.desc_tipus ,t.id_tipus ,t.nom_tipus, r.data_arribada,r.data_sortida FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND t.ocupants_tipus> :ocupants AND ( :arribada >=r.data_sortida OR ( :arribada <r.data_arribada AND :sortida <=data_arribada));");
         $stm1->execute([
@@ -57,26 +60,28 @@ $ocupants=$_GET['ocupants'];
                 $img = 'habitacio_doble.jpg';
             }
             
-            print "<div class='container_tipus_habitacions'>";
-            print '<div class="tipus_habitacions">';
+            print "<div class='container_reserva_habitacions'>";
+            print '<div class="recerca_habitacions">';
               print"<h3>".$row['nom_tipus']."</h3>";
-              print'<div class="container_imatges_habitacions">';
-                print'<div class="imatges_habitacions"></div>';
+              print'<div class="container_imatges_recerca">';
+                print'<div class="imatges_recerca"></div>';
                     print'<div class="text">';
                         print"<p>".$row['desc_tipus']."</p>";
-                        print"<div class='especificacions'>";
+                        print"<div class='especificacions_recerca'>";
                             print "<img src='logos\habitacions_logos\silueta-persona.png'>";
                             print"<p><b>MAX ".$row['ocupants_tipus']." p</b></p>";
                             print "<img src='logos\habitacions_logos\information.png'>";
                             print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
                         print"</div>";
-                        print"<div class='preu'>".$row['preu']."€ </div>";
-                        print"<a href='habitacions.php#arribada_hotel'><div class='boto'>Reserva</div></a>";
+                        print"<div class='preu_recerca'>".$row['preu']."€ </div>";
+                        print"<a href='habitacions.php#arribada_hotel'><div class='boto_reserva'>Reserva</div></a>";
                     print"</div>";
               print"</div>";
             print"</div>";
             print "</div>";
           }
+
+        }catch(Exeption $e ){}
 
         ?>
         </div>

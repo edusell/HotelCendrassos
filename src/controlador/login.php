@@ -2,7 +2,7 @@
 
 function ctrlLogin($peticio, $resposta, $imatges){
 
-    $resposta->SetTemplate("Login.php");
+    $resposta->SetTemplate("login.php");
 
 
     return $resposta;

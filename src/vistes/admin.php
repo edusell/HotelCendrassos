@@ -4,12 +4,12 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css.css"rel="stylesheet" type="text/css">
       <link href="admin.css"rel="stylesheet" type="text/css">
       <title>Admin</title>
    </head>
    <body>
-      <nav>
-      </nav>
+      <?php include('menu.php') ?>
       <div class='sidebar'>
         <a href="#" class='menuesquerra actiu'>&nbsp&nbsp<img src="logos/admin_icon/panell.png" width='25px'><div>&nbsp&nbsp PANELL</div><a>
         <a href="admin_usuaris.php" class='menuesquerra'>&nbsp&nbsp<img src="logos/admin_icon/people.png" width='25px'><div>&nbsp&nbsp USUARIS</div><a>

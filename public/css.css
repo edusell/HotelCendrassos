@@ -240,6 +240,8 @@ a{
 .topnav {
   overflow: hidden;
   background-color: #333;
+  height: 50px !important;
+  width: 100%;
 }
 
 .topnav a {

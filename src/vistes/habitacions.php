@@ -9,15 +9,7 @@
     <link href="css.css"rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="container_principal menu_superior">
-    <div class="item logo"></div>
-        <div class="item"><a href="habitacions.php">Habitacions</a></div>
-        <div class="item">Serveis</div>
-        <div class="item">Galeria</div>
-        <div class="item">contacta</div>
-        <div class="item">Inicia sesio</div>
-        <div class="item">Registrarte</div>
-    </div>
+    <?php include "menu.php";?>
 
     <?php $data_avui = date("Y-m-d");?>
 

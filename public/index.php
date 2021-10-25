@@ -6,9 +6,9 @@ include "../src/controlador/inici.php";
 include "../src/controlador/admin.php";
 include "../src/controlador/habitacio.php";
 include "../src/controlador/panell_usuaris.php";
-include "../src/controlador/panell_reserves.php";
+include "../src/controlador/panell_reservas.php";
 include "../src/controlador/panell_calendari.php";
-include "../src/controlador/panell_habitacions.php";
+include "../src/controlador/panell_habitacio.php";
 include "../src/controlador/Galeria.php";
 include "../src/controlador/login.php";
 

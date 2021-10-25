@@ -8,15 +8,8 @@
       <title>Admin</title>
    </head>
    <body>
-      <nav>
-      </nav>
-      <div class='sidebar'>
-        <a href="admin.php" class='menuesquerra'>&nbsp&nbsp<img src="logos/admin_icon/panell.png" width='25px'><div>&nbsp&nbsp PANELL</div><a>
-        <a href="admin_usuaris.php" class='menuesquerra actiu'>&nbsp&nbsp<img src="logos/admin_icon/people.png" width='25px'><div>&nbsp&nbsp USUARIS</div><a>
-        <a href="admin_reserves.php" class='menuesquerra'>&nbsp&nbsp<img src="logos/admin_icon/reserves.png" width='25px'><div>&nbsp&nbsp RESERVES</div><a>
-        <a href="admin_calendari.php" class='menuesquerra'>&nbsp&nbsp<img src="logos/admin_icon/calendari.png" width='25px'><div>&nbsp&nbsp CALENDARI</div><a>
-        <a href="admin_habitacions.php" class='menuesquerra'>&nbsp&nbsp<img src="logos/admin_icon/room.png" width='25px'><div>&nbsp&nbsp HABITACIONS</div><a>
-      </div>
+   <?php include('menu.php') ?>
+      <?php include('sidebar.php') ?>
       <div class='pagina'>
           <table class='panell'>
               <tr class='estructura'>

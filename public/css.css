@@ -286,6 +286,7 @@ a{
     float: none;
     display: block;
     text-align: left;
+    position: relative;
   }
 }
 

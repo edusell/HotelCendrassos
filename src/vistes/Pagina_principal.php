@@ -21,7 +21,7 @@
             </div>
          </div>
          <div class="reserva">
-            <form action="recerca.php" method='GET'>
+            <form action="index.php?r=recerca" method='GET'>
                <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
                <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
                <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
@@ -38,26 +38,8 @@
             <a class='submenu' href='#nosaltres'><div>SOBRE NOSALTRES</div></a>
             <a class='submenu' href='#aventatges'><div>CONTACTE</div></a>
             </div>
-         
-
          </div>
          <div id="avantatges" class="avantatges">
-            <!--<h1>SERVEIS</h1>
-            <div class='container100'>
-               <table class='serveis'>
-                  <tr>
-                     <td class='doble'>
-                        PARKING VIGILAT
-
-                     </td>
-                     <td>
-                        <div class='fonsimg'>
-                           <img src="img/inici/prking.jpg" alt="img">
-                        </div>
-                     </td>
-                  </tr>
-               </table>
-            </div>-->
             <h1>SERVEIS</h1>
             <div class="avantatges_logos">
                <div>
@@ -73,7 +55,22 @@
                   <p>Servei piscina</p>
                </div>
             </div>
-         </div>-->
+         </div>
+         <div class="avantatges_logos">
+               <div>
+                  <img src="logos\logo-parking.png" alt="..." width="60" height="60">
+                  <p>Servei parking vigilat</p>
+               </div>
+               <div>
+                  <img src="logos\logo-bicicleta.png" alt="..." width="60" height="60">
+                  <p>Servei parking bicicleta</p>
+               </div>
+               <div>
+                  <img src="logos\logo_piscina.png" alt="..." width="60" height="60">
+                  <p>Servei piscina</p>
+               </div>
+            </div>
+         </div>
          <div class='nosaltres'>
             <p>hola</p>
          </div>

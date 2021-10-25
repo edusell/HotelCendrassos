@@ -44,29 +44,40 @@
         <h1>Descobreix les avantatges</h1>
         <div class="avantatges_logos">
             <div>
-                <img src="logos\logo-parking.png" alt="..." width="60" height="60">
+                <img src="logos\logo-parking.png" alt="Ha fallat algo" width="60" height="60">
                 <p>Servei parking vigilat</p>
             </div>
             <div>
-                <img src="logos\logo-bicicleta.png" alt="..." width="60" height="60">
+                <img src="logos\logo-bicicleta.png" alt="Ha fallat algo" width="60" height="60">
                 <p>Servei parking bicicleta</p>
             </div>
             <div>
-                <img src="logos\logo_piscina.png" alt="..." width="60" height="60">
+                <img src="logos\logo_piscina.png" alt="Ha fallat algo" width="60" height="60">
                 <p>Servei piscina</p>
             </div>
         </div>
     </div>
+    <div class="serveis">
+        <div class="servei">
+            <h1>Servei de neteja</h1>
+            <img src="img/servei/servei-de-neteja.jpg">
+            <p>Servei de neteja inclos en el preu de la habitacio per nit.</p>
+            <div>
+        <div class="servei">
+            <h1>Servei de bar</h1>
+            <img src="img/serveis/servei-de-bar.jpg">
+            <p>Servei de bar per esmorzar, dinar, sopar (esmorzar inclosa al preu per nit).</p>
+            
+            
+       </div>
+    </div>
     <div class="footer">
         <footer>
             <div class="logos_footer">
-            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-
-
-
+            <img src="logos\footer\twiter_logo.png" alt="Ha fallat algo" width="60" height="60">
+            <img src="logos\footer\facebook_logo.png" alt="Ha fallat algo" width="60" height="60">
+            <img src="logos\footer\youtube_logo.png" alt="Ha fallat algo" width="60" height="60">
+            <img src="logos\footer\instagram_logo.png" alt="Ha fallat algo" width="60" height="60">
             </div>
             <ul class="footer_ul">
                 <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>

@@ -20,82 +20,16 @@
       <div class='pagina'>
           <table class='panell'>
               <tr class='estructura'>
-                  <td colspan=2 class=border>
-                  <h3>TIPUS HABITACIONS</h3>
-                  <form id="reserves" action="../src/borrarreserva.php" method="post" class='reserves'>
-              <table id='taulareserves'>
-              <tr class='header'A>
-                        <td>id_tipus</td>
-                        <td>m_tipus</td>
-                        <td>serveis_tipus</td>
-                        <td>ocupants_tipus</td>
-                        <td>desc_tipus</td>
-                        <td>nom_tipus</td>
-                        <td>id_hotel_tipus</td>
-                        <td>preu</td>
-                        </tr>
-                        <?php
-                        include '../src/database.php';
-                        
-                        $sql = "select * from tipushabitacio;";
-                        
-                        foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
-                        
-                            print "<tr>";
-                            print "<td><input type='checkbox' name='id_tipus_habitacio[]' value='".$row['id_tipus']."'></td>";
-                            print "<td>".$row['m_tipus']."</td>";
-                            print "<td>".$row['serveis_tipus']."</td>";
-                            print "<td>".$row['ocupants_tipus']."</td>";
-                            print "<td>".$row['desc_tipus']."</td>";
-                            print "<td>".$row['nom_tipus']."</td>";
-                            print "<td>".$row['id_hotel_tipus']."</td>";
-                            print "<td>".$row['preu']."</td>";
-                            print "<tr>";
-                        }
-                        ?>
-          </table>
-          </form>
-               <button type='submit' form='reserves'>Borrar</button>
-               <br><br>
-            </td>
-              </tr>
-              <tr class='estructura '>
-                  <td class=border>
-                  <h3>DEPARTAMENT</h3>
-               <div id='habitacions' class='reserves'>
-                     <table id='taulahabitacions'>
-                        <tr class='header'>
-                           <td></td>
-                           <td>id</td>
-                           <td>nom</td>
-                           <td>descripcio</td>
-                        </tr>
-                        <form id='borrartipus' action='../src/borrardept.php' method='post'>
-                        <?php
-                           $sql = "SELECT id_departament,nom_departament,descripcio_departament FROM departament;";
-                           $habitacions = $conn->query($sql);
-                           
-                           
-                           foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
-                               print "<tr>";
-                               print "<td><input type='checkbox' name='tipus[]' value='".$row['id_departament']."'></td>";
-                               print "<td>".$row['id_departament']."</td>";
-                               print "<td>".$row['nom_departament']."</td>";
-                               print "<td>".$row['descripcio_departament']."</td>";
-                               print "<tr>";
-                           }
-                           
-                           ?>
-                  </form>
-                  <form id='creartipushabitacio' action="../src/creardept.php" method='post'>
-                  <tr id='hide'>
                   <td colspan=2></td>
-                  <td><input class='addtxt' type='text' name='nom'></td>
-                  <td><input class='addtxt' type='text' name='descripcio'></td>
-                          </td>
-                  </tr>
-                  
-                </table>
+
+              </tr>
+              <tr class='estructura'>
+                  <td></td>
+                  <td></td>
+
+              </tr>
+
+          </table>
      
      </div>
    </body>

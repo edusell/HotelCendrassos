@@ -1,2 +1,2 @@
 <?php
-header('Location: public\Pagina_principal.php');
+header('Location: public\index.php');

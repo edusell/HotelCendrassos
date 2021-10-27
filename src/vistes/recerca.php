@@ -18,15 +18,7 @@ $ocupants=$_GET['ocupants'];
     <title>Document</title>
 </head>
 <body class='recerca'>
-<div class="container_principal menu_superior">
-            <div class="item logo" ></div>
-            <div class="item"><a href="habitacions.php">Habitacions</a></div>
-            <div class="item">Serveis</div>
-            <div class="item">Galeria</div>
-            <div class="item">contacta</div>
-            <div class="item">Inicia sesio</div>
-            <div class="item">Registrarte</div>
-        </div>
+<?php include 'menu.php'; ?>
         <div class="habitacions">
             <?= 'DATA ENTRADA:'.$arribada.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
         </div>
@@ -78,4 +70,5 @@ $ocupants=$_GET['ocupants'];
         ?>
         </div>
 </body>
+<?php include 'footerprim.php';?>
 </html>

@@ -1,5 +1,5 @@
 <div class="topnav" id="myTopnav">
-         <a href="index.php" class="active">INICI</a>
+         <a href="index.php">INICI</a>
          <a href="index.php?r=habitacions">HABITACIONS</a>
          <a href="index.php?r=galeria">GALERIA</a>
          <a href="index.php?r=contacte">CONTACTE</a>

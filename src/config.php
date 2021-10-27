@@ -12,3 +12,4 @@ $config["db"]["host"] = 'localhost';
 
 //require_once "../src/models/peticio.php";
 require_once "../src/models/resposta.php";
+require_once "../src/models/admin.php";

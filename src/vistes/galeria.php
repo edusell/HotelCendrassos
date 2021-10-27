@@ -21,25 +21,8 @@
             
         </div>
 
-        <div class="footer">
-            <footer>
-            <div class="logos_footer">
-                <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
-                <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
-                <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
-                <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-    
-    
-                </div>
-                <ul class="footer_ul">
-                    <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>
-                    <li><a href="serveis.php"><p class="footer_seccions">Serveis</p></li>
-                    <li><a href="Habitacions.php"><p class="footer_seccions">Serveis</p></li>
-                    <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
-                    <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
-                </ul>
-            </footer>
-        </div>
-    
+       </div>
+       <?php include 'footerprim.php';?>
 </body>
+
 </html>

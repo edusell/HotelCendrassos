@@ -31,11 +31,12 @@
                         <td>Tipus</td>
                      </tr>
                      <?php
-                        include '../src/database.php';
+                       include '../src/database.php';
                         
                         $sql = "select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida, u.nom,u.cognom,u.tel,u.correu,h.id_habitacio,t.nom_tipus FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus;";
                         
                         foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
+                         
                         
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";

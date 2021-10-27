@@ -1,4 +1,5 @@
 <?php
+
 $mes = ['gener','febrer','març','abril','maig','juny','juliol','agost','septembre','octubre','novembre','desembre'];
 $nums = ['31','28','30','31','30','31','30','31','30','31','30','31'];
 
@@ -19,7 +20,7 @@ for($y=0;$y<12;$y++){
 print '];';
 */
 
-$marcar = ['1,1','9,16'];
+$marcar = ['1,1','9,16','4,5'];
 
 
 
@@ -29,51 +30,20 @@ for($y=0;$y<$avui['mon']-1;$y++){
     }
 }
 
-for($i=0;$i<count($marcar);$i++){
-    $tmp = explode(",", $marcar[$i]);
-    $arr[$tmp[0]-1][$tmp[1]-1]=1;
-    }
 
-    for($y=0;$y<$avui['mday']-1;$y++){
+
+    for($y=0;$y<$avui['mday'];$y++){
            $arr[$avui['mon']-1][$y]=2;
     }
 
-$arr[$avui['mon']-1][$avui['mday']-1]=3;
+$arr[$avui['mon']-1][$avui['mday']]=3;
 
-
-
-/*
-for($i=0;$i<12;$i++){
-    print '
-    <table class=mes>
-    <tr>
-    <td colspan=7>'.$mes[$i].'</td>
-    </tr>
-    <tr>';
-    
-    $sem=0;
-    $dia=0;
-    for($y=0;$y<$nums[$i];$y++){
-        $dia++;
-        if($arr[$i][$y]==1){
-        print '<td class=marcar>'.$dia.'</td>';
-        } else if($arr[$i][$y]==0) {
-        print '<td>'.$dia.'</td>';
-        } else if($arr[$i][$y]==2) {
-            print '<td class=passat>'.$dia.'</td>';
-        }
-        else if($arr[$i][$y]==3) {
-            print '<td class=avui>'.$dia.'</td>';
-        }
-
-        $sem++;
-        if($sem==7){
-            print '</tr><tr>';
-            $sem=0;
-        }
+for($i=0;$i<count($marcar);$i++){
+    $tmp = explode(",", $marcar[$i]);
+    $arr[$tmp[0]-1][$tmp[1]]=1;
     }
-  
-    print '</tr></table>';
 
+function tencat($datain,$datafn){
+    $ini = explode($datain,'-');
+    $fn = explode($datafn,'-');
 }
-?>*/

@@ -11,6 +11,7 @@ include "../src/controlador/panell_calendari.php";
 include "../src/controlador/panell_habitacio.php";
 include "../src/controlador/Galeria.php";
 include "../src/controlador/login.php";
+include "../src/controlador/recerca.php";
 
 
 $r="";
@@ -40,6 +41,8 @@ if ($r == "") {
     $resposta = ctrlGaleria($peticio, $resposta, $imatges);
 }else if($r == "login"){
     $resposta = ctrlLogin($peticio, $resposta, $imatges);
+} else if($r == "recerca"){
+    $resposta = ctrlRecerca($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

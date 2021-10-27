@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="logos/logo-hotel.png" type="image/x-icon">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       <link href="css.css"rel="stylesheet" type="text/css">
       <title>Document</title>
@@ -14,14 +15,15 @@
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-inner">
             <div class="carousel-item active">
-               <img src="logos\slider_habitacions\habitacio1.jpg" class="d-block w-100" alt="...">
+               <img src="logos\slider_menu_principal\imatge1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                <img src="logos\slider_menu_principal\imatge2.jpg" class="d-block w-100" alt="...">
             </div>
          </div>
          <div class="reserva">
-            <form action="index.php?r=recerca" method='GET'>
+            <form action="index.php?r=recerca&" method='GET'>
+               <input type="hidden" name="r" value='recerca'>
                <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
                <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
                <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
@@ -101,7 +103,17 @@
             </ul>
             </footer>-->
       </div>
+      <?php include 'footerprim.php';?>
    </body>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   
+   <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+   </script>
 </html>

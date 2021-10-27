@@ -23,12 +23,13 @@
             </div>
         </div>
         <div class="reserva">
-                <form>
-                    <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
-                    <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
-                    <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
-                    <button >Reserva</button>
-                </form>
+        <form action="index.php?r=recerca&" method='GET'>
+               <input type="hidden" name="r" value='recerca'>
+               <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
+               <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
+               <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
+               <button >Reserva</button>
+            </form>
               </div>
         </div>
         <div class="habitacions">
@@ -77,8 +78,7 @@
 
         </div> 
 
-    <div class="footer">
-        <footer>
+    <!--    <footer>
         <div class="logos_footer">
             <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
             <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
@@ -94,8 +94,8 @@
                 <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
                 <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
             </ul>
-        </footer>
-    </div>
+        </footer>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+<?php include 'footerprim.php';?>
 </html>

@@ -13,3 +13,4 @@ $config["db"]["host"] = 'localhost';
 
 require_once "../src/models/admin.php";
 require_once "../src/models/resposta.php";
+require_once "../src/models/clients.php";

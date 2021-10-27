@@ -1,6 +1,5 @@
 <?php
-
-function ctrlHabitacio($peticio, $resposta, $imatges){
+function ctrlAdmin($peticio, $resposta, $imatges){
     include '../src/config.php';
 
     $tip_habs = new \Daw\llistartipushab($config["db"]);
@@ -15,3 +14,4 @@ function ctrlHabitacio($peticio, $resposta, $imatges){
 
     return $resposta;
 }
+?>

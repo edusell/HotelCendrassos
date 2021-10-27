@@ -35,9 +35,35 @@
         <div class="habitacions">
             <h1>Tipus de habitacions</h1>
         </div>
-        <?php include '..\src\database.php';
+        
+        <?php 
+            
+            foreach($llistar_tiphab as $row){
+                print "<div class='container_tipus_habitacions'>";
+                print '<div class="tipus_habitacions">';
+                  print"<h3>".$row['nom_tipus']."</h3>";
+                  print'<div class="container_imatges_habitacions">';
+                    print'<div class="imatges_habitacions"></div>';
+                        print'<div class="text">';
+                            print"<p>".$row['desc_tipus']."</p>";
+                            print"<div class='especificacions'>";
+                                print "<img src='logos\habitacions_logos\silueta-persona.png'>";
+                                print"<p><b>MAX ".$row['ocupants_tipus']." p</b></p>";
+                                print "<img src='logos\habitacions_logos\information.png'>";
+                                print"<p><b>".$row['m_tipus']."m<sub>2 </sub></b></p>";
+                            print"</div>";
+                            print"<div class='preu'>".$row['preu']."€ </div>";
+                            print"<a href='habitacions.php#arribada_hotel'><div class='boto'>Reserva</div></a>";
+                        print"</div>";
+                  print"</div>";
+                print"</div>";
+                print "</div>";}
 
-            $stm1 = $conn->prepare("select COUNT(*) from usuari where DNI = :dni;");
+            
+        
+        //include '..\src\database.php';
+
+           /* $stm1 = $conn->prepare("select COUNT(*) from usuari where DNI = :dni;");
             
 
                              $sql = "SELECT * FROM tipushabitacio";
@@ -73,7 +99,7 @@
                     print"</div>";
               print"</div>";
             print"</div>";
-            print "</div>";}
+            print "</div>";}*/
         ?>
 
         </div> 

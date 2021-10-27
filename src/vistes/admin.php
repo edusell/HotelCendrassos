@@ -31,13 +31,9 @@
                         <td>Tipus</td>
                      </tr>
                      <?php
-                       include '../src/database.php';
-                        //print_r($llistar_reserves);
-                        //$sql = "select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida, u.nom,u.cognom,u.tel,u.correu,h.id_habitacio,t.nom_tipus FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus;";
-                        
-                        //foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
+
                          foreach($llistar_reserves as $row){
-                            //print_r($row);
+
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
                             print "<td>".$row['id_reserva']."</td>";
@@ -76,11 +72,8 @@
                         </tr>
                         <form id='borrartipus' action='../src/borrartipushabitacio.php' method='post'>
                         <?php
-                           $sql = "select id_tipus,m_tipus,ocupants_tipus,preu,nom_tipus, desc_tipus from tipushabitacio;";
-                           $habitacions = $conn->query($sql);
-                           
-                           
-                           foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
+
+                            foreach($llistar_tipus as $row){
                                print "<tr>";
                                print "<td><input type='checkbox' name='tipus[]' value='".$row['id_tipus']."'></td>";
                                print "<td>".$row['id_tipus']."</td>";

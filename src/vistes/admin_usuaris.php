@@ -29,12 +29,8 @@
                         <td>contrasenya</td>
                      </tr>
                      <?php
-                        include '../src/database.php';
-                        
-                        $sql = "select DNI,Nom,Cognom,tel,correu,username,nom_departament FROM usuari, departament where id_departament_usuari=id_departament;";
-                        
-                        foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
-                        
+
+                        foreach($llistar_usuaris as $row){
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['DNI']."'></td>";
                             print "<td>".$row['DNI']."</td>";
@@ -68,11 +64,8 @@
                         </tr>
                         <form id='borrartipus' action='../src/borrardept.php' method='post'>
                         <?php
-                           $sql = "SELECT id_departament,nom_departament,descripcio_departament FROM departament;";
-                           $habitacions = $conn->query($sql);
-                           
-                           
-                           foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
+
+                            foreach($llistar_depts as $row){
                                print "<tr>";
                                print "<td><input type='checkbox' name='tipus[]' value='".$row['id_departament']."'></td>";
                                print "<td>".$row['id_departament']."</td>";

@@ -91,7 +91,7 @@
                            
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="index.php" method='post'>
+                  <form id='creartipushabitacio' action="index.php" method='get'>
                   <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
                   <td colspan=2></td>
@@ -109,9 +109,10 @@
                <button form='creartipushabitacio' id='hidebut'>envia</button>   
                <br><br>  
             </td>
+            <!-- USUARIS -->
             <td class='estructura estructurausuari'>
                <h3>CREAR USUARI</h3>
-               <form id='registre' action="index.php" method='GET' novalidate>
+               <form id='registre' action="index.php" method='post' novalidate>
                  <input type='hidden' name='r' value='crearusuariadmin'>
                   <label for="mail">
                   <span>Correu electronic: </span>
@@ -166,8 +167,10 @@
                      ?>
                   </select>
                   </label>
+                  <button >Enviar</button>
                </form>
-               <button onclick="validar()">Enviar</button>
+               
+               <!--<button onclick="validar()">Enviar</button>-->
             </td>
             </tr>
       </table>
@@ -193,7 +196,7 @@
       });
     });
 
-      document.getElementById('hide').style.visibility = "hidden";
+     /* document.getElementById('hide').style.visibility = "hidden";
       document.getElementById('hidebut').style.visibility = "hidden";
       document.getElementById('creartipus').style.visibility = "visible";
       
@@ -302,7 +305,7 @@
            }
          }
          return 0;
-       }
+       }*/
 
    </script>
    

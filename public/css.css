@@ -411,7 +411,6 @@ body::-webkit-scrollbar {
 }
 .text{
     font-size: 1.2em;
-    color: black;
     width: 90%;
     height: 400px;
     text-align: justify;

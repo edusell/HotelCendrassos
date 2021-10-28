@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .prova{
+            width: 200px;
+            height: 400px;
+            /*backdrop-filter: blur(5px);*/
+            box-shadow: 20px 20px 50px rgb(0,0,0,0.5);
+            border: 1px solid rgb(209, 209, 209);
+            transform-style: preserve-3d;
+        }
+        .inner{
+            width: 180px;
+            height: 100px;
+            background-color: white;
+            margin: 5px;
+            transform: translateZ(10px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="prova">
+        <div class="inner">
+adsqwDEWD
+        </div>
+        jrewigreuiger <br>nfiewrnfiuoer <br>uipfqbediwqof
+    </div>
+    
+
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".prova"), {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 0.2
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".prova"));
+</script>
+</body>
+</html>

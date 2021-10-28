@@ -41,12 +41,15 @@ class adminpdo
         $caracts_numero_tlf=false;
         $errvalid=false;
         $permitidos = "0123456789";
-        for ($i=0; $i<strlen($telefon); $i++){
-            if (strpos($permitidos, substr($nombre_usuario,$i,1))==false){
+        for ($a=0; $a<strlen($tel); $a++){
+            if (strpos($permitidos, substr($tel,$a,1))==false){
                 $err['tel']=1;
+                //$err[$i]='Numero telefon incorrecte';
+               // $i++;
             }
         }
 
+       
         $stm1 = $this->sql->prepare("select COUNT(*) from usuari where DNI = :dni;");
         $sql1 = $stm1->execute([
           ':dni' => $dni
@@ -56,27 +59,39 @@ class adminpdo
         $sql2 = $stm1->execute([
           ':user' => $usuari
         ]);
+            
 
-
-        if($caracters_dni<9){
+        if(strlen($dni)<9){
             $err[$i]='El dni es incorrecte';
             $i++;
+            print("Error");
+            die();
         }
     
         if(strlen($tel)!=9){
             $err[$i]='El telefon es incorrecte';
             $i++;
+            print("Error telefon");
+            die();
+           
+        
         }
-        //if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
-        //     $err[$i]='El Correu electronic es incorrecte';
-        //     $i++;
-        //}
-        //if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
-        //    $err['mail']=1;
-        ///}
+        if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+            $err[$i]='El Correu electronic es incorrecte';
+             $i++;
+             print("Error email");
+            die();
+        }
+        if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
+            $err['mail']=1;
+            $err[$i]='El Correu electronic es incorrecte 1';
+            print("Error domini");
+            die();
+
+        }
         //if(count($sql1)>0){
-        //    $err['dni']=1;
-        //}
+            //$err['dni']=1;
+       // }
 
         if(count($err)== 0){
             $insert = $this->sql->prepare("INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES ( :dni , :nom, :cognom, :tel , :mail , '0' , :usuari , :pass , :rol);");

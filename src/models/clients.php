@@ -59,7 +59,7 @@ class llistartipushab
         //$user = $_POST['usuari'];
         //$pass= $_POST['password'];
 
-        $query = 'select  DNI,password,username,rol,id_departament_usuari from usuari where username=:user;';
+        $query = 'select  DNI,Nom,password,username,rol,id_departament_usuari from usuari where username=:user;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':user' => $user ]);

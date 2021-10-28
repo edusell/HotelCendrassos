@@ -1,3 +1,7 @@
+<?php
+include 'roladmin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -189,7 +193,7 @@
    <script>
      $(document).ready(function(){
       $(".close").click(function(){
-    $(".alerta").css("visibility", "hidden");
+    $("#alerta").css("visibility", "hidden");
       });
     });
 

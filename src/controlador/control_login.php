@@ -17,9 +17,17 @@ function ctrLogin($peticio, $resposta, $contenidor)
     $actual = $usuaris->getUser($usuari);
 
        
-        //print_r($actual["password"]);
+       // print_r($actual);
+       // die();
        
     if($actual["password"] === $pass) {
+
+        session_start();
+        $_SESSION['user']=$usuari;
+        $_SESSION['pass']=$pass;
+        $_SESSION['DNI']=$actual["dni"];
+        $_SESSION['nom']=$actual["Nom"];
+        $_SESSION['rol']=$actual["id_departament_usuari"];
        
         //$resposta->setSession("logat", true);
        // $resposta->setSession("login", $actual);

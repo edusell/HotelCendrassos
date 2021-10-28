@@ -7,7 +7,7 @@
 
          <?php
          session_start();
-         echo $_SESSION['id_departament_usuari'];
+     
           if(isset($_SESSION['user'])){
             if($_SESSION['rol']==1){
             print  '<a href="index.php?r=admin">ADMINISTRACIO</a>';

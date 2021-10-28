@@ -15,6 +15,7 @@ include "../src/controlador/recerca.php";
 include "../src/controlador/borrarreserva.php";
 include "../src/controlador/borrartipus.php";
 include "../src/controlador/creartipus.php";
+include "../src/controlador/crearusuariadmin.php";
 
 
 $r="";

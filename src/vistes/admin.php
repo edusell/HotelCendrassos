@@ -170,6 +170,13 @@
             </tr>
       </table>
      </div>
+     
+     <div  style='position: fixed' class="alert alert-warning alert-dismissible fade show" role="alert">
+     <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
    </body>
    <script>
       document.getElementById('hide').style.visibility = "hidden";
@@ -282,5 +289,13 @@
          }
          return 0;
        }
+       alert
+       /*<?php
+    if(isset($erradduser)){
+      print 'alert("ERROR AL CREAR USUARI");';
+      }
+    
+   ?>*/
    </script>
+   
 </html>

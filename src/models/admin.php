@@ -34,6 +34,65 @@ class adminpdo
      * @param int $id
      * @return array imatge amb ["titol", "url"]
      */
+    public function adduseradmin($mail,$nom,$cnom,$dni,$tel,$usuari,$pass,$rol){
+  
+        $err = array();
+        $caracters_dni=strlen($dni);
+        $caracts_numero_tlf=false;
+        $errvalid=false;
+        $permitidos = "0123456789";
+        for ($i=0; $i<strlen($telefon); $i++){
+            if (strpos($permitidos, substr($nombre_usuario,$i,1))==false){
+                $err['tel']=1;
+            }
+        }
+
+        $stm1 = $this->sql->prepare("select COUNT(*) from usuari where DNI = :dni;");
+        $sql1 = $stm1->execute([
+          ':dni' => $dni
+        ]);
+
+        $stm1 = $this->sql->prepare("select COUNT(*) from usuari where usuari = :user;");
+        $sql2 = $stm1->execute([
+          ':user' => $usuari
+        ]);
+
+
+        if($caracters_dni<9){
+            $err['dni']=1;
+        }
+    
+        if(strlen($tel)!=9){
+            $err['tel']=1;
+        }
+        if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+             $err['mail']=1;
+        }
+        if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
+            $err['mail']=1;
+        }
+        //if(count($sql1)>0){
+        //    $err['dni']=1;
+        //}
+
+        if(count($err)== 0){
+            $insert = $this->sql->prepare("INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES ( :dni , :nom, :cognom, :tel , :mail , '0' , :usuari , :pass , :rol);");
+            $sql = $insert->execute([
+                ':dni' => $dni,
+                ':nom' => $nom,
+                ':cognom' => $cnom,
+                ':usuari' => $usuari,
+                ':mail' => $mail,
+                ':tel' => $tel,
+                ':pass' => $pass,
+                ':rol' => $rol
+            ]);
+        }       
+
+        return $err;
+
+
+    }
 
     public function getreserva()
     {

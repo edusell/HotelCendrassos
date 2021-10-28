@@ -37,7 +37,7 @@
         </div>
         
         <?php 
-            
+        
             foreach($llistar_tiphab as $row){
                 print "<div class='container_tipus_habitacions'>";
                 print '<div class="tipus_habitacions">';

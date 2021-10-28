@@ -7,14 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="css.css"rel="stylesheet" type="text/css">
 
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
         <?php include 'menu.php'; ?>
                 <!--MENU-->
 
+
         <div class="container-login">
-            <form class="login" action="../src/validarlogin.php" method="POST">
+            <form class="login" action="index.php" method="POST">
+                <input type="hidden" name="r" value="dologin">
                 <label>Usuari:<br>
                     <input id='usuari' name="usuari" type="text" required>
                 </label><br><br>

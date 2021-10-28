@@ -38,7 +38,32 @@ class llistartipushab
         return $stm->fetchALL(\PDO::FETCH_ASSOC);
     }
 
+    //Sesions
+    /*public function __construct(){
+        session_start();
+    }*/
 
+   
+    public function get($id){
+        return $_SESSION[$id];
+    }
+
+
+    public function set($id, $value){
+        $_SESSION[$id] = $value;
+    }
+
+    //Validacio de usuaris contra la base de dades 
+    public function getUser($user)
+    {
+        //$user = $_POST['usuari'];
+        //$pass= $_POST['password'];
+
+        $query = 'select  DNI,password,username,rol,id_departament_usuari from usuari where username=:user;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':user' => $user ]);
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }
-
-?>

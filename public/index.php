@@ -16,6 +16,7 @@ include "../src/controlador/borrarreserva.php";
 include "../src/controlador/borrartipus.php";
 include "../src/controlador/creartipus.php";
 include "../src/controlador/crearusuariadmin.php";
+include "../src/controlador/control_login.php";
 
 
 $r="";
@@ -56,6 +57,8 @@ if ($r == "") {
     $resposta = ctrlcreartipus($peticio, $resposta, $imatges);
 } else if($r == "crearusuariadmin"){
     $resposta = ctrlcrearusuariadmin($peticio, $resposta, $imatges);
+}else if($r == "dologin"){
+    $resposta = ctrLogin($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

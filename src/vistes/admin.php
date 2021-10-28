@@ -15,7 +15,8 @@
          <tr>
             <td class='estructura'colspan='2'>
                <h3>Reserves</h3>
-               <form id="reserves" action="../src/borrarreserva.php" method="post" class='reserves'>
+               <form id="reserves" action="index.php" method="get" class='reserves'>
+               <input type="hidden" name='r' value='borrreserva'>
                   <table id='taulareserves'>
                      <tr class='header'A>
                         <td></td>
@@ -70,7 +71,8 @@
                            <td>tipus</td>
                            <td>descripcio</td>
                         </tr>
-                        <form id='borrartipus' action='../src/borrartipushabitacio.php' method='post'>
+                        <form id='borrartipus' action='index.php' method='get'>
+                        <input type="hidden" name='r' value='borrartipus'>
                         <?php
 
                             foreach($llistar_tipus as $row){
@@ -87,7 +89,8 @@
                            
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="../src/creartipushabitacio.php" method='post'>
+                  <form id='creartipushabitacio' action="index.php" method='get'>
+                  <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
                   <td colspan=2></td>
                   <td><input class='addnum' type='number' name='m'></td>
@@ -153,10 +156,7 @@
                   <span>rol: </span>
                   <select name="rol" id="rol">
                   <?php
-                     $sql= 'select id_departament,nom_departament from departament;';
-                     $rols = $conn->query($sql);
-                     
-                     foreach ($conn->query($sql, PDO::FETCH_ASSOC) as $row) {
+                    foreach($llistar_rols as $row){
                      print '<option value="'.$row['id_departament'].'">'.$row['nom_departament'].'</option>';
                      }
                      

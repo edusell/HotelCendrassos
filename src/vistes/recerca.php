@@ -22,7 +22,7 @@ $ocupants=$_GET['ocupants'];
         <div class="habitacions">
             <?= 'DATA ENTRADA:'.$arribada.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
         </div>
-
+        
         <?php
         
         include '../src/database.php';
@@ -45,9 +45,9 @@ $ocupants=$_GET['ocupants'];
             
             print "<div class='container_reserva_habitacions'>";
             print '<div class="recerca_habitacions">';
-              print"<h3>".$row['nom_tipus']."</h3>";
+              print"<h1>".$row['nom_tipus']."</h1>";
               print'<div class="container_imatges_recerca">';
-                print'<div class="imatges_recerca"></div>';
+                print'<div><img class="imatges_recerca" src="img/habitacio_doble.jpg"></div>';
                     print'<div class="text">';
                         print"<p>".$row['desc_tipus']."</p>";
                         print"<div class='especificacions_recerca'>";
@@ -71,4 +71,22 @@ $ocupants=$_GET['ocupants'];
         </div>
 </body>
 <?php include 'footerprim.php';?>
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript">
+
+
+
+	VanillaTilt.init(document.querySelector(".recerca_habitacions"), {
+		max: 10,
+		speed: 400,
+        reverse:  true,
+        glare: true,
+        "max-glare": 0.2,
+        //scale: 1.05
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".recerca_habitacions"));
+</script>
+</body>
 </html>

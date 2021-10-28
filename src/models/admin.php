@@ -68,10 +68,45 @@ class adminpdo
     public function dropreserva($ids){
         for($i=0;$i<count($ids);$i++){
 
-            $stm = $conn->prepare("DELETE FROM reserva WHERE id_reserva = :ids ;");
-            $sql = $stm->execute([':ids' => $ids[$i]]);
+            $query = "DELETE FROM reserva WHERE id_reserva = :ids ;";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':ids' => $ids[$i]]);
         
         }
+    }
+
+    public function droptipus($ids){
+        for($i=0;$i<count($ids);$i++){
+
+            $query = "DELETE FROM tipushabitacio WHERE id_tipus = :ids ;";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':ids' => $ids[$i]]);
+        
+        }
+    }
+
+    public function creartipus($id,$m,$servei,$omax,$descripcio,$nom,$preu,$directori){
+       
+    $stm = $this->sql->prepare("INSERT INTO tipushabitacio (id_tipus, m_tipus, serveis_tipus, ocupants_tipus, desc_tipus, nom_tipus, id_hotel_tipus, preu,imatge) VALUES ( :id , :m , :serveis , :omax , :descripcio , :nom , '1', :preu , :img );");
+    $sql = $stm->execute([
+    ':id' => $id,
+    ':m' => $m,
+    ':serveis' => $servei,
+    ':omax' => $omax,
+    ':descripcio' => $descripcio,
+    ':nom' => $nom,
+    ':preu' => $preu,
+    ':img' =>$directori,
+    ]);
+    }
+
+    public function ultimidtipus(){
+        $query = "select id_tipus from tipushabitacio order by id_tipus desc limit 1;";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+        $result = $stm->fetchColumn();
+        //print_r($result);
+        return $result;
     }
     
     public function getusers(){
@@ -104,6 +139,23 @@ class adminpdo
         return $stm->fetchALL(\PDO::FETCH_ASSOC);
 
     }
+
+
+    public function getrol(){
+        $query = "select id_departament,nom_departament from departament;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetchALL(\PDO::FETCH_ASSOC);
+
+    }
+    
 
   
 }

@@ -12,6 +12,9 @@ include "../src/controlador/panell_habitacio.php";
 include "../src/controlador/Galeria.php";
 include "../src/controlador/login.php";
 include "../src/controlador/recerca.php";
+include "../src/controlador/borrarreserva.php";
+include "../src/controlador/borrartipus.php";
+include "../src/controlador/creartipus.php";
 
 
 $r="";
@@ -23,6 +26,7 @@ $resposta = new Daw\Resposta();
 //$imatges = new Daw\ImatgesSQLite($config["sqlite"]);
 //$imatges = new Daw\ImatgesPDO($config["db"]);
 //echo ($r);
+
 if ($r == "") {
     $resposta = ctrlPortada($peticio, $resposta, $imatges);
 } else if($r == "admin"){
@@ -43,6 +47,12 @@ if ($r == "") {
     $resposta = ctrlLogin($peticio, $resposta, $imatges);
 } else if($r == "recerca"){
     $resposta = ctrlRecerca($peticio, $resposta, $imatges);
+}  else if($r == "borrreserva"){
+    $resposta = ctrlborrreserva($peticio, $resposta, $imatges);
+} else if($r == "borrartipus"){
+    $resposta = ctrlborrtipus($peticio, $resposta, $imatges);
+}  else if($r == "creartipus"){
+    $resposta = ctrlcreartipus($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

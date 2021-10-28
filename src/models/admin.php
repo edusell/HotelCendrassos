@@ -35,7 +35,7 @@ class adminpdo
      * @return array imatge amb ["titol", "url"]
      */
     public function adduseradmin($mail,$nom,$cnom,$dni,$tel,$usuari,$pass,$rol){
-  
+        $i =0;
         $err = array();
         $caracters_dni=strlen($dni);
         $caracts_numero_tlf=false;
@@ -59,18 +59,21 @@ class adminpdo
 
 
         if($caracters_dni<9){
-            $err['dni']=1;
+            $err[$i]='El dni es incorrecte';
+            $i++;
         }
     
         if(strlen($tel)!=9){
-            $err['tel']=1;
+            $err[$i]='El telefon es incorrecte';
+            $i++;
         }
-        if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
-             $err['mail']=1;
-        }
-        if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
-            $err['mail']=1;
-        }
+        //if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+        //     $err[$i]='El Correu electronic es incorrecte';
+        //     $i++;
+        //}
+        //if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
+        //    $err['mail']=1;
+        ///}
         //if(count($sql1)>0){
         //    $err['dni']=1;
         //}

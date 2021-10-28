@@ -14,14 +14,14 @@ function ctrlcrearusuariadmin($peticio, $resposta, $imatges){
     $resposta->set("llistar_reserves", $reserves);
     $resposta->set("llistar_rols", $rols);
 
-    $mail = $_GET['mail'];
-    $nom = $_GET['nom'];
-    $cnom =$_GET['cognom'];
-    $dni = $_GET['dni'];
-    $tel = $_GET['telefon'];
-    $usuari = $_GET['usuari'];
-    $pass =$_GET['contrasenya'];
-    $rol = $_GET['rol'];
+    $mail = $_POST['mail'];
+    $nom = $_POST['nom'];
+    $cnom =$_POST['cognom'];
+    $dni = $_POST['dni'];
+    $tel = $_POST['telefon'];
+    $usuari = $_POST['usuari'];
+    $pass =$_POST['contrasenya'];
+    $rol = $_POST['rol'];
 
     $err = $model->adduseradmin($mail,$nom,$cnom,$dni,$tel,$usuari,$pass,$rol);
 

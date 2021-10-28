@@ -4,7 +4,9 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS only -->
       <link href="admin.css"rel="stylesheet" type="text/css">
+      
       <title>Admin</title>
    </head>
    <body>
@@ -89,7 +91,7 @@
                            
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="index.php" method='get'>
+                  <form id='creartipushabitacio' action="index.php" method='post'>
                   <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
                   <td colspan=2></td>
@@ -170,15 +172,27 @@
             </tr>
       </table>
      </div>
-     
-     <div  style='position: fixed' class="alert alert-warning alert-dismissible fade show" role="alert">
-     <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+     <?php
+     if(isset($erradduser)){
+       for($i=0;$i<count($erradduser);$i++){
+       print '<div id=alerta class="alerta">
+      <p id=alertatxt>'.$erradduser[$i].'</p>
+      <button type="button" class="close" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+      </button>
+     </div>';
+       }
+     }
+     ?>
    </body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+     $(document).ready(function(){
+      $(".close").click(function(){
+    $(".alerta").css("visibility", "hidden");
+      });
+    });
+
       document.getElementById('hide').style.visibility = "hidden";
       document.getElementById('hidebut').style.visibility = "hidden";
       document.getElementById('creartipus').style.visibility = "visible";
@@ -289,13 +303,7 @@
          }
          return 0;
        }
-       alert
-       /*<?php
-    if(isset($erradduser)){
-      print 'alert("ERROR AL CREAR USUARI");';
-      }
-    
-   ?>*/
+
    </script>
    
 </html>

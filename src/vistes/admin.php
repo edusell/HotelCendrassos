@@ -109,7 +109,8 @@
             </td>
             <td class='estructura estructurausuari'>
                <h3>CREAR USUARI</h3>
-               <form id='registre' action="validacioregistre.php" method='GET' novalidate>
+               <form id='registre' action="index.php" method='GET' novalidate>
+                 <input type='hidden' name='r' value='crearusuariadmin'>
                   <label for="mail">
                   <span>Correu electronic: </span>
                   <input type="email" id="mail" name="mail" required minlength="8">

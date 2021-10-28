@@ -53,6 +53,8 @@ if ($r == "") {
     $resposta = ctrlborrtipus($peticio, $resposta, $imatges);
 }  else if($r == "creartipus"){
     $resposta = ctrlcreartipus($peticio, $resposta, $imatges);
+} else if($r == "crearusuariadmin"){
+    $resposta = ctrlcrearusuariadmin($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

@@ -27,7 +27,7 @@
                <td colspan=2 class=border>
                   <h3>USUARIS</h3>
                  
-                     <table id='taulareserves'>
+                     <table style='overflow-y: scroll;' id='taulareserves'>
                      <form id="rmusuari" action="index.php" method="post" class='reserves'>
                      <input type='hidden' name='r' value='rmuser'>
                         <tr class='header'A>
@@ -129,7 +129,8 @@
                               ?>
                         </form>
                         <form id='creardept' action="index.php" method='post'>
-                           <tr id='hide'>
+                        <input type='hidden' name='r' value='creardept'>
+                           <tr id='hidedept'>
                               <td colspan=2></td>
                               <td><input class='addtxt' type='text' name='nom'></td>
                               <td><input class='addtxt' type='text' name='descripcio'></td>
@@ -138,6 +139,8 @@
                      </table>
                   </div>
                   <button type='submit' form='borrardept'>Borrar</button>
+                  <button id='creardeptbut' onclick='creardept()'>Crear</button>
+                  <button form='creardept' id='hidebutdept'>Enviar</button>
                   <br><br>  
                </td>
             </tr>
@@ -149,12 +152,23 @@
       $("#hide").css("visibility", "hidden");
       $("#hidebut").css("visibility", "hidden");
       $("#crearusuariinput").css("visibility", "visible");
+
+      $("#hidedept").css("visibility", "hidden");
+      $("#hidebutdept").css("visibility", "hidden");
+      $("#creardeptbut").css("visibility", "visible");
        
        
         function crearusuari(){
           $("#hide").css("visibility", "visible");
           $("#hidebut").css("visibility", "visible");
       $("#crearusuariinput").css("visibility", "hidden");
+         
+        }
+
+        function creardept(){
+          $("#hidedept").css("visibility", "visible");
+          $("#hidebutdept").css("visibility", "visible");
+        $("#creardeptbut").css("visibility", "hidden");
          
         }
         function validar(){

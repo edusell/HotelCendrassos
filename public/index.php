@@ -19,6 +19,7 @@ include "../src/controlador/crearusuariadmin.php";
 include "../src/controlador/control_login.php";
 include "../src/controlador/panellusuari.php";
 include "../src/controlador/rmuser.php";
+include "../src/controlador/adddept.php";
 
 
 $r="";
@@ -65,6 +66,8 @@ if ($r == "") {
     $resposta = ctrPanellusuari($peticio, $resposta, $imatges);
 }else if($r == "rmuser"){
     $resposta = ctrrmuser($peticio, $resposta, $imatges);
+} else if($r == "creardept"){
+    $resposta = ctradddept($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

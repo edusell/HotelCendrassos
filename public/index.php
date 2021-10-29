@@ -18,6 +18,7 @@ include "../src/controlador/creartipus.php";
 include "../src/controlador/crearusuariadmin.php";
 include "../src/controlador/control_login.php";
 include "../src/controlador/panellusuari.php";
+include "../src/controlador/rmuser.php";
 
 
 $r="";
@@ -62,6 +63,8 @@ if ($r == "") {
     $resposta = ctrLogin($peticio, $resposta, $imatges);
 }else if($r == "usuari"){
     $resposta = ctrPanellusuari($peticio, $resposta, $imatges);
+}else if($r == "rmuser"){
+    $resposta = ctrrmuser($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

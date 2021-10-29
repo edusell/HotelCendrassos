@@ -152,6 +152,16 @@ class adminpdo
         }
     }
 
+    public function dropuser($ids){
+        for($i=0;$i<count($ids);$i++){
+
+            $query = "DELETE FROM usuari WHERE DNI = :ids ;";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':ids' => $ids[$i]]);
+        
+        }
+    }
+
     public function droptipus($ids){
         for($i=0;$i<count($ids);$i++){
 

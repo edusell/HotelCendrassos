@@ -22,13 +22,19 @@ function ctrlcrearusuariadmin($peticio, $resposta, $imatges){
     $usuari = $_POST['usuari'];
     $pass =$_POST['contrasenya'];
     $rol = $_POST['rol'];
+    $origen = $_POST['orig'];
 
     $err = $model->adduseradmin($mail,$nom,$cnom,$dni,$tel,$usuari,$pass,$rol);
 
     if(count($err)!=0){
         $resposta->set("erradduser",$err);
     }
+
+    if(isset($_POST['orig'])){
+        header('Location:index.php?r='.$origen);
+    } else {
     $resposta->SetTemplate("admin.php");
+    }
 
     return $resposta;
 }

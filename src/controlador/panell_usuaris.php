@@ -5,6 +5,9 @@ function ctrlAdminusuari($peticio, $resposta, $imatges){
 
     $model = new \Daw\adminpdo($config["db"]);
 
+    $rols = $model->getrol();
+    $resposta->set("llistar_rols", $rols);
+
     $usuaris= $model->getusers();
     $resposta->set("llistar_usuaris", $usuaris);
 

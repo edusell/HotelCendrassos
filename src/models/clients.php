@@ -66,4 +66,20 @@ class llistartipushab
         
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+
+    //Retornar valors del usuari en el panell usuari
+
+    public function getdadesUser()
+    {
+        session_start();
+
+        $dni = $_SESSION['DNI'];
+        
+        $query = 'select  DNI,Nom,password,username,rol,id_departament_usuari from usuari where DNI=:dni;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':dni' => $dni ]);
+        return $result->fetchall(\PDO::FETCH_ASSOC);
+    }
+
 }

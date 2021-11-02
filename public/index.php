@@ -62,6 +62,7 @@ if ($r == "") {
     $resposta = ctrLogin($peticio, $resposta, $imatges);
 }else if($r == "usuari"){
     $resposta = ctrPanellusuari($peticio, $resposta, $imatges);
+    
 }
 
 $resposta->resposta();

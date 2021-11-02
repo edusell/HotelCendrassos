@@ -13,17 +13,34 @@
 <body>
 <?php include('menu.php'); ?><br>
 <div class="container">
-<div class="row align-items-start justify-content-center">
-  <div class="col-12 "id="configuracions">
-   <h1>Dades personals<h1>
-     <div class="row">
-     <div class="col-4" id="dadespersonals"><p>Nom:</p></div>
-     <div class="col-4" id="dadespersonals"><p>Cognom:</p></div>
-     <div class="col-4" id="dadespersonals"><p>DNI:</p></div>
+  <div class="row align-items-start justify-content-center col-12">
+    <div class="col-12 "id="configuracions">
+      <h1>General<h1>
+      <?php foreach($llistar_dades as $row){
+        
+      print '<div class="row panelldades">';
+        print"<div class='col-4 ' id='dadespersonals'><p>Nom: <input type='text' value=".$row['nom']."readonly='readonly' class='col-4'></p></div>";
+        print'<div class="col-4" id="dadespersonals"><p>Cognoms: <input type="text" readonly="readonly" class="col-6"></p></div>';
+        print'<div class="col-4" id="dadespersonals"><p>DNI: <input type="text" readonly="readonly" class="col-4"></p></div>';
+      print'</div>';
+      print '<div class="row panelldades">';
+        print'<div class="col-4 " id="dadespersonals"><p>Correu: <input type="text" class="col-9"></p></div>';
+       print' <div class="col-4" id="dadespersonals"><p>Adreça: <input type="text" class="col-9"></p></div>';
+        print'<div class="col-4" id="dadespersonals"><p>Data neixament: <input type="date" readonly="readonly" class="col-5"></p></div>';
+      print'</div>';
+      print'<div class="row panelldades">';
+        print'<div class="col-2" id="dadespersonals"><p>Edat: <input type="number" readonly="readonly" class="col-2"></p></div>';
+        print'<div class="col-6" id="dadespersonals"><p>Poblacio: <input type="text" readonly="readonly" ></p></div>';
+        print'<div></div>';
+        print'<button class="col-2 boto_modifica">Modifica</button>';
+      print'</div>';
+    print'</div>';
+      }
+    ?>
+    <div class="col-12 "id="configuracions">
+    <h1>Reserves<h1>
+
     </div>
-  </div>
-  <div class="col-1" >2</div>
-</div>
 </div>
 <?php include 'footerprim.php';?>
 </body>

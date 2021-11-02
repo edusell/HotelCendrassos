@@ -200,7 +200,7 @@ include 'roladmin.php';
       });
     });
 
-     /* document.getElementById('hide').style.visibility = "hidden";
+     document.getElementById('hide').style.visibility = "hidden";
       document.getElementById('hidebut').style.visibility = "hidden";
       document.getElementById('creartipus').style.visibility = "visible";
       
@@ -309,7 +309,7 @@ include 'roladmin.php';
            }
          }
          return 0;
-       }*/
+       }
 
    </script>
    

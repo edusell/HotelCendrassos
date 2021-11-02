@@ -1,5 +1,5 @@
 #configuracions{
-background-color: red;
+background-color: rgb(233, 207, 136);
 text-align: center;
 }
 #dadespersonals{
@@ -8,3 +8,18 @@ font-size: 15px;
 .panelldades{
     padding-top: 50px;
 }
+input{
+    background-color: rgb(238, 234, 184);
+    border-radius: 5px;
+}
+.boto_modifica{
+    background-color: tan;
+    border-radius: 10px;
+}
+.boto_contrasenya{
+    background-color: tan;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 15px;
+}
+

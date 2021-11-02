@@ -155,7 +155,7 @@ class adminpdo
     public function dropdept($ids){
         for($i=0;$i<count($ids);$i++){
 
-            $query = "DELETE FROM departament WHERE id_reserva = :ids ;";
+            $query = "DELETE FROM departament WHERE id_departament = :ids ;";
             $stm = $this->sql->prepare($query);
             $result = $stm->execute([':ids' => $ids[$i]]);
         

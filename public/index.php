@@ -20,6 +20,7 @@ include "../src/controlador/control_login.php";
 include "../src/controlador/panellusuari.php";
 include "../src/controlador/rmuser.php";
 include "../src/controlador/adddept.php";
+include "../src/controlador/borrardept.php";
 
 
 $r="";
@@ -68,6 +69,8 @@ if ($r == "") {
     $resposta = ctrrmuser($peticio, $resposta, $imatges);
 } else if($r == "creardept"){
     $resposta = ctradddept($peticio, $resposta, $imatges);
+}else if($r == "borrardept"){
+    $resposta = ctrldropdept($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

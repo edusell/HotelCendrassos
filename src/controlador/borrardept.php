@@ -6,10 +6,11 @@ function ctrldropdept($peticio, $resposta, $imatges){
     $model = new \Daw\adminpdo($config["db"]);
     $id=$_REQUEST['ids'];
 
+    
     $model->dropdept($id);
 
     //print_r($reserves);
-    header('Location: index.php?r=adminusuari')
+    header('Location: index.php?r=adminusuari');
     $resposta->SetTemplate("admin.php");
 
     return $resposta;

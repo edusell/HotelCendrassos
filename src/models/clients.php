@@ -79,7 +79,7 @@ class llistartipushab
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':dni' => $dni ]);
-        return $result->fetchall(\PDO::FETCH_ASSOC);
+        return $res->fetch(\PDO::FETCH_ASSOC);
     }
 
 }

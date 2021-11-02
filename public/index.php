@@ -18,6 +18,8 @@ include "../src/controlador/creartipus.php";
 include "../src/controlador/crearusuariadmin.php";
 include "../src/controlador/control_login.php";
 include "../src/controlador/panellusuari.php";
+include "../src/controlador/rmuser.php";
+include "../src/controlador/adddept.php";
 
 
 $r="";
@@ -62,7 +64,14 @@ if ($r == "") {
     $resposta = ctrLogin($peticio, $resposta, $imatges);
 }else if($r == "usuari"){
     $resposta = ctrPanellusuari($peticio, $resposta, $imatges);
+<<<<<<< HEAD
     
+=======
+}else if($r == "rmuser"){
+    $resposta = ctrrmuser($peticio, $resposta, $imatges);
+} else if($r == "creardept"){
+    $resposta = ctradddept($peticio, $resposta, $imatges);
+>>>>>>> b01e5db0115bc18ea425a8879f6802d9a0014c8f
 }
 
 $resposta->resposta();

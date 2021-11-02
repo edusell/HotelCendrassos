@@ -152,6 +152,16 @@ class adminpdo
         }
     }
 
+    public function dropuser($ids){
+        for($i=0;$i<count($ids);$i++){
+
+            $query = "DELETE FROM usuari WHERE DNI = :ids ;";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':ids' => $ids[$i]]);
+        
+        }
+    }
+
     public function droptipus($ids){
         for($i=0;$i<count($ids);$i++){
 
@@ -230,6 +240,26 @@ class adminpdo
         }
         
         return $stm->fetchALL(\PDO::FETCH_ASSOC);
+
+    }
+    public function getdeptid(){
+        $query = "select id_departament from departament order by id_departament desc limit 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+
+        
+
+        return $stm->fetchALL(\PDO::FETCH_ASSOC);
+    }
+
+    public function adddept($id,$nom,$desc){
+        $query = "INSERT INTO `departament` (`id_departament`, `nom_departament`, `descripcio_departament`, `id_hotel_departament`) VALUES ( :id, :nom , :d , '1');";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id'=> $id,
+            ':nom' => $nom,
+            ':d' => $desc
+        ]);
 
     }
     

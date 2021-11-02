@@ -171,10 +171,10 @@ include 'roladmin.php';
                      ?>
                   </select>
                   </label>
-                  <button >Enviar</button>
+                  
                </form>
                
-               <!--<button onclick="validar()">Enviar</button>-->
+               <button onclick="validar()">Enviar</button>
             </td>
             </tr>
       </table>
@@ -200,7 +200,11 @@ include 'roladmin.php';
       });
     });
 
+<<<<<<< HEAD
      document.getElementById('hide').style.visibility = "hidden";
+=======
+      document.getElementById('hide').style.visibility = "hidden";
+>>>>>>> b01e5db0115bc18ea425a8879f6802d9a0014c8f
       document.getElementById('hidebut').style.visibility = "hidden";
       document.getElementById('creartipus').style.visibility = "visible";
       

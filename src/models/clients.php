@@ -125,5 +125,4 @@ class llistartipushab
 
         return $arr;
     }
->>>>>>> f-borrardept
 }

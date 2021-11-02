@@ -10,7 +10,6 @@ include 'roladmin.php';
       <link href="admin.css"rel="stylesheet" type="text/css">
       <title>Admin</title>
    </head>
-   <?php include 'provacalendari.php'; ?>
    <body>
    <?php include('menu.php') ?>
       <?php include('sidebar.php') ?>
@@ -93,7 +92,7 @@ include 'roladmin.php';
       </div>
       <script>
          var m=1;
-         var arr=<?= json_encode($arr) ?>;
+         var arr=<?= json_encode($arraycalendari) ?>;
          var mes = ['gener','febrer','marc','abril','maig','juny','juliol','agost','septembre','octubre','novembre','desembre'];
          var dies = ['31','28','30','31','30','31','30','31','30','31','30','31'];
          var row;

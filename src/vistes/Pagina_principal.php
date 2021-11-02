@@ -10,23 +10,26 @@
       <title>Document</title>
       <?php $data_avui = date("Y-m-d");?>
    </head>
-   <body>
+   <body  class='boles'>
       <?php include('menu.php'); ?>
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-inner">
             <div class="carousel-item active">
-               <img src="logos\slider_menu_principal\imatge1.jpg" class="d-block w-100" alt="...">
+            <img src="logos\slider_menu_principal\hotel1.jpg" class="d-block w-100 slider" alt="...">
+               <!--<img src="logos\slider_menu_principal\imatge1.jpg" class="d-block w-100" alt="...">-->
             </div>
-            <div class="carousel-item">
+            <!--<div class="carousel-item">
                <img src="logos\slider_menu_principal\imatge2.jpg" class="d-block w-100" alt="...">
-            </div>
+            </div>-->
          </div>
          <div class="reserva">
             <form action="index.php?r=recerca&" method='GET'>
                <input type="hidden" name="r" value='recerca'>
-               <label> Data arribada <input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
-               <label> Data sortida  <input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
-               <label> Ocupants  <input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
+               <span id='hotel'>HOTEL</span><br>
+               <span id='hotel'>CENDRASSOS</span>
+               <label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
+               <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
+               <label> Ocupants  <br><input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
                <button >Reserva</button>
             </form>
          </div>
@@ -34,79 +37,200 @@
       <div id=provasticki>
          <div class='sticky'>
              <div class='container-submenu'>
-            <a class='submenu' href='#aventatges'><div>SERVEIS</div></a>
-            <a class='submenu' href='#avantatges'><div>CALENDARI</div></a>
+            <a class='submenu' href='#serveis'><div>SERVEIS</div></a>
+            <a class='submenu' href='#calendari'><div>CALENDARI</div></a>
             <a class='submenul' href='#carouselExampleSlidesOnly'><div> <img src="logos/logo-hotel.png" alt="" width='40px'> </div></a>
             <a class='submenu' href='#nosaltres'><div>SOBRE NOSALTRES</div></a>
             <a class='submenu' href='#aventatges'><div>CONTACTE</div></a>
             </div>
          </div>
-         <div id="avantatges" class="avantatges">
-            <h1>SERVEIS</h1>
-            <div class="avantatges_logos">
-               <div>
-                  <img src="logos\logo-parking.png" alt="..." width="60" height="60">
-                  <p>Servei parking vigilat</p>
-               </div>
-               <div>
-                  <img src="logos\logo-bicicleta.png" alt="..." width="60" height="60">
-                  <p>Servei parking bicicleta</p>
-               </div>
-               <div>
-                  <img src="logos\logo_piscina.png" alt="..." width="60" height="60">
-                  <p>Servei piscina</p>
-               </div>
-            </div>
-         </div>
-         <div class="avantatges_logos">
-               <div>
-                  <img src="logos\logo-parking.png" alt="..." width="60" height="60">
-                  <p>Servei parking vigilat</p>
-               </div>
-               <div>
-                  <img src="logos\logo-bicicleta.png" alt="..." width="60" height="60">
-                  <p>Servei parking bicicleta</p>
-               </div>
-               <div>
-                  <img src="logos\logo_piscina.png" alt="..." width="60" height="60">
-                  <p>Servei piscina</p>
-               </div>
-            </div>
-         </div>
          <div class='nosaltres'>
-            <p>hola</p>
+            <div class='sobrenos'>
+               <br>
+            <h2>BENVINGUT A HOTEL CENDRASSOS</h2>
+           
+            <p>
+            Tot el que fem a cada espai dels nostres hotels està dissenyat per donar-li la benvinguda per part de la nostra comunitat. 
+            Des de les nostres habitacions fins als nostres espais públics, passant pels spas, els gimnasos i els restaurants, creem espais on se sentirà com a casa.
+            </p>   
+            </div>
          </div>
-      
-      <div id="nosaltres">
-        <p>hola</p>
-      </div>
-      </div>  
-      </div>
+         <hr>
+         <div id='serveis' class='serveis'>
+            <h2>SERVEIS</h2> 
+            <div class='containerservei'>
+            <div id='servei'class='servei'>
+               <h4>PISCINA</h4>
+               <img src="img/serveis/piscina.jpg" alt="" width=80%>
+               <div>
+                  El nostre hotel disposa d'una amplia piscina per gaudir amb tota la familia.
+               </div>
+            </div>
+            <div id='servei1' class='servei'>
+            <h4>PARKING</h4>
+            <img src="img/serveis/parking.jpg" alt="" width=80%>
+            </div>
+            <div id='servei2' class='servei'>
+            <h4>RESTEURANT</h4>
+            <img src="img/serveis/bar.jpg" alt="" width=80%>
+            </div>
+            <div id='servei3' class='servei'>
+            <h4>SPA</h4>
+            <img src="img/serveis/spa.jpg" alt="" width=80%>
+            </div>
+         </div>
+         <hr style='margin-top:30px;margin-bottom:30px'>
+         <h2 id=calendari>CALENDARI 2021</h2>
+         <div class='ccmes'>
+            <div class='cmes'>
+                         <P>GENER</P>
+                        <table id='gener' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>FEBRER</P>
+                        <table id='febrer' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>MARÇ</P>
+                        <table id='marc' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>ABRIL</P>
+                        <table id='abril' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>MAIG</P>
+                        <table id='maig' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>JUNY</P>
+                        <table id='juny' class=mes>
+                        </table>
+                     </div class='cmes'>
+</div>
+<div class='ccmes'>
+                     <div class='cmes'>
+                     <P>JULIOL</P>
+                        <table id='juliol' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>AGOST</P>
+                        <table id='agost' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>SEPTEMBRE</P>
+                        <table id='septembre' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>OCTUBRE</P>
+                        <table id='octubre' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>NOVEMBRE</P>
+                        <table id='novembre' class=mes>
+                        </table>
+                     </div>
+                     <div class='cmes'>
+                     <P>DESEMBRE</P>
+                        <table id='desembre' class=mes>
+                        </table>
+                     </div>
+         </div>
+         <hr style='margin-top: 30px;margin-bottom: 30px;'>
+
+         </div>
+
+
+
       </div>
       <div class="footerpr">
-         <!-- <footer>
-            <div class="logos_footer">
-            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-            
-            
-            
-            </div>
-            <ul>
-                <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="Habitacions.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
-            </ul>
-            </footer>-->
+        
       </div>
       <?php include 'footerprim.php';?>
    </body>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+         var m=1;
+         var arr=<?= json_encode($arraycalendari) ?>;
+         var mes = ['gener','febrer','marc','abril','maig','juny','juliol','agost','septembre','octubre','novembre','desembre'];
+         var dies = ['31','28','30','31','30','31','30','31','30','31','30','31'];
+         var row;
+         
+         
+         
+         for(var m=0;m<12;m++){
+         var dia=1;
+         var table = document.getElementById(mes[m]);
+         
+         for(var i =0;i<5;i++){
+             var  row = table.insertRow(-1);
+                 for(var z=0;z<7;z++){
+                     if(arr[m][dia]==0){
+                         var cell1 = row.insertCell(-1);
+                         cell1.innerHTML = dia;
+                     } else if(arr[m][dia]==1){
+                         var cell1 = row.insertCell(-1);
+                         cell1.style.backgroundColor = "red";
+                         cell1.innerHTML = dia;
+                     }
+                     else if(arr[m][dia]==2){
+                         var cell1 = row.insertCell(-1);
+                         cell1.style.backgroundColor = "rgba(95,95,95,0.9)";
+                         cell1.innerHTML = dia;
+                     }
+                     else if(arr[m][dia]==3){
+                         var cell1 = row.insertCell(-1);
+                         cell1.style.backgroundColor = "rgb(150,150,150)";
+                         cell1.innerHTML = dia;
+                     }
+                     dia++;
+                 }
+             }
+         }    
+         
+         
+        /* function imprimircalendari(mes){
+         
+            for(var i =0;i<4;i++){
+                 var table = document.getElementById("gener");
+                 var row = table.insertRow(0);
+                 for(var z=0;z<dies[mes];z++){
+                     if(arr[mes][dia]==0){
+                         var cell1 = row.insertCell(0);
+                         cell1.innerHTML = "";
+                     } else if(arr[mes][dia]==1){
+                         var cell1 = row.insertCell(0);
+                         cell1.style.backgroundColor = "red";
+                         cell1.innerHTML = "";
+                     }
+                     else if(arr[mes][dia]==2){
+                         var cell1 = row.insertCell(0);
+                         cell1.style.backgroundColor = "#c9c9c9";
+                         cell1.innerHTML = "";
+                     }
+                     else if(arr[mes][dia]==3){
+                         var cell1 = row.insertCell(0);
+                         cell1.style.backgroundColor = "#8f8f8f";
+                         cell1.innerHTML = "";
+                     }
+                     dia++;
+                 }
+             }
+         
+         }*/
+      </script>
+   <script>
+
       function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
@@ -116,4 +240,43 @@
         }
       }
    </script>
+   <script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript">
+
+	VanillaTilt.init(document.querySelector("#servei"), {
+		max: 10,
+		speed: 400,
+        reverse:  true,
+        glare: true,
+        "max-glare": 0.2,
+       
+	});
+   VanillaTilt.init(document.querySelector("#servei1"), {
+		max: 10,
+		speed: 400,
+        reverse:  true,
+        glare: true,
+        "max-glare": 0.2,
+       
+	});
+   VanillaTilt.init(document.querySelector("#servei2"), {
+		max: 10,
+		speed: 400,
+        reverse:  true,
+        glare: true,
+        "max-glare": 0.2,
+       
+	});
+   VanillaTilt.init(document.querySelector("#servei3"), {
+		max: 10,
+		speed: 400,
+        reverse:  true,
+        glare: true,
+        "max-glare": 0.2,
+        
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".servei"));
+</script>
 </html>

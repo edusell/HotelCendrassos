@@ -115,7 +115,8 @@
                            <td>nom</td>
                            <td>descripcio</td>
                         </tr>
-                        <form id='borrartipus' action='../src/borrardept.php' method='post'>
+                        <form id='borrardept' action='index.php' method='post'>
+                          <input type="hidden" name='r' value='borrardept' >
                            <?php
                               foreach($llistar_depts as $row){
                                  print "<tr>";

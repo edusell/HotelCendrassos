@@ -1,5 +1,5 @@
 <?php
-
+/*
 $mes = ['gener','febrer','març','abril','maig','juny','juliol','agost','septembre','octubre','novembre','desembre'];
 $nums = ['31','28','30','31','30','31','30','31','30','31','30','31'];
 
@@ -18,7 +18,7 @@ for($y=0;$y<12;$y++){
 
 }
 print '];';
-*/
+
 
 $marcar = ['1,1','9,16','4,5'];
 
@@ -46,4 +46,4 @@ for($i=0;$i<count($marcar);$i++){
 function tencat($datain,$datafn){
     $ini = explode($datain,'-');
     $fn = explode($datafn,'-');
-}
+}*/

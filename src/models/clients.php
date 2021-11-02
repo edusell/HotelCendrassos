@@ -69,17 +69,17 @@ class llistartipushab
 
     //Retornar valors del usuari en el panell usuari
 
-    public function getdadesUser()
+    public function getdadesUser($dni)
     {
-        session_start();
-
-        $dni = $_SESSION['DNI'];
         
         $query = 'select  DNI,Nom,password,username,rol,id_departament_usuari from usuari where DNI=:dni;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':dni' => $dni ]);
-        return $res->fetch(\PDO::FETCH_ASSOC);
+           // print_r($stm->fetch(\PDO::FETCH_ASSOC));
+        //die();
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+       
     }
 
 }

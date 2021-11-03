@@ -25,7 +25,7 @@ function ctrLogin($peticio, $resposta, $contenidor)
         session_start();
         $_SESSION['user']=$usuari;
         $_SESSION['pass']=$pass;
-        $_SESSION['DNI']=$actual["dni"];
+        $_SESSION['DNI']=$actual["DNI"];
         $_SESSION['nom']=$actual["Nom"];
         $_SESSION['rol']=$actual["id_departament_usuari"];
        

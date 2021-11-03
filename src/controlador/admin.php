@@ -3,11 +3,11 @@
 function ctrlAdmin($peticio, $resposta, $imatges){
     include '../src/config.php';
 
-    $reserva = new \Daw\adminpdo($config["db"]);
+    $model = new \Daw\adminpdo($config["db"]);
 
-    $reserves = $reserva->getreserva();
-    $tipus = $reserva->gettipus();
-    $rols = $reserva->getrol();
+    $reserves = $model->getreserva();
+    $tipus = $model->gettipus();
+    $rols = $model->getrol();
 
     //print_r($reserves);
     $resposta->set("llistar_tipus", $tipus);

@@ -15,5 +15,5 @@ function ctrlborrreserva($peticio, $resposta, $imatges){
 
     $resposta->SetTemplate("admin.php");
 
-    return $resposta;
+    return $resposta; 
 }

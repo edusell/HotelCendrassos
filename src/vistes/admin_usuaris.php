@@ -26,7 +26,7 @@
             <tr class='estructura'>
                <td colspan=2 class=border>
                   <h3>USUARIS</h3>
-                 
+                  <div id='habitacions' class='reserves'>                 
                      <table style='overflow-y: scroll;' id='taulareserves'>
                      <form id="rmusuari" action="index.php" method="post" class='reserves'>
                      <input type='hidden' name='r' value='rmuser'>
@@ -98,6 +98,7 @@
                   </tr>
                   </form>
                   </table>
+                    </div>
                   <button form='rmusuari' type='submit'>Borrar</button>
                   <button id='crearusuariinput' onclick='crearusuari()'>Crear</button>
                   <button onclick="validar()" id='hidebut'>Enviar</button>

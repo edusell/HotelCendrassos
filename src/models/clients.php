@@ -1,7 +1,7 @@
 <?php
 namespace Daw;
 
-class llistartipushab
+class llistartipushab 
 
 {
     private $sql;

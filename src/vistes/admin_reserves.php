@@ -16,7 +16,49 @@ include 'roladmin.php';
       <div class='pagina'>
           <table class='panell'>
               <tr class='estructura'>
-                  <td colspan=2></td>
+                  <td colspan=2>
+                  <h3>Reserves</h3>
+               <form id="reserves" action="index.php" method="get" class='reserves'>
+               <input type="hidden" name='r' value='borrreserva'>
+                  <table id='taulareserves'>
+                     <tr class='header'A>
+                        <td></td>
+                        <td>id_reserva</td>
+                        <td>Nom</td>
+                        <td>Cognom</td>
+                        <td>Telefon</td>
+                        <td>Correu</td>
+                        <td>Ocupants</td>
+                        <td>data arribada</td>
+                        <td>data sortida</td>
+                        <td>habitacio</td>
+                        <td>Tipus</td>
+                     </tr>
+                     <?php
+
+                         foreach($llistar_reserves as $row){
+
+                            print "<tr>";
+                            print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
+                            print "<td>".$row['id_reserva']."</td>";
+                            print "<td>".$row['nom']."</td>";
+                            print "<td>".$row['cognom']."</td>";
+                            print "<td>".$row['tel']."</td>";
+                            print "<td>".$row['correu']."</td>";
+                            print "<td>".$row['num_ocupants']."</td>";
+                            print "<td>".$row['data_arribada']."</td>";
+                            print "<td>".$row['data_sortida']."</td>";
+                            print "<td>".$row['id_habitacio']."</td>";
+                            print "<td>".$row['nom_tipus']."</td>";
+                            print "<tr>";
+                        }
+                        
+                        ?>
+                  </table>
+               </form>
+               <button type='submit' form='reserves'>Borrar</button>
+               <br><br>
+                  </td>
 
               </tr>
               <tr class='estructura'>

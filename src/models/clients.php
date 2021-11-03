@@ -71,7 +71,7 @@ class llistartipushab
     public function getdadesUser($dni)
     {
         
-        $query = 'select  DNI,Nom,password,username,rol,id_departament_usuari from usuari where DNI=:dni;';
+        $query = 'select  DNI,Nom,password,Cognom,tel,correu,username,rol,id_departament_usuari from usuari where DNI=:dni;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':dni' => $dni ]);
@@ -125,4 +125,16 @@ class llistartipushab
 
         return $arr;
     }
+    public function getpanellreserva($dni)
+    {
+        $query = 'select  id_reserva,num_ocupants,data_arribada,data_sortida,DNI from reserva where DNI=:dni;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':dni' => $dni ]);
+           // print_r($stm->fetch(\PDO::FETCH_ASSOC));
+        //die();
+        return $stm->fetchall(\PDO::FETCH_ASSOC);
+       
+    }
+
 }

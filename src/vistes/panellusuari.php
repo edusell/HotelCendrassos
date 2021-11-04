@@ -22,7 +22,6 @@
     <div class="popup-wrapper">
 
         <div class="popup col-12 justify-content-center">
-                
 
             <div class="popup-close">x</div>
             <div class="popup-content ">
@@ -65,30 +64,35 @@
     ?>
     <div class="col-12 "id="configuracions">
     <h1>Reserves<h1>
-      <table class="col-12 " id="panell">
-      <tr>
-        <th>Id</th>
-        <th>Ocupants</th>
-        <th>Arribada</th>
-        <th>Sortida</th>
-        <th>DNI</th>
-      </tr>
+      
+
+      <table class="table table-striped table-dark">
+          <thead>
+          <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Ocupants</th>
+          <th scope="col">Arribada</th>
+          <th scope="col">Sortida</th>
+          <th scope="col">DNI</th>
+          </tr>
         <?php
 
         foreach($llistar_panell_reserva as $row){
           
-          print "<tr>";
-          print "<td>".$row['id_reserva']."</td>";
-          print "<td>".$row['num_ocupants']."</td>";
-          print "<td>".$row['data_arribada']."</td>";
-          print "<td>".$row['data_sortida']."</td>";
-          print "<td>".$row['DNI']."</td>";
-          print "<tr>";
+          print'</thead>';
+          print'<tbody>';
+          print'<tr>';
+          print"<th scope='row'>".$row['id_reserva']."</th>";
+          print"<td>".$row['num_ocupants']."</td>";
+          print"<td>".$row['data_arribada']."</td>";
+          print"<td>".$row['data_sortida']."</td>";
+          print"<td>".$row['DNI']."</td>";
+          print"</tr>";
         } 
 
         ?>
-      </table>
-
+          </tbody>
+          </table>
     </div>
 </div>
 <?php include 'footerprim.php';?>
@@ -97,10 +101,12 @@
   const button = document.getElementById('contrasenya');
 const popup = document.querySelector('.popup-wrapper');
 const close = document.querySelector('.popup-close');
+
  
 button.addEventListener('click', () => {
     popup.style.display = 'block';
 });
+
 close.addEventListener('click', () => {
     popup.style.display = 'none';
 });
@@ -111,7 +117,6 @@ popup.addEventListener('click', e => {
         popup.style.display = 'none';
     }
 });
-
 
 </script>
 </html>

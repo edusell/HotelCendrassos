@@ -849,4 +849,16 @@ button:hover {
   display: block;
 
 }
+.cambicontrasenya{
+  display: none;
+  width: 10%;
+  height: 100px;
+  background-color: rgb(201, 201, 191);
+  float: right;
+  z-index: 1;
+  position: absolute;
+  right: 0px;
+  margin-right: 10px;
+  border: solid 1px black;
+}
 

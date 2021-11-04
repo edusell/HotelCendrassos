@@ -21,6 +21,8 @@ include "../src/controlador/panellusuari.php";
 include "../src/controlador/rmuser.php";
 include "../src/controlador/adddept.php";
 include "../src/controlador/borrardept.php";
+include "../src/controlador/borrarhabitacio.php";
+include "../src/controlador/crearhabitacio.php";
 
 
 $r="";
@@ -71,6 +73,11 @@ if ($r == "") {
     $resposta = ctradddept($peticio, $resposta, $imatges);
 }else if($r == "borrardept"){
     $resposta = ctrldropdept($peticio, $resposta, $imatges);
+}else if($r == "borrarhabitacio"){
+    $resposta = ctrldrophabitacio($peticio, $resposta, $imatges);
+}else if($r == "crearhabitacio"){
+    $resposta = ctrladdhabitacio($peticio, $resposta, $imatges);
 }
+
 
 $resposta->resposta();

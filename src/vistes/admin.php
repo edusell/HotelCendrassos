@@ -78,7 +78,7 @@ include 'roladmin.php';
                            <td>tipus</td>
                            <td>descripcio</td>
                         </tr>
-                        <form id='borrartipus' action='index.php' method='get'>
+                        <form id='borrartipus' action='index.php' method='post'>
                         <input type="hidden" name='r' value='borrartipus'>
                         <?php
 
@@ -96,7 +96,7 @@ include 'roladmin.php';
                            
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="index.php" method='get'>
+                  <form id='creartipushabitacio' action="index.php" method='post'>
                   <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
                   <td colspan=2></td>

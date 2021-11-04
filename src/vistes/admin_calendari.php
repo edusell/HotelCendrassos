@@ -14,77 +14,73 @@
       <?php include('menu.php') ?>
       <?php include('sidebar.php') ?>
       <div class='pagina'>
-         <table class='panell'>
-            <tr class='estructura'>
-               <td colspan=2 class='calendari'>
-                  <table>
-                     <tr>
-                        <td>
-                           <P>GENER</P>
-                           <table id='gener' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>FEBRER</P>
-                           <table id='febrer' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>MARÇ</P>
-                           <table id='marc' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>ABRIL</P>
-                           <table id='abril' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>MAIG</P>
-                           <table id='maig' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>JUNY</P>
-                           <table id='juny' class=mes>
-                           </table>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <P>JULIOL</P>
-                           <table id='juliol' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>AGOST</P>
-                           <table id='agost' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>SEPTEMBRE</P>
-                           <table id='septembre' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>OCTUBRE</P>
-                           <table id='octubre' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>NOVEMBRE</P>
-                           <table id='novembre' class=mes>
-                           </table>
-                        </td>
-                        <td>
-                           <P>DESEMBRE</P>
-                           <table id='desembre' class=mes>
-                           </table>
-                        </td>
-                     </tr>
-                     </td>
-                     </tr>
-                  </table>
+         <table class='taulacalendari'>
+            <tr>
+               <td>
+               <P>GENER</P>
+                        <table id='gener' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>FEBRER</P>
+                        <table id='febrer' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>MARÇ</P>
+                        <table id='marc' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>ABRIL</P>
+                        <table id='abril' class=mes>
+                        </table>
+               </td>
+            </tr>
+            <tr>
+            <td>
+               <P>MAIG</P>
+                        <table id='maig' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>JUNY</P>
+                        <table id='juny' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>JULIOL</P>
+                        <table id='juliol' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>AGOST</P>
+                        <table id='agost' class=mes>
+                        </table>
+               </td>
+            </tr>
+            <tr>
+            <td>
+               <P>SEPTEMBRE</P>
+                        <table id='septembre' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>OCTUBRE</P>
+                        <table id='octubre' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>NOVEMBRE</P>
+                        <table id='novembre' class=mes>
+                        </table>
+               </td>
+               <td>
+               <P>DESEMBRE</P>
+                        <table id='desembre' class=mes>
+                        </table>
+               </td>
+            </tr>
          </table>
       </div>
       <script>

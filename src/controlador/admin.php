@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 function ctrlAdmin($peticio, $resposta, $imatges){
     include '../src/config.php';

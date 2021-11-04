@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'roladmin.php';
 ?>
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ include 'roladmin.php';
                   <h3>Reserves</h3>
                <form id="reserves" action="index.php" method="get" class='reserves'>
                <input type="hidden" name='r' value='borrreserva'>
+               <input type="hidden" name='origen' value='adminreserva'>
                   <table id='taulareserves'>
                      <tr class='header'A>
                         <td></td>
@@ -62,8 +63,87 @@ include 'roladmin.php';
 
               </tr>
               <tr class='estructura'>
-                  <td></td>
-                  <td></td>
+                  <td id='mitatestructura'>
+                  <h3>Futures reserves</h3>
+               <form id="reservesnew" action="index.php" method="get" class='reserves'>
+               <input type="hidden" name='r' value='borrreserva'>
+               <input type="hidden" name='origen' value='adminreserva'>
+                  <table id='taulareservesmod'>
+                     <tr class='header'A>
+                        <td></td>
+                        <td>id_reserva</td>
+                        <td>Nom</td>
+                        <td>Cognom</td>
+                        <td>Ocupants</td>
+                        <td>data arribada</td>
+                        <td>data sortida</td>
+                        <td>habitacio</td>
+                     </tr>
+                     <?php
+                     $avui = getdate();
+
+
+                         foreach($llistar_reserves as $row){
+                           if($row['data_entrada']>$avui){
+
+                            print "<tr>";
+                            print "<td id='seleccio'><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
+                            print "<td>".$row['id_reserva']."</td>";
+                            print "<td>".$row['nom']."</td>";
+                            print "<td>".$row['cognom']."</td>";
+                            print "<td>".$row['num_ocupants']."</td>";
+                            print "<td>".$row['data_arribada']."</td>";
+                            print "<td>".$row['data_sortida']."</td>";
+                            print "<td>".$row['id_habitacio']."</td>";
+                            print "<tr>";
+                         }}
+                        
+                        ?>
+                  </table>
+               </form>
+               <button type='submit' form='reservesnew'>Borrar</button>
+                  </td>
+                  <td id='mitatestructura'>
+                  <h3>Reserves Antigues</h3>
+               <form id="reservesold" action="index.php" method="get" class='reserves'>
+               <input type="hidden" name='r' value='borrreserva'>
+               <input type="hidden" name='origen' value='adminreserva'>
+                  <table id='taulareservesmod'>
+                     <tr class='header'A>
+                        <td></td>
+                        <td>id_reserva</td>
+                        <td>Nom</td>
+                        <td>Cognom</td>
+                        <td>Ocupants</td>
+                        <td>data arribada</td>
+                        <td>data sortida</td>
+                        <td>habitacio</td>
+                     </tr>
+                     <?php
+                     //$avui = getdate();
+
+
+                         foreach($llistar_reserves as $row){
+                           
+                           if($row['data_sortida']<$avui){
+
+                            print "<tr>";
+                            print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
+                            print "<td>".$row['id_reserva']."</td>";
+                            print "<td>".$row['nom']."</td>";
+                            print "<td>".$row['cognom']."</td>";
+                            print "<td>".$row['num_ocupants']."</td>";
+                            print "<td>".$row['data_arribada']."</td>";
+                            print "<td>".$row['data_sortida']."</td>";
+                            print "<td>".$row['id_habitacio']."</td>";
+                            print "<tr>";
+                         }}
+                        
+                        ?>
+                  </table>
+               </form>
+               <button type='submit' form='reservesold'>Borrar</button>
+                  </td>
 
               </tr>
 

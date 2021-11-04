@@ -90,7 +90,7 @@ class adminpdo
 
         }
         //if(count($sql1)>0){
-            //$err['dni']=1;
+            //$err['dni']=1; 
        // }
 
         if(count($err)== 0){
@@ -114,7 +114,21 @@ class adminpdo
 
     public function getreserva()
     {
-        $query = "select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida, u.nom,u.cognom,u.tel,u.correu,h.id_habitacio,t.nom_tipus FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus;";
+        $query = "select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida, u.nom,u.cognom,u.tel,u.correu,h.id_habitacio,t.nom_tipus FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus ORDER BY r.id_reserva DESC;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetchALL(\PDO::FETCH_ASSOC);
+    }
+    public function gethabitacions()
+    {
+        $query = " select id_habitacio,m_tipus,preu,nom_tipus,serveis_tipus from habitacio, tipushabitacio where id_tipus_habitacio=id_tipus;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
 
@@ -151,6 +165,18 @@ class adminpdo
         
         }
     }
+
+    public function drophabitacio($ids){
+        print_r($ids);
+        for($i=0;$i<count($ids);$i++){
+
+            $query = "DELETE FROM habitacio WHERE id_habitacio = :ids ;";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':ids' => $ids[$i]]);
+        
+        }
+    }
+
 
     public function dropdept($ids){
         for($i=0;$i<count($ids);$i++){
@@ -197,12 +223,28 @@ class adminpdo
     ]);
     }
 
+    public function crearhabitacio($id,$tipus){
+
+        $stm = $this->sql->prepare("INSERT INTO habitacio (id_habitacio ,id_tipus_habitacio) VALUES ( :id , :tipus );");
+        $sql = $stm->execute([
+        ':id' => $id,
+        ':tipus' => $tipus,
+        ]);
+        }
+
+    public function ultimahabitacio(){
+        $query = "select id_habitacio from habitacio order by id_habitacio desc limit 1;";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+        $result = $stm->fetchColumn();
+        return $result;
+    }
+
     public function ultimidtipus(){
         $query = "select id_tipus from tipushabitacio order by id_tipus desc limit 1;";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         $result = $stm->fetchColumn();
-        //print_r($result);
         return $result;
     }
     

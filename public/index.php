@@ -75,15 +75,12 @@ if ($r == "") {
     $resposta = ctradddept($peticio, $resposta, $imatges);
 }else if($r == "borrardept"){
     $resposta = ctrldropdept($peticio, $resposta, $imatges);
-<<<<<<< HEAD
 }else if($r == "tanca_sesio"){
     $resposta = ctrltancasesio($peticio, $resposta, $imatges);
-=======
 }else if($r == "borrarhabitacio"){
     $resposta = ctrldrophabitacio($peticio, $resposta, $imatges);
 }else if($r == "crearhabitacio"){
     $resposta = ctrladdhabitacio($peticio, $resposta, $imatges);
->>>>>>> be25220a760c6b9be48f74f550f1ae2f27028add
 }
 
 

@@ -58,7 +58,7 @@
         print'<div class="col-6" id="dadespersonals"><p>Poblacio: <input type="text" readonly="readonly" ></p></div>';
         print'<div></div>';
         print'<button class="col-2 boto_modifica" >Modifica</button>';
-        print'<button class="col-2 boto_modifica" id="contrasenya">Canvia contrasenya</button>';
+        print'<button class="col-2 boto_contrasenya" id="contrasenya">Canvia contrasenya</button>';
       print'</div>';
     print'</div>'; 
     ?>
@@ -98,18 +98,18 @@
 <?php include 'footerprim.php';?>
 </body>
 <script>
-  const button = document.getElementById('contrasenya');
+const button_contrasenya = document.getElementById('contrasenya');
 const popup = document.querySelector('.popup-wrapper');
 const close = document.querySelector('.popup-close');
 
  
-button.addEventListener('click', () => {
+button_contrasenya.addEventListener('click', () => {
     popup.style.display = 'block';
 });
-
 close.addEventListener('click', () => {
     popup.style.display = 'none';
 });
+
 
 popup.addEventListener('click', e => {
     // console.log(e);

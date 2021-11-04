@@ -428,6 +428,7 @@ a{
 }
 
 .topnav {
+  margin-bottom: -50px;
   overflow: hidden;
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 100%);
@@ -853,12 +854,17 @@ button:hover {
   display: none;
   width: 10%;
   height: 100px;
-  background-color: rgb(201, 201, 191);
+  background-color: rgb(255, 255, 248);
   float: right;
   z-index: 1;
   position: absolute;
   right: 0px;
+  top:40px;
   margin-right: 10px;
   border: solid 1px black;
+}
+.boto_contrasenya{
+  border-radius: 10px;
+
 }
 

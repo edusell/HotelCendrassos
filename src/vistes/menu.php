@@ -26,25 +26,39 @@
          </a>
          
 </div>
-<div class="cambicontrasenya " id="contrasenya">
-          <a>Tancasesio</a>
+<div class="cambicontrasenya " id="contrasenya1">
+        <ul>
+          <a href="index.php?r=tanca_sesio">Tancasesio <img src="..\..\public\logos\menu\logout.png"></a>
+        </ul>
 </div>
 
 
       <script>
-        const button = document.getElementById('contrasenya');
+        const button = document.getElementById('contrasenya1');
         const logo = document.getElementById('logat');
+        const button1 = document.getElementById('contrasenya1');
+        const logo1 = document.getElementById('logat');
+
+        
 
         logo.addEventListener('mouseover', () => {
-        button.style.display = 'block';
+        button1.style.display = 'block';
 });
-button.addEventListener('mouseover', () => {
-        button.style.display = 'block';
+button1.addEventListener('mouseover', () => {
+        button1.style.display = 'block';
 });
+button.addEventListener('mouseleave', () => {
+        button.style.display = 'none';
+});
+
 
 logo.addEventListener('mouseleave', () => {
         button.style.display = 'none';
 });
+
+function tanca_Sesio(){
+  
+}
 
       function myFunction() {
         var x = document.getElementById("myTopnav");

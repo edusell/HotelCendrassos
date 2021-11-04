@@ -21,6 +21,7 @@ include "../src/controlador/panellusuari.php";
 include "../src/controlador/rmuser.php";
 include "../src/controlador/adddept.php";
 include "../src/controlador/borrardept.php";
+include "../src/controlador/tancasesio.php";
 
 
 $r="";
@@ -71,6 +72,8 @@ if ($r == "") {
     $resposta = ctradddept($peticio, $resposta, $imatges);
 }else if($r == "borrardept"){
     $resposta = ctrldropdept($peticio, $resposta, $imatges);
+}else if($r == "tanca_sesio"){
+    $resposta = ctrltancasesio($peticio, $resposta, $imatges);
 }
 
 $resposta->resposta();

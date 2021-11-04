@@ -21,7 +21,7 @@ include 'roladmin.php';
       <table class='panell'>
          <tr>
             <td class='estructura'colspan='2'>
-               <h3>Reserves</h3>
+               <h3>RESERVES</h3>
                <form id="reserves" action="index.php" method="get" class='reserves'>
                <input type="hidden" name='r' value='borrreserva'>
                   <table id='taulareserves'>

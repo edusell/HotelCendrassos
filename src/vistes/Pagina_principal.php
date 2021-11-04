@@ -27,7 +27,7 @@
                <input type="hidden" name="r" value='recerca'>
                <span id='hotel'>HOTEL</span><br>
                <span id='hotel'>CENDRASSOS</span>
-               <label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" required></label>
+               <label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" onchange='datasortida()' required></label>
                <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
                <label> Ocupants  <br><input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
                <button >Reserva</button>
@@ -160,6 +160,11 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+
+
+
+
+      
          var m=1;
          var arr=<?= json_encode($arraycalendari) ?>;
          var mes = ['gener','febrer','marc','abril','maig','juny','juliol','agost','septembre','octubre','novembre','desembre'];
@@ -230,6 +235,12 @@
          }*/
       </script>
    <script>
+      function datasortida(){
+         var tmp = $('#arribada').val();
+         tmp1 = tmp.split('-');
+         console.log(tmp1[1]);
+         var tmp = $('#sortida').attr('min',tmp);
+      }
 
       function myFunction() {
         var x = document.getElementById("myTopnav");

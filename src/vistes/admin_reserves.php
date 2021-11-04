@@ -17,7 +17,7 @@ include 'roladmin.php';
           <table class='panell'>
               <tr class='estructura'>
                   <td colspan=2>
-                  <h3>Reserves</h3>
+                  <h3>RESERVES</h3>
                <form id="reserves" action="index.php" method="get" class='reserves'>
                <input type="hidden" name='r' value='borrreserva'>
                <input type="hidden" name='origen' value='adminreserva'>
@@ -64,7 +64,7 @@ include 'roladmin.php';
               </tr>
               <tr class='estructura'>
                   <td id='mitatestructura'>
-                  <h3>Futures reserves</h3>
+                  <h3>RESERVES PENDENTS</h3>
                <form id="reservesnew" action="index.php" method="get" class='reserves'>
                <input type="hidden" name='r' value='borrreserva'>
                <input type="hidden" name='origen' value='adminreserva'>
@@ -104,7 +104,7 @@ include 'roladmin.php';
                <button type='submit' form='reservesnew'>Borrar</button>
                   </td>
                   <td id='mitatestructura'>
-                  <h3>Reserves Antigues</h3>
+                  <h3>HISTORIAL DE RESERVES</h3>
                <form id="reservesold" action="index.php" method="get" class='reserves'>
                <input type="hidden" name='r' value='borrreserva'>
                <input type="hidden" name='origen' value='adminreserva'>

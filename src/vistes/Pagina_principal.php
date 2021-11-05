@@ -28,7 +28,7 @@
                <span id='hotel'>HOTEL</span><br>
                <span id='hotel'>CENDRASSOS</span>
                <label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" onchange='datasortida()' required></label>
-               <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31"></label>
+               <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>"  max="2100-12-31"></label>
                <label> Ocupants  <br><input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
                <button >Reserva</button>
             </form>
@@ -237,9 +237,24 @@
    <script>
       function datasortida(){
          var tmp = $('#arribada').val();
+
+         
+
+         console.log(tmp);
+         
+        
+
          tmp1 = tmp.split('-');
-         console.log(tmp1[1]);
-         var tmp = $('#sortida').attr('min',tmp);
+         var dia=parseInt(tmp1[2])+1
+         var dia_string = dia.toString();
+       
+
+         //var tmp2 = '"'+dia_string+'-'+tmp1[1]+'-'+tmp1[0]+'"';
+         var tmp2 = tmp1[0]+'-'+tmp1[1]+'-'+dia_string;
+         console.log(tmp2);
+         
+         $('#sortida').attr('min',$('#arribada').val());
+         $('#sortida').val($('#arribada').val());
       }
 
       function myFunction() {

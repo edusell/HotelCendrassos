@@ -9,7 +9,7 @@
 
     <title>Login</title>
 </head>
-<body>
+<body id='registrebody'>
         <?php include 'menu.php'; ?>
                 <!--MENU-->
 

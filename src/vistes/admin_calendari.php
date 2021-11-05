@@ -82,6 +82,8 @@
                </td>
             </tr>
          </table>
+
+
       </div>
       <script>
          var m=1;
@@ -102,24 +104,24 @@
                  for(var z=0;z<7;z++){
                      if(arr[m][dia]==0){
                          var cell1 = row.insertCell(-1);
-                         boto = "<button class='butcalendari' data-dia='"+m+','+dia+"' onclick='calendari("+m+','+dia+")'>"+dia+"</button>";
+                         boto = "<form action='index.php' method='post'><input type='hidden' name='r' value='festa'></input><input type='hidden' name='d' value='"+m+","+dia+"'></input><button class='butcalendari'>"+dia+"</button></form>";
                          cell1.innerHTML = boto;
                      } else if(arr[m][dia]==1){
                          var cell1 = row.insertCell(-1);
                          cell1.style.backgroundColor = "red";
-                         boto = "<button class='butcalendari' data-dia='"+m+','+dia+"' onclick='calendari("+m+','+dia+")'>"+dia+"</button>";
+                         boto = "<form action='index.php' method='get'><input type='hidden' name='r' value='festa'></input><input type='hidden' name='d' value='"+m+","+dia+"'></input><input type='hidden' name='a' value='a'></input><button class='butcalendari'>"+dia+"</button></form>";
                          cell1.innerHTML = boto;
                      }
                      else if(arr[m][dia]==2){
                          var cell1 = row.insertCell(-1);
                          cell1.style.backgroundColor = "#c9c9c9";
-                         boto = "<button class='butcalendari' data-dia='"+m+','+dia+"' onclick='calendari("+m+','+dia+")'>"+dia+"</button>";
+                         boto = "<form action='index.php' method='post'><input type='hidden' name='r' value='festa'></input><input type='hidden' name='d' value='"+m+","+dia+"'></input><button class='butcalendari'>"+dia+"</button></form>";
                          cell1.innerHTML = boto;
                      }
                      else if(arr[m][dia]==3){
                          var cell1 = row.insertCell(-1);
                          cell1.style.backgroundColor = "#8f8f8f";
-                         boto = "<button class='butcalendari' data-dia='"+m+','+dia+"' onclick='calendari("+m+','+dia+")'>"+dia+"</button>";
+                         boto = "<form action='index.php' method='post'><input type='hidden' name='r' value='festa'></input><input type='hidden' name='d' value='"+m+","+dia+"'></input><button class='butcalendari'>"+dia+"</button></form>";
                          cell1.innerHTML = boto;
                      }
                      dia++;

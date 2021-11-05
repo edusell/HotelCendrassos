@@ -6,26 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="css.css"rel="stylesheet" type="text/css">
-  <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen> 
     <title>Registre</title>
 
 </head>
-<body>
+<body id=registrebody>
   <body>
-    <div class="container_principal menu_superior">
-        <div class="item logo" ></div>
-        <div class="item"><a href="habitacions.php">Habitacions</a></div>
-        <div class="item">Serveis</div>
-        <div class="item">Galeria</div>
-        <div class="item">contacta</div>
-        <div class="item">Inicia sesio</div>
-        <div class="item">Registrarte</div>
-    </div>
+   <?php include 'menu.php';?>
     <!--MENU-->
+    <div class="container-login">
 
-    <form id='registre' action="../src/validacioregistre.php" method='GET' novalidate>
-
-          <ul>
+    <form id='registre' class='login' action="../src/validacioregistre.php" method='GET' novalidate>
                 <label for="mail">
                   <span>Correu electronic: </span><br>
                   <input type="email" id="mail" name="mail" required minlength="8">
@@ -72,49 +62,13 @@
                   <input type="password" id="contrasenya" name="contrasenya" required minlength="8"><br>
                   <span id='contrasenyaerr' class="error" aria-live="polite"></span>
                 </label>
-              </ul>
         
       </form>
       <button onclick="validar()">Enviar</button>
 
-
+</div>
        <!-- FOOTER-->
-       <div class="footer">
-        <footer>
-            <div class="logos_footer">
-            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-
-
-            <div class="resultado">
-                <?php if(isset($_GET['dni']) && $_GET['dni'] == 'true'): ?>
-                <h2>L'usuari ja existeix</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['caracters_dni']) && $_GET['caracters_dni'] == 'true'): ?>
-                <h2>El dni ha de contenir 9 caracters</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['caracters_tlf']) && $_GET['caracters_tlf'] == 'true'): ?>
-                <h2>El telefon nomes pot contenir digits de 0 a 9</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['largada_tlf']) && $_GET['largada_tlf'] == 'true'): ?>
-                <h2>El telefon ha de contenir 9 digits</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['mail_err']) && $_GET['mail_err'] == 'true'): ?>
-                <h2>Correo incorrecte</h2>
-                <?php endif;?>
-
-            </div>
-            </div>
-            <ul class="footer_ul">
-                <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="Habitacions.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
-            </ul>
-        </footer>
+       <?php include 'footerprim.php' ?>
       <script>
 
  

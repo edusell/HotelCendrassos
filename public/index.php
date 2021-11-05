@@ -24,6 +24,8 @@ include "../src/controlador/borrardept.php";
 include "../src/controlador/tancasesio.php";
 include "../src/controlador/borrarhabitacio.php";
 include "../src/controlador/crearhabitacio.php";
+include "../src/controlador/festa.php";
+include "../src/controlador/registre.php";
 
 
 
@@ -81,6 +83,10 @@ if ($r == "") {
     $resposta = ctrldrophabitacio($peticio, $resposta, $imatges);
 }else if($r == "crearhabitacio"){
     $resposta = ctrladdhabitacio($peticio, $resposta, $imatges);
+}else if($r == "festa"){
+    $resposta = ctrlfesta($peticio, $resposta, $imatges);
+}else if($r == "registre"){
+    $resposta = ctrlregistre($peticio, $resposta, $imatges);
 }
 
 

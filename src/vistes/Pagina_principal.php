@@ -7,6 +7,7 @@
       <link rel="icon" href="logos/logo-hotel.png" type="image/x-icon">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       <link href="css.css"rel="stylesheet" type="text/css">
+      <link href="mcss.css"rel="stylesheet" type="text/css">
       <title>Document</title>
       <?php $data_avui = date("Y-m-d");?>
    </head>
@@ -14,16 +15,15 @@
       <?php include('menu.php'); ?>
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="logos\slider_menu_principal\hotel1.jpg" class="d-block w-100 slider" alt="...">
-               <!--<img src="logos\slider_menu_principal\imatge1.jpg" class="d-block w-100" alt="...">-->
+            <div class="carousel-item active" style='transition: transform 3s ease, opacity .8s ease-out'>
+            <img src="logos\slider_menu_principal\piscina1.jpg" class="d-block w-100 slider" alt="...">
             </div>
-            <!--<div class="carousel-item">
-               <img src="logos\slider_menu_principal\imatge2.jpg" class="d-block w-100" alt="...">
-            </div>-->
+            <div class="carousel-item" style='transition: transform 3s ease, opacity .8s ease-out'>
+            <img src="logos\slider_menu_principal\hotel1.jpg" class="d-block w-100 slider" alt="...">
+            </div>
          </div>
          <div class="reserva">
-            <form action="index.php?r=recerca&" method='GET'>
+            <form action="index.php?r=recerca&" method='GET' class='forminici'>
                <input type="hidden" name="r" value='recerca'>
                <span id='hotel'>HOTEL</span><br>
                <span id='hotel'>CENDRASSOS</span>
@@ -39,7 +39,7 @@
              <div class='container-submenu'>
             <a class='submenu' href='#serveis'><div>SERVEIS</div></a>
             <a class='submenu' href='#calendari'><div>CALENDARI</div></a>
-            <a class='submenul' href='#carouselExampleSlidesOnly'><div> <img src="logos/logo-hotel.png" alt="" width='40px'> </div></a>
+            <a class='submenul' href='#carouselExampleSlidesOnly'><div> <img src="logos/logo-hotel.png" alt="" width=40px></div></a>
             <a class='submenu' href='#nosaltres'><div>SOBRE NOSALTRES</div></a>
             <a class='submenu' href='#aventatges'><div>CONTACTE</div></a>
             </div>
@@ -59,24 +59,38 @@
          <div id='serveis' class='serveis'>
             <h2>SERVEIS</h2> 
             <div class='containerservei'>
+
             <div id='servei'class='servei'>
+               <img src="img/serveis/piscina.jpg" alt="" width=100%>
+               
+               <div class='infoservei'>
                <h4>PISCINA</h4>
-               <img src="img/serveis/piscina.jpg" alt="" width=80%>
-               <div>
-                  El nostre hotel disposa d'una amplia piscina per gaudir amb tota la familia.
+                <p>  El nostre hotel disposa d'una amplia piscina per gaudir amb tota la familia.</p>
                </div>
             </div>
+
             <div id='servei1' class='servei'>
-            <h4>PARKING</h4>
-            <img src="img/serveis/parking.jpg" alt="" width=80%>
+            <img src="img/serveis/parking.jpg" alt="" width=100%>
+            <div class='infoservei'>
+               <h4>ESTACIONAMENT</h4>
+                <p>  Hotel Cendrassos disposa d'un aparcament garantit per a cada habitacio de l'hotel.</p>
+               </div>
             </div>
+
+
             <div id='servei2' class='servei'>
-            <h4>RESTEURANT</h4>
-            <img src="img/serveis/bar.jpg" alt="" width=80%>
+            <img src="img/serveis/bar.jpg" alt="" width=100%>
+                           <div class='infoservei'>
+               <h4>RESTAURANT</h4>
+                <p>  Hotel cendrassos disposa d'un restaurat amb un ampli menu on disfrutar del gust mediterrani.</p>
+               </div>
             </div>
             <div id='servei3' class='servei'>
-            <h4>SPA</h4>
-            <img src="img/serveis/spa.jpg" alt="" width=80%>
+            <img src="img/serveis/spa.jpg" alt="" width=100%>
+            <div class='infoservei'>
+               <h4>SPA</h4>
+                <p>  Disfruta i relaxet en el nostre SPA de l'hotel cendrassos, aquest disposa de piscines, saunes, jacuzzis i una gran catititat de massatges disponibles per els nostres clients sense cost adicional als residents de l'hotel.</p>
+               </div>
             </div>
          </div>
          <hr style='margin-top:30px;margin-bottom:30px'>
@@ -144,9 +158,15 @@
                         <table id='desembre' class=mes>
                         </table>
                      </div>
-         </div>
+         </div >
          <hr style='margin-top: 30px;margin-bottom: 30px;'>
 
+         <!--CALENDARI RESPONSIVE-->
+         <div id='calendariresponsive'>
+         <h2 id=mesresponsive></h2>
+         <table id='responsive'></table>
+         <button onclick='anterior()'>Anterior</button><button onclick='seguent()'>Seguent</button>
+         </div>
          </div>
 
 
@@ -202,39 +222,66 @@
                  }
              }
          }    
+
+         //CALENDARI MOBIL
+
+        tmp=10;
+      
+         imprimircalendari(tmp);
+         function seguent(){
+            var table = document.getElementById("responsive");
+            table.innerHTML= "";
+            if(tmp <11){
+               tmp ++;
+            } else{
+               tmp = 0;
+            }
+            imprimircalendari(tmp);
+         }
+         function anterior(){
+            var table = document.getElementById("responsive");
+            table.innerHTML= "";
+            if(tmp >0){
+               tmp --;
+            } else{
+               tmp = 11;
+            }
+            imprimircalendari(tmp);
+         }
+
+        function imprimircalendari(m){
+           $('#mesresponsive').text(mes[m])
+         var table = document.getElementById('responsive');
+         var dia=1;
          
-         
-        /* function imprimircalendari(mes){
-         
-            for(var i =0;i<4;i++){
-                 var table = document.getElementById("gener");
-                 var row = table.insertRow(0);
-                 for(var z=0;z<dies[mes];z++){
-                     if(arr[mes][dia]==0){
-                         var cell1 = row.insertCell(0);
-                         cell1.innerHTML = "";
-                     } else if(arr[mes][dia]==1){
-                         var cell1 = row.insertCell(0);
+         for(var i =0;i<5;i++){
+             var  row = table.insertRow(-1);
+                 for(var z=0;z<7;z++){
+                     if(arr[m][dia]==0){
+                         var cell1 = row.insertCell(-1);
+                         cell1.innerHTML = dia;
+                     } else if(arr[m][dia]==1){
+                         var cell1 = row.insertCell(-1);
                          cell1.style.backgroundColor = "red";
-                         cell1.innerHTML = "";
+                         cell1.innerHTML = dia;
                      }
-                     else if(arr[mes][dia]==2){
-                         var cell1 = row.insertCell(0);
-                         cell1.style.backgroundColor = "#c9c9c9";
-                         cell1.innerHTML = "";
+                     else if(arr[m][dia]==2){
+                         var cell1 = row.insertCell(-1);
+                         cell1.style.backgroundColor = "rgba(95,95,95,0.9)";
+                         cell1.innerHTML = dia;
                      }
-                     else if(arr[mes][dia]==3){
-                         var cell1 = row.insertCell(0);
-                         cell1.style.backgroundColor = "#8f8f8f";
-                         cell1.innerHTML = "";
+                     else if(arr[m][dia]==3){
+                         var cell1 = row.insertCell(-1);
+                         cell1.style.backgroundColor = "rgb(150,150,150)";
+                         cell1.innerHTML = dia;
                      }
                      dia++;
                  }
              }
-         
-         }*/
+         }
       </script>
    <script>
+      
       function datasortida(){
          var tmp = $('#arribada').val();
 

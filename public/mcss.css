@@ -1,0 +1,81 @@
+@media only screen and (max-width: 500px) {
+    
+.containerservei {
+display: block;
+margin-bottom: 10px;
+}
+.ccmes{
+    display: none;
+}
+#carouselExampleSlidesOnly{
+    height: 100vh;
+    background-image: url(img/fons.jpg);
+    background-position: center;
+}
+.carousel-inner{
+    display: none;
+}
+.reserva{
+    
+    width: 100%;
+    margin: 0px;
+    left: 0;
+    height: 100%;
+    background-color: rgb(255 255 255 / 57%);
+   
+}
+.forminici{
+    height: 50%;
+    text-align: center;
+    display: grid;
+
+}
+#hotel{
+    margin: 0px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+.topnav.responsive{
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0) -22%, rgba(0,0,0,1) 98%)
+}
+.topnav{
+    position: absolute;
+}
+.sticky{
+    display: none;
+}
+.nosaltres{
+    margin-top: -20px;
+    background: #333;
+}
+.sobrenos{
+    background-color: #33333377;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+.serveis{
+    margin-top: -2px;
+    background-color: #333;
+}
+hr{
+    display: none;
+}
+.servei{
+    margin-bottom: 20px;
+}
+#calendariresponsive{
+    display: inline;
+}
+#responsive{
+    margin: auto;
+}
+#registrebody{
+    background-image: url(img/fons_recerca.jpg);
+    background-position: top;
+    background-size: auto;
+}
+}

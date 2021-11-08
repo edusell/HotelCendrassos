@@ -6,115 +6,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="css.css"rel="stylesheet" type="text/css">
-  <LINK REL=StyleSheet HREF="estil.css" TYPE="text/css" MEDIA=screen> 
+  <link href="mcss.css"rel="stylesheet" type="text/css">
+
     <title>Registre</title>
 
 </head>
-<body>
+<body id=registrebody>
   <body>
-    <div class="container_principal menu_superior">
-        <div class="item logo" ></div>
-        <div class="item"><a href="habitacions.php">Habitacions</a></div>
-        <div class="item">Serveis</div>
-        <div class="item">Galeria</div>
-        <div class="item">contacta</div>
-        <div class="item">Inicia sesio</div>
-        <div class="item">Registrarte</div>
-    </div>
+   <?php include 'menu.php';?>
     <!--MENU-->
+    <div class="container-login">
 
-    <form id='registre' action="../src/validacioregistre.php" method='GET' novalidate>
-
-          <ul>
-                <label for="mail">
+    <div class='registre'>
+    <form id='registre' class='formregistre' action="index.php" method='post' novalidate>
+      <input type="hidden" name='r' value='crearusuariadmin'>
+      <input type="hidden" name='orig' value='usuari'>
+      <table class='estructuraregistre'>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan=2>
+          <label for="nom">
+                  <span>Nom: </span><br>
+                  <input type="text" id="nom" name="nom" required minlength="1">
+                  <span id='nomerr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan=2>
+          <label for="cognom">
+                  <span>Cognoms: </span><br>
+                  <input type="text" id="cognom" name="cognom" required>
+                  <span id='cognomerr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan=2>                
+            <label for="telefon">
+                  <span>Telefon:</span><br>
+                  <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
+                  <span id='telefonerr' class="error" aria-live="polite"></span>
+                </label></td>
+          
+        </tr>
+        <tr>
+        <td colspan=3>
+          <label for="dni">
+                  <span>DNI: </span><br>
+                  <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
+                  <span id='dnierr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan='3'>
+          <label for="mail">
                   <span>Correu electronic: </span><br>
                   <input type="email" id="mail" name="mail" required minlength="8">
                   <span id="emailerr" class="error" aria-live="polite"></span>
                 </label>
             
-                <label for="nom">
-                  <span>Nom: </span><br>
-                  <input type="text" id="nom" name="nom" required minlength="1">
-                  <span id='nomerr' class="error" aria-live="polite"></span>
-                </label>
-              
+          </td>
+        </tr>
+        <tr>
+          <td colspan='3'>
 
-                <label for="cognom">
-                  <span>Cognoms: </span><br>
-                  <input type="text" id="cognom" name="cognom" required>
-                  <span id='cognomerr' class="error" aria-live="polite"></span>
-                </label>
-             
-
-                <label for="dni">
-                  <span>DNI: </span><br>
-                  <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
-                  <span id='dnierr' class="error" aria-live="polite"></span>
-                </label>
-              
-
-                <label for="telefon">
-                  <span>Telefon:</span><br>
-                  <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
-                  <span id='telefonerr' class="error" aria-live="polite"></span>
-                </label>
-           
-
-                <label for="usuari">
+          <label for="usuari">
                   <span>Usuari: </span><br>
                   <input type="text" id="usuari" name="usuari" required minlength="8">
                   <span id='usuarierr' class="error" aria-live="polite"></span>
                 </label>
-              
+          </td>
+          <td colspan=3>
 
-                <label for="contrasenya">
+          <label for="contrasenya">
                   <span>Contrasenya: </span><br>
                   <input type="password" id="contrasenya" name="contrasenya" required minlength="8"><br>
                   <span id='contrasenyaerr' class="error" aria-live="polite"></span>
                 </label>
-              </ul>
-        
+          </td>
+        </tr>
+      </table>
       </form>
-      <button onclick="validar()">Enviar</button>
+      <button id='env' onclick="validar()">Enviar</button>
+      </div>
 
 
+</div>
        <!-- FOOTER-->
-       <div class="footer">
-        <footer>
-            <div class="logos_footer">
-            <img src="logos\footer\twiter_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\facebook_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\youtube_logo.png" alt="..." width="60" height="60">
-            <img src="logos\footer\instagram_logo.png" alt="..." width="60" height="60">
-
-
-            <div class="resultado">
-                <?php if(isset($_GET['dni']) && $_GET['dni'] == 'true'): ?>
-                <h2>L'usuari ja existeix</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['caracters_dni']) && $_GET['caracters_dni'] == 'true'): ?>
-                <h2>El dni ha de contenir 9 caracters</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['caracters_tlf']) && $_GET['caracters_tlf'] == 'true'): ?>
-                <h2>El telefon nomes pot contenir digits de 0 a 9</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['largada_tlf']) && $_GET['largada_tlf'] == 'true'): ?>
-                <h2>El telefon ha de contenir 9 digits</h2>
-                <?php endif;?>
-                <?php if(isset($_GET['mail_err']) && $_GET['mail_err'] == 'true'): ?>
-                <h2>Correo incorrecte</h2>
-                <?php endif;?>
-
-            </div>
-            </div>
-            <ul class="footer_ul">
-                <li ><a href="Pagina_principal.php"><p class="footer_seccions">Pagina principal</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="Habitacions.php"><p class="footer_seccions">Serveis</p></li>
-                <li><a href="contacta.php"><p class="footer_seccions">Contacta</p></li>
-                <li><a href="serveis.php"><p class="footer_seccions">galeria</p></li>
-            </ul>
-        </footer>
+       <?php include 'footerprim.php' ?>
       <script>
 
  

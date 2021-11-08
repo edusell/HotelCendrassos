@@ -28,6 +28,8 @@ include "../src/controlador/cambiacontrasenya.php";
 include "../src/controlador/retornar_valors_client.php";
 
 
+include "../src/controlador/festa.php";
+include "../src/controlador/registre.php";
 
 
 
@@ -89,6 +91,10 @@ if ($r == "") {
     $resposta = ctrlcambiacontrasenya($peticio, $resposta, $imatges);
 }else if($r == "modificadades"){
     $resposta = ctrlmodificadades($peticio, $resposta, $imatges);
+}else if($r == "festa"){
+    $resposta = ctrlfesta($peticio, $resposta, $imatges);
+}else if($r == "registre"){
+    $resposta = ctrlregistre($peticio, $resposta, $imatges);
 }
 
 

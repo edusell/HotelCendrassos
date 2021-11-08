@@ -314,6 +314,25 @@ class adminpdo
         ]);
 
     }
+
+    public function festa($data){
+        $query = "INSERT INTO `calendari` (`id_calendari`, `data_in_tencament`, `data_fn_tencament`, `id_hotel_calendari`) VALUES (NULL, :data , '2021-01-01', '1');";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':data'=> $data
+        ]);
+
+        return 'hols';
+    }
+    public function nofesta($data){
+        $query = 'DELETE FROM calendari WHERE data_in_tencament = :data ;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':data'=> $data
+        ]);
+
+        return 'hols';
+    }
     
 
   

@@ -99,7 +99,7 @@ include 'roladmin.php';
                   <form id='creartipushabitacio' action="index.php" method='post'>
                   <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
-                  <td colspan=2></td>
+                  <td colspan=2><input type="file" id="myFile" name="img" class='hidebut' required> </td>
                   <td><input class='addnum' type='number' name='m'></td>
                   <td><input class='addnum' type='number' name='omax'></input></td>
                   <td><input class='addnum' type='number' name='preu'></td>
@@ -111,7 +111,7 @@ include 'roladmin.php';
                </div>
                <button type='submit' form='borrartipus'>Borrar</button>
                <button id='creartipus' onclick='crearhabitacio()'>Crear</button>
-               <button form='creartipushabitacio' id='hidebut'>envia</button>   
+               <button form='creartipushabitacio' class='hidebut'>envia</button>
                <br><br>  
             </td>
             <!-- USUARIS -->
@@ -195,6 +195,7 @@ include 'roladmin.php';
    </body>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+
      $(document).ready(function(){
       $(".close").click(function(){
     $("#alerta").css("visibility", "hidden");
@@ -202,14 +203,15 @@ include 'roladmin.php';
     });
 
 
-     document.getElementById('hide').style.visibility = "hidden";
-      document.getElementById('hidebut').style.visibility = "hidden";
-      document.getElementById('creartipus').style.visibility = "visible";
+      $('.hidebut').css('visibility','hidden');
+      $('#hide').css('visibility','hidden');
+      $('#creartipus').css('visibility','visible');
+
       
        function crearhabitacio(){
-         document.getElementById('hide').style.visibility = "visible";
-         document.getElementById('hidebut').style.visibility = "visible";
-         document.getElementById('creartipus').style.visibility = "hidden";
+        $('.hidebut').css('visibility','visible');
+      $('#hide').css('visibility','visible');
+      $('#creartipus').css('visibility','hidden');
        }
        function validar(){
          var submit = 0;

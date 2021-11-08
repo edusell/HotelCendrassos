@@ -78,4 +78,18 @@ hr{
     background-position: top;
     background-size: auto;
 }
+.habitacions{
+    margin-top: -10px;
+}
+.tipus_habitacions{
+    width: 90%;
+    height: auto;
+    padding: 0px;
+}
+.container_imatges_habitacions {
+    display: block;
+}
+.container_tipus_habitacions {
+height: auto;
+}
 }

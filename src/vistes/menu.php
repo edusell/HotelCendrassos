@@ -22,7 +22,7 @@
          ?>
          
          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-         <i class="fa fa-bars"></i>
+         <i class="fa fa-bars"><img src="logos/admin_icon/list.png" alt="img"></i>
          </a>
          
 </div>

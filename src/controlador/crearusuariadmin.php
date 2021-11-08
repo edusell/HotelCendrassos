@@ -24,6 +24,9 @@ function ctrlcrearusuariadmin($peticio, $resposta, $imatges){
     $rol = $_POST['rol'];
     $origen = $_POST['orig'];
 
+    if(!isset($rol)){
+        $rol=0;
+    }
     $err = $model->adduseradmin($mail,$nom,$cnom,$dni,$tel,$usuari,$pass,$rol);
 
     if(count($err)!=0){

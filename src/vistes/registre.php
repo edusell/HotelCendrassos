@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="css.css"rel="stylesheet" type="text/css">
+  <link href="mcss.css"rel="stylesheet" type="text/css">
+
     <title>Registre</title>
 
 </head>
@@ -15,56 +17,82 @@
     <!--MENU-->
     <div class="container-login">
 
-    <form id='registre' class='login' action="../src/validacioregistre.php" method='GET' novalidate>
-                <label for="mail">
+    <div class='registre'>
+    <form id='registre' class='formregistre' action="index.php" method='post' novalidate>
+      <input type="hidden" name='r' value='crearusuariadmin'>
+      <input type="hidden" name='orig' value='usuari'>
+      <table class='estructuraregistre'>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan=2>
+          <label for="nom">
+                  <span>Nom: </span><br>
+                  <input type="text" id="nom" name="nom" required minlength="1">
+                  <span id='nomerr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan=2>
+          <label for="cognom">
+                  <span>Cognoms: </span><br>
+                  <input type="text" id="cognom" name="cognom" required>
+                  <span id='cognomerr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan=2>                
+            <label for="telefon">
+                  <span>Telefon:</span><br>
+                  <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
+                  <span id='telefonerr' class="error" aria-live="polite"></span>
+                </label></td>
+          
+        </tr>
+        <tr>
+        <td colspan=3>
+          <label for="dni">
+                  <span>DNI: </span><br>
+                  <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
+                  <span id='dnierr' class="error" aria-live="polite"></span>
+                </label>
+          </td>
+          <td colspan='3'>
+          <label for="mail">
                   <span>Correu electronic: </span><br>
                   <input type="email" id="mail" name="mail" required minlength="8">
                   <span id="emailerr" class="error" aria-live="polite"></span>
                 </label>
             
-                <label for="nom">
-                  <span>Nom: </span><br>
-                  <input type="text" id="nom" name="nom" required minlength="1">
-                  <span id='nomerr' class="error" aria-live="polite"></span>
-                </label>
-              
+          </td>
+        </tr>
+        <tr>
+          <td colspan='3'>
 
-                <label for="cognom">
-                  <span>Cognoms: </span><br>
-                  <input type="text" id="cognom" name="cognom" required>
-                  <span id='cognomerr' class="error" aria-live="polite"></span>
-                </label>
-             
-
-                <label for="dni">
-                  <span>DNI: </span><br>
-                  <input type="text" id="dni" name="dni" required minlength="9" maxlength="9">
-                  <span id='dnierr' class="error" aria-live="polite"></span>
-                </label>
-              
-
-                <label for="telefon">
-                  <span>Telefon:</span><br>
-                  <input type="tel" id="telefon" name="telefon" required minlength="9" maxlength="9">
-                  <span id='telefonerr' class="error" aria-live="polite"></span>
-                </label>
-           
-
-                <label for="usuari">
+          <label for="usuari">
                   <span>Usuari: </span><br>
                   <input type="text" id="usuari" name="usuari" required minlength="8">
                   <span id='usuarierr' class="error" aria-live="polite"></span>
                 </label>
-              
+          </td>
+          <td colspan=3>
 
-                <label for="contrasenya">
+          <label for="contrasenya">
                   <span>Contrasenya: </span><br>
                   <input type="password" id="contrasenya" name="contrasenya" required minlength="8"><br>
                   <span id='contrasenyaerr' class="error" aria-live="polite"></span>
                 </label>
-        
+          </td>
+        </tr>
+      </table>
       </form>
-      <button onclick="validar()">Enviar</button>
+      <button id='env' onclick="validar()">Enviar</button>
+      </div>
+
 
 </div>
        <!-- FOOTER-->

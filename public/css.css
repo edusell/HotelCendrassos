@@ -40,7 +40,7 @@ width: 100%;
   background: #dbdbdb; 
 }
 
-/*.serveis::before{
+.serveis::before{
   z-index: -10;
   position: absolute;
   top: 0;
@@ -50,8 +50,8 @@ width: 100%;
   height: 100%;
   content: " ";
   background: linear-gradient(#f00,#f0f);
-  background-image: url(img/fons.jpg);
-  clip-path: circle( 20% at left 65%);
+
+  clip-path: circle( 20% at left 50%);
 
 }
 /*.boles::after{
@@ -201,7 +201,7 @@ transition: 0.5s;
 }
 .habitacions{
   width: 100%;
-  background-color: rgb(34, 34, 37);
+  background-color: rgb(76, 76, 78);
   height: 50px;
   color: whitesmoke;
   text-align: center;
@@ -272,7 +272,6 @@ hr{
 .sobrenos{
  
   background-color: #33333377;
-  backdrop-filter: blur(5px);
   width: 50%;
   padding: 30px;
   border-radius: 20px;
@@ -305,10 +304,12 @@ hr{
   background-position: center;
   background-size: cover;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.425);
+  border: 0px solid rgba(255, 255, 255, 0.425);
   /*border-right: 1px;
   border-bottom: 1px;*/
   box-shadow: #f2f2f29d;
+  border-radius: 20px;
+  overflow: hidden;
 
 }
 /*#servei{
@@ -474,7 +475,7 @@ a{
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {position: absolute;}
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -733,7 +734,8 @@ a{
   align-items: center;
   justify-content: center;
   color: white;
-}
+  }
+
 
 
 
@@ -870,3 +872,92 @@ button:hover {
 
 }
 
+.registre{
+  width: auto;
+  background-color: #686868;
+  padding: 20px;
+
+}
+.formregistre{
+width: auto;
+
+}
+.estructuraregistre td{
+  text-align: left;
+  float: center;
+  padding: 5px;
+}
+#registre label{
+  width: 100%;
+}
+#registre input{
+  width: 100%;
+}
+#env{
+  float: right;
+}
+button:hover{
+  background-color: rgb(250, 250, 250);
+}
+
+
+.servei{
+  width: 280px;
+	height: 360px;
+	border-radius: 15px;
+	padding: 0rem;
+	background: white;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	transition: 0.4s ease-out;
+	box-shadow: 0px 7px 10px rgba(black, 0.5);
+}
+.servei:hover{
+  transform: translateY(20px);
+  background: rgba(black, 0.6);
+
+}
+.servei:hover:before{opacity: 1;}
+.servei:hover .infoservei{
+  opacity: 1;
+  transform: translateY(0px);
+  background: rgba(black, 0.6);
+}
+.servei::before{
+  content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+		background: rgba(black, 0.6);
+		z-index: 2;
+		transition: 0.5s;
+		opacity: 0;
+}
+.servei img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+.infoservei{
+  position: relative;
+  z-index: 3;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+padding-top: 30%;
+}
+#calendariresponsive{
+  display: none;
+}

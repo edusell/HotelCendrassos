@@ -136,5 +136,38 @@ class llistartipushab
         return $stm->fetchall(\PDO::FETCH_ASSOC);
        
     }
+    public function cambiacontrasenya($dni,$nova_contrasenya)
+    {
+        
+        $query = 'UPDATE usuari SET password=:nova where DNI=:dni';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':nova' => $nova_contrasenya,
+            ':dni' => $dni
+        ]);
+
+           // print_r($stm->fetch(\PDO::FETCH_ASSOC));
+        //die();
+        return $stm->fetchall(\PDO::FETCH_ASSOC);
+       
+    }
+    public function cambiadades($dni,$correu,$telefon)
+    {
+        
+        
+        $query = 'UPDATE usuari SET correu=:correu ,tel=:telefon where DNI=:dni';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':correu' => $correu,
+            ':dni' => $dni,
+            ':telefon' => $telefon
+        ]);
+
+           // print_r($stm->fetch(\PDO::FETCH_ASSOC));
+        //die();
+        return $stm->fetchall(\PDO::FETCH_ASSOC);
+       
+    }
+
 
 }

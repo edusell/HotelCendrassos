@@ -28,7 +28,7 @@
 </div>
 <div class="cambicontrasenya " id="contrasenya1">
         <ul>
-          <a href="index.php?r=tanca_sesio">Tancasesio <img src="..\..\public\logos\menu\logout.png"></a>
+          <a href="index.php?r=tanca_sesio">Tancasesio <img src="logos\menu\logout.png" width="20px" heigth="20px"></a>
         </ul>
 </div>
 

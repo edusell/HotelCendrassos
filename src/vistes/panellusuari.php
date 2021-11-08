@@ -26,42 +26,38 @@
             <div class="popup-close">x</div>
             <div class="popup-content ">
                 <h3>Cambia contrasenya</h3>
-                <form>
-                  <label>Contrasenya actual<input type="text"></label>
-                  <label>Contrasenya nova<input type="text" ></label>
-                  <label>Repeteix la contrasenya nova<input type="text" ></label>
+                <form action="index.php?r=cambiacontrasenya"  method="post">
+                  <label>Contrasenya actual<input  type="password" name="contrasenya_actual"></label>
+                  <label>Contrasenya nova<input type="password" name="contrasenya_nova"></label>
+                  <label>Repeteix la contrasenya nova<input  type="password" name="contrasenya_nova1"></label>
                   <button>Cambia</button>
                 </form>
             </div>
         </div>
     </div>
       <h1>General<h1>
+        <form action="index.php?r=modificadades" method="post">
       <?php 
-    
-        
-      //$dni = $_SESSION['Nom'];
-      //print_r($dni);
-      //die();
-        //print_r($llistar_dades);
-        //die();
+     
       print '<div class="row panelldades">';
         print"<div class='col-4 ' id='dadespersonals'><p>Nom: <input type='text' value=".$llistar_dades['Nom']." readonly='readonly' class='col-4'></p></div>";
         print"<div class='col-4' id='dadespersonals'><p>Cognoms: <input type='text' value='".$llistar_dades['Cognom']."'readonly='readonly' class='col-6'></p></div>";
         print"<div class='col-4' id='dadespersonals'><p>DNI: <input type='text'value='".$llistar_dades['DNI']."' readonly='readonly' class='col-4'></p></div>";
       print'</div>';
       print '<div class="row panelldades">';
-        print"<div class='col-4' id='dadespersonals'><p>Correu: <input type='text'value='".$llistar_dades['correu']."' class='col-9'></p></div>";
-       print' <div class="col-4" id="dadespersonals"><p>Adreça: <input type="text" class="col-9"></p></div>';
-        print"<div class='col-4' id='dadespersonals'><p>Telefon: <input type='number' value='".$llistar_dades['tel']."'readonly='readonly' class='col-5'></p></div>";
+        print"<div class='col-4' id='dadespersonals'><p>Correu: <input type='text' name='correu' value='".$llistar_dades['correu']."' class='col-9'></p></div>";
+       print' <div class="col-4" id="dadespersonals"><p>Adreça: <input type="text" name="adreça" class="col-9"></p></div>';
+        print"<div class='col-4' id='dadespersonals'><p>Telefon: <input type='text' name='telefon' value='".$llistar_dades['tel']."' class='col-5'></p></div>";
       print'</div>';
       print'<div class="row panelldades">';
         print'<div class="col-6" id="dadespersonals"><p>Poblacio: <input type="text" readonly="readonly" ></p></div>';
         print'<div></div>';
-        print'<button class="col-2 boto_modifica" >Modifica</button>';
+        print'<button type="submit" class="col-2 boto_modifica" >Modifica</button>';
         print'<button class="col-2 boto_contrasenya" id="contrasenya">Canvia contrasenya</button>';
       print'</div>';
     print'</div>'; 
     ?>
+    </form>
     <div class="col-12 "id="configuracions">
     <h1>Reserves<h1>
       
@@ -78,7 +74,6 @@
         <?php
 
         foreach($llistar_panell_reserva as $row){
-          
           print'</thead>';
           print'<tbody>';
           print'<tr>';

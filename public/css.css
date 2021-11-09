@@ -743,6 +743,7 @@ a{
 /*LOGIN.HTML*/
 .footer_login{
   width: 100%;
+  position: absolute;
   height: 30px;
   background-color: rgb(94, 95, 97);
 
@@ -960,4 +961,9 @@ padding-top: 30%;
 }
 #calendariresponsive{
   display: none;
+}
+.imatges_habitacions{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

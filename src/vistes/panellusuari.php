@@ -14,7 +14,7 @@
 <body>
 <?php include('menu.php'); ?><br>
 
-<div class="container">
+<div class="container col-12 dades">
 
   <div class="row align-items-start justify-content-center col-12">
     <div class="col-12 "id="configuracions">
@@ -60,8 +60,6 @@
     </form>
     <div class="col-12 "id="configuracions">
     <h1>Reserves<h1>
-      
-
       <table class="table table-striped table-dark">
           <thead>
           <tr>

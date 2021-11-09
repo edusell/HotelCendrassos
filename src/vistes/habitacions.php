@@ -47,7 +47,7 @@
                 print '<div class="tipus_habitacions">';
                   print"<h3>".$row['nom_tipus']."</h3>";
                   print'<div class="container_imatges_habitacions">';
-                    print'<div class="imatges_habitacions"></div>';
+                    print'<div class="imatges_habitacions"><img src="img/uploads/'.$row['imatge'].'"width=100% height=233px"></div>';
                         print'<div class="text">';
                             print"<p>".$row['desc_tipus']."</p>";
                             print"<div class='especificacions'>";

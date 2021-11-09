@@ -210,6 +210,7 @@ class adminpdo
 
     public function creartipus($id,$m,$servei,$omax,$descripcio,$nom,$preu,$directori){
        
+       
     $stm = $this->sql->prepare("INSERT INTO tipushabitacio (id_tipus, m_tipus, serveis_tipus, ocupants_tipus, desc_tipus, nom_tipus, id_hotel_tipus, preu,imatge) VALUES ( :id , :m , :serveis , :omax , :descripcio , :nom , '1', :preu , :img );");
     $sql = $stm->execute([
     ':id' => $id,
@@ -224,6 +225,8 @@ class adminpdo
     }
 
     public function crearhabitacio($id,$tipus){
+
+        
 
         $stm = $this->sql->prepare("INSERT INTO habitacio (id_habitacio ,id_tipus_habitacio) VALUES ( :id , :tipus );");
         $sql = $stm->execute([

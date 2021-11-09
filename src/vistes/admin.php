@@ -78,7 +78,7 @@ include 'roladmin.php';
                            <td>tipus</td>
                            <td>descripcio</td>
                         </tr>
-                        <form id='borrartipus' action='index.php' method='post'>
+                        <form id='borrartipus' action='index.php' method='post' >
                         <input type="hidden" name='r' value='borrartipus'>
                         <?php
 
@@ -96,10 +96,10 @@ include 'roladmin.php';
                            
                            ?>
                   </form>
-                  <form id='creartipushabitacio' action="index.php" method='post'>
+                  <form id='creartipushabitacio' action="index.php" method='post' enctype="multipart/form-data">
                   <input type="hidden" name='r' value='creartipus'>
                   <tr id='hide'>
-                  <td colspan=2><input type="file" id="myFile" name="img" class='hidebut' required> </td>
+                  <td colspan=2><input type="file" id="myFile" name="imatge" class='hidebut' required></td>
                   <td><input class='addnum' type='number' name='m'></td>
                   <td><input class='addnum' type='number' name='omax'></input></td>
                   <td><input class='addnum' type='number' name='preu'></td>

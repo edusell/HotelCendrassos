@@ -22,13 +22,14 @@
          ?>
          
          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-         <i class="fa fa-bars"><img src="logos/admin_icon/list.png" alt="img"></i>
+         <i class="fa fa-bars"></i>
          </a>
          
 </div>
 <div class="cambicontrasenya " id="contrasenya1">
         <ul>
           <a href="index.php?r=tanca_sesio">Tancasesio <img src="logos\menu\logout.png" width="20px" heigth="20px"></a>
+          <a href="index.php?r=tanca_sesio">Perfil <img src="logos\menu\logout.png" width="20px" heigth="20px"></a>
         </ul>
 </div>
 

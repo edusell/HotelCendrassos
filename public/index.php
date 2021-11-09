@@ -42,7 +42,7 @@ $resposta = new Daw\Resposta();
 //$imatges = new Daw\ImatgesSQLite($config["sqlite"]);
 //$imatges = new Daw\ImatgesPDO($config["db"]);
 //echo ($r);
-
+ 
 if ($r == "") {
     $resposta = ctrlPortada($peticio, $resposta, $imatges);
 } else if($r == "admin"){

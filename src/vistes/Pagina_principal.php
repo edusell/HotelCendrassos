@@ -44,6 +44,14 @@
             <a class='submenu' href='#aventatges'><div>CONTACTE</div></a>
             </div>
          </div>
+         <?php
+$tmp = $_COOKIE['mode'];
+if(!isset($tmp) || $tmp==0){
+ print "<button class='ligth' onclick='clar()' style='float: right;'><img  id='clar' src = 'logos/admin_icon/sun-fill.svg' alt='clar' width=25px/></button>";
+} else {
+    print "<button class='ligth' onclick='clar()' style='float: right;'><img  id='clar' src = 'logos/admin_icon/moon.svg' alt='clar' width=25px/></button>";
+}
+?>
          <div class='nosaltres'>
             <div class='sobrenos'>
                <br>
@@ -180,6 +188,47 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+          <?php
+if(!isset($tmp) || $tmp==0){
+    
+   } else {
+       print "   var element = document.body;
+       element.classList.toggle('llum');
+       $('#clar').attr('src','logos/admin_icon/moon.svg');
+       $('.ligth').attr('onclick','fosc()');
+       $('h1').css('color','black')";
+       
+   }
+    ?>
+
+
+function clar() {
+   var element = document.body;
+   element.classList.toggle("llum");
+   $('#clar').attr('src','logos/admin_icon/moon.svg');
+   $('.ligth').attr('onclick','fosc()');
+   $('h1').css('color','black');
+   $('h2').css('color','black');
+   $('a').css('color','white');
+   $('.sticky').css('background-color','rgb(137, 137, 137)');
+   $('.sobrenos').css('color','black');
+   document.cookie = "mode=1";
+  
+
+}
+function fosc(){
+    var element = document.body;
+   element.classList.toggle("llum");
+   $('#clar').attr('src','logos/admin_icon/sun-fill.svg');
+   $('.ligth').attr('onclick','clar()');
+   $('h1').css('color','white');
+   $('h2').css('color','black');
+   $('a').css('color','white');
+   $('.sticky').css('background-color','rgb(77, 77, 77)');
+   $('.sobrenos').css('color','white');
+   document.cookie = "mode=0";
+
+}
 
 
 

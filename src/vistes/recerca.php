@@ -19,7 +19,7 @@ $ocupants=$_GET['ocupants'];
 </head>
 <body class='recerca'>
 <?php include 'menu.php'; ?>
-        <div class="habitacions">
+        <div class="habitacions"> 
             <?= 'DATA ENTRADA:'.$arribada.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
         </div>
         
@@ -31,7 +31,7 @@ $ocupants=$_GET['ocupants'];
 //Ocupants select t.id_tipus FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND t.ocupants_tipus>= 2;
 //SELECT rh.id_habitacio from reserva r,reservahabitacio rh where rh.id_reserva=r.id_reserva AND ( 2021-10-01 >=r.data_sortida OR ( 2021-10-01 <r.data_arribada AND 2021-10-28 <=data_arribada));
 
-        $stm1 = $conn->prepare("select h.id_habitacio , t.m_tipus ,t.preu, t.serveis_tipus , t.ocupants_tipus , t.desc_tipus ,t.id_tipus ,t.nom_tipus, r.data_arribada,r.data_sortida FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND t.ocupants_tipus> :ocupants AND ( :arribada >=r.data_sortida OR ( :arribada <r.data_arribada AND :sortida <=data_arribada)) group by h.id_habitacio;");
+ /*       $stm1 = $conn->prepare("select h.id_habitacio , t.m_tipus ,t.preu, t.serveis_tipus , t.ocupants_tipus , t.desc_tipus ,t.id_tipus ,t.nom_tipus, r.data_arribada,r.data_sortida FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND t.ocupants_tipus> :ocupants AND ( :arribada >=r.data_sortida OR ( :arribada <r.data_arribada AND :sortida <=data_arribada)) group by h.id_habitacio;");
         
         $stm1->execute([
              ':arribada' => $arribada,
@@ -39,9 +39,11 @@ $ocupants=$_GET['ocupants'];
              ':sortida' => $sortida
         ]);
 
-        while($row = $stm1->fetch(PDO::FETCH_ASSOC)) {//recorrem el select
-         
+        while($row = $stm1->fetch(PDO::FETCH_ASSOC)) {//recorrem el select*/
+
             
+            foreach($disponibles as $row){
+
                 $img = 'habitacio_familiar.jpg';
 
             
@@ -73,22 +75,6 @@ $ocupants=$_GET['ocupants'];
         </div>
 </body>
 <?php include 'footerprim.php';?>
-<script type="text/javascript" src="vanilla-tilt.js"></script>
-<script type="text/javascript">
 
-
-
-	VanillaTilt.init(document.querySelector(".recerca_habitacions"), {
-		max: 10,
-		speed: 400,
-        reverse:  true,
-        glare: true,
-        "max-glare": 0.2,
-        //scale: 1.05
-	});
-	
-	//It also supports NodeList
-	VanillaTilt.init(document.querySelectorAll(".recerca_habitacions"));
-</script>
 </body>
 </html>

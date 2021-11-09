@@ -1,5 +1,5 @@
 <?php
-namespace Daw;
+namespace Daw; 
 
 class llistartipushab 
 
@@ -168,6 +168,37 @@ class llistartipushab
         return $stm->fetchall(\PDO::FETCH_ASSOC);
        
     }
+    public function reserves($entrada,$sortida,$ocupants)
+    {
+        
+        
+        $query = 'select id_tipus_habitacio ,count( id_habitacio) as numd,t.m_tipus,t.serveis_tipus,t.ocupants_tipus,t.desc_tipus,t.nom_tipus,preu,imatge from habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus AND t.ocupants_tipus >= :ocupants  group by id_tipus_habitacio;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':ocupants' => $ocupants]);
+
+        $query1 = "select count(h.id_habitacio) as num,h.id_tipus_habitacio from habitacio h,reserva r,reservahabitacio rh where h.id_habitacio=rh.id_habitacio and r.id_reserva=rh.id_reserva and ( :entrada >=r.data_arribada) and ( :sortida <=r.data_sortida);";
+        $stm1 = $this->sql->prepare($query1);
+        $result1 = $stm1->execute([
+            ':entrada' => $entrada,
+            ':sortida' => $sortida
+        ]);
+
+        $hd = $stm->fetchall(\PDO::FETCH_ASSOC);
+        $ho = $stm1->fetchall(\PDO::FETCH_ASSOC);
+        //print_r($hd);
+
+        for($i=0;$i<count($ho);$i++){
+            for($y=0;$y<count($hd);$y++){
+            if($ho[$i]['id_tipus_habitacio']==$hd[$y]['id_tipus_habitacio']){
+                $hd[$y]['numd'] = $hd[$y]['numd'] - $ho[$i]['num'];
+            }
+        }
 
 
+        return $hd;
+       
+    }
+
+
+}
 }

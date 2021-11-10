@@ -26,10 +26,9 @@ include "../src/controlador/borrarhabitacio.php";
 include "../src/controlador/crearhabitacio.php";
 include "../src/controlador/cambiacontrasenya.php";
 include "../src/controlador/retornar_valors_client.php";
-
-
 include "../src/controlador/festa.php";
 include "../src/controlador/registre.php";
+include "../src/controlador/galeriaadmin.php";
 
 
 
@@ -95,6 +94,8 @@ if ($r == "") {
     $resposta = ctrlfesta($peticio, $resposta, $imatges);
 }else if($r == "registre"){
     $resposta = ctrlregistre($peticio, $resposta, $imatges);
+}else if($r == "galeriaadmin"){
+    $resposta = ctrlgaleriaadmin($peticio, $resposta, $imatges);
 }
 
 

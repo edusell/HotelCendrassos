@@ -13,11 +13,11 @@
    <body>
       <?php include('menu.php') ?>
       <?php include('sidebar.php') ?>
-      <div class='pagina'>
-        <div class='estructura' style='padding-top: 70px; margin-left:20px; width:98%;'>
+      <div class='pagina' style='padding-top: 70px;'>
+        <div class='estructura' style='margin-left:20px; width:98%;'>
                <h3>RESERVES</h3>
-               <form id="reserves" action="index.php" method="get" class='reserves' style='height: 300px'>
-               <input type="hidden" name='r' value='borrreserva'>
+               <form id="galeria" action="index.php" method="get" class='reserves' style='height: 60vh'>
+               <input type="hidden" name='r' value='borrfoto'>
                   <table id='taulareserves' style=' max-heigth: 600px;'>
                      <tr class='header'A>
                         <td></td>
@@ -31,7 +31,7 @@
             if($file == '.' || $file == '..'){} else {
 
                 print "<tr>";
-                print "<td><input type='checkbox' name='reserves[]' value='".$carpeta.$file."'></td>";
+                print "<td><input type='checkbox' name='fotos[]' value='".$carpeta.$file."'></td>";
                 print "<td>".$carpeta.$file."</td>";
                 print "<td><img src='".$carpeta.$file."' width=150px></td>";
                 print "<tr>";
@@ -43,7 +43,7 @@
                         ?>
                   </table>
                </form>
-               <button type='submit' form='reserves'>Borrar</button>
+               <button type='submit' form='galeria'>Borrar</button>
                </form>
                <form id='addimage' action='index.php' method='POST'  enctype="multipart/form-data">
                   <input type="hidden" name=r value='afegirimatge'>
@@ -57,4 +57,4 @@
       </div>
    </body>
    
-</html>
+</html> 

@@ -12,15 +12,16 @@ $ocupants=$_REQUEST['ocupants'];
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css.css"rel="stylesheet" type="text/css">
     <link href="metodo-pago.css"rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"rel="stylesheet" type="text/css">
+    <link href="css.css"rel="stylesheet" type="text/css">
 
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RESERVA</title>
 </head>
 <body class='recerca'>
 <?php include 'menu.php'; ?>

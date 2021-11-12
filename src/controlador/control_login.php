@@ -3,6 +3,9 @@
 function ctrLogin($peticio, $resposta, $contenidor)
 {
     include '../src/config.php';
+    
+
+    
 
     $usuari = $_POST['usuari'];
     $pass = $_POST['contrasenya'];
@@ -28,13 +31,24 @@ function ctrLogin($peticio, $resposta, $contenidor)
         $_SESSION['DNI']=$actual["DNI"];
         $_SESSION['nom']=$actual["Nom"];
         $_SESSION['rol']=$actual["id_departament_usuari"];
+        $redireccio_pagina_recerca=$_COOKIE["HTTP_REFERER"];
+
        
         //$resposta->setSession("logat", true);
        // $resposta->setSession("login", $actual);
        if($actual["id_departament_usuari"]==1){
-        $resposta->redirect("location: index.php?r=admin");
+        if(isset($_COOKIE["HTTP_REFERER"])){
+            header("Location:".$redireccio_pagina_recerca);
+           }else{
+            $resposta->redirect("location: index.php?r=admin");
+           }
+           //$resposta->redirect($redireccio_pagina_recerca);
        }else{
-        $resposta->redirect("location: index.php");
+           if(isset($_COOKIE["HTTP_REFERER"])){
+            header("Location:".$redireccio_pagina_recerca);
+           }else{
+            $resposta->redirect("location: index.php");
+           }
        }
     }else {
         //$resposta->setSession("logat", false);

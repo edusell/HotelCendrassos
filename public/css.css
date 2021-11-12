@@ -1069,6 +1069,16 @@ padding-top: 30%;
   background-color: #ffffffb4;
   border: 1px solid white;
 }
+.Popup-reserva{
+  background-color: #a09d9d;
+  height: 500px;
+  z-index: 1;
+}
+.Popup-reserva h4{
+  padding-top: 50px;
+}
+
+
 
 /*habitacions inici*/
 .habitacionsinici{

@@ -56,6 +56,9 @@ class llistartipushab
     //Validacio de usuaris contra la base de dades 
     public function getUser($user)
     {
+       
+        //print_r($_SERVER['HTTP_REFERER']);
+        //die();
         //$user = $_POST['usuari'];
         //$pass= $_POST['password'];
 
@@ -197,8 +200,25 @@ class llistartipushab
 
         return $hd;
        
+    }}
+
+    public function resumreserva($id)
+    {
+        
+        
+        $query = 'select * from tipushabitacio where id_tipus= :id';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id' => $id
+        ]);
+
+        
+
+           // print_r($stm->fetch(\PDO::FETCH_ASSOC));
+        //die();
+        return $stm->fetchall(\PDO::FETCH_ASSOC);
+       
     }
 
 
-}
 }

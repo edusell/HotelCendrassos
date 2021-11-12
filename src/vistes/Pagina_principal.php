@@ -23,7 +23,7 @@
             </div>
          </div>
          <div class="reserva">
-            <form action="index.php?r=recerca&" method='GET' class='forminici'>
+            <form action="index.php" method='GET' class='forminici'>
                <input type="hidden" name="r" value='recerca'>
                <span id='hotel'>HOTEL</span><br>
                <span id='hotel'>CENDRASSOS</span>

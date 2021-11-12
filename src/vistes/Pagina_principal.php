@@ -52,6 +52,8 @@ if(!isset($tmp) || $tmp==0){
     print "<button class='ligth' onclick='clar()' style='float: right;'><img  id='clar' src = 'logos/admin_icon/moon.svg' alt='clar' width=25px/></button>";
 }
 ?>
+<!--<img class='cercle' src="img/fons.jpg" alt="img">-->
+
          <div class='nosaltres'>
             <div class='sobrenos'>
                <br>
@@ -63,7 +65,7 @@ if(!isset($tmp) || $tmp==0){
             </p>   
             </div>
          </div>
-         <hr>
+<hr>
          <div id='serveis' class='serveis'>
             <h2>SERVEIS</h2> 
             <div class='containerservei'>
@@ -102,6 +104,8 @@ if(!isset($tmp) || $tmp==0){
             </div>
          </div>
          <hr style='margin-top:30px;margin-bottom:30px'>
+         
+
          <h2 id=calendari>CALENDARI 2021</h2>
          <div class='ccmes'>
             <div class='cmes'>
@@ -179,12 +183,15 @@ if(!isset($tmp) || $tmp==0){
 
 
 
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2257547387367!2d2.962496515453574!3d42.27370407919278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1ses!2ses!4v1636656220172!5m2!1ses!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <br><br><br><br><br>
       </div>
       <div class="footerpr">
         
       </div>
       <?php include 'footerprim.php';?>
    </body>
+   
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>

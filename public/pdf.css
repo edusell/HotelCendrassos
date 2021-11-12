@@ -1,0 +1,44 @@
+body{
+    height: 290mm;
+    width: 210mm;
+    border: 1px solid black;
+}
+.header{
+    width: 100%;
+
+    text-align: center;
+
+}
+p{
+    text-align: center;
+}
+hr{
+width: 60%;
+}
+
+.info{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+}
+table{
+    text-align: left;
+}
+td{
+    padding-left: 20px;
+}
+th{
+    float: right;
+}
+.r{
+  
+width: 100%;
+min-height: 200px;
+}
+.r p{
+    text-align: left;
+}
+ul{
+    padding-left: initial;
+}

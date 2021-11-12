@@ -5,7 +5,6 @@
          <a href="index.php?r=contacte">CONTACTE</a>
 
 
-
          <?php
          session_start();
      
@@ -27,13 +26,12 @@
          
 </div>
 <div class="cambicontrasenya " id="contrasenya1">
-        <ul>
-          <a href="index.php?r=tanca_sesio">Tancasesio <img src="logos\menu\logout.png" width="20px" heigth="20px"></a>
-          <a href="index.php?r=tanca_sesio">Perfil <img src="logos\menu\logout.png" width="20px" heigth="20px"></a>
-        </ul>
+  <div class='visible_logout'>
+          <a class='user' href="index.php?r=tanca_sesio"><div class='log'><img src="logos\admin_icon\sortir.svg" width="30px" heigth="30px">&nbsp;&nbsp;Tancasesio </div></a>
+         <a class='user' href="index.php?r=tanca_sesio"> <div class='log'><img src="logos\admin_icon\infouser.svg" width="30px" heigth="30px">&nbsp;&nbsp;Perfil </div></a>
+          <a  class='user' href="index.php?r=tanca_sesio"><div class='log'><img src="logos\admin_icon\key-fill.svg" width="30px" heigth="30px">&nbsp;&nbsp;Cambiar Contrasenya</div> </a>
+  </div>      
 </div>
-
-
       <script>
         const button = document.getElementById('contrasenya1');
         const logo = document.getElementById('logat');
@@ -47,6 +45,7 @@
 });
 button1.addEventListener('mouseover', () => {
         button1.style.display = 'block';
+        button1.style.transition = "all 2s";
 });
 button.addEventListener('mouseleave', () => {
         button.style.display = 'none';
@@ -55,6 +54,7 @@ button.addEventListener('mouseleave', () => {
 
 logo.addEventListener('mouseleave', () => {
         button.style.display = 'none';
+        button.style.transition = "all 2s";
 });
 
 function tanca_Sesio(){

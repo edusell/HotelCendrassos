@@ -325,7 +325,7 @@ class adminpdo
             ':data'=> $data
         ]);
 
-        return 'hols';
+        return '';
     }
     public function nofesta($data){
         $query = 'DELETE FROM calendari WHERE data_in_tencament = :data ;';
@@ -334,7 +334,16 @@ class adminpdo
             ':data'=> $data
         ]);
 
-        return 'hols';
+        return '';
+    }
+    public function pdf($id){
+        $query = ' select r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida,r.preu, u.nom,u.cognom,u.tel,u.correu,u.DNI, h.id_habitacio,t.nom_tipus, t.m_tipus, t.serveis_tipus, t.desc_tipus, t.preu as preutipus, t.imatge FROM reserva r, usuari u,reservahabitacio i,habitacio h,tipushabitacio t WHERE r.id_reserva= :id AND r.DNI=u.DNI AND r.id_reserva=i.id_reserva AND i.id_habitacio=h.id_habitacio AND h.id_tipus_habitacio=t.id_tipus;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id'=> $id
+        ]);
+
+        return $stm->fetchALL(\PDO::FETCH_ASSOC);
     }
     
 

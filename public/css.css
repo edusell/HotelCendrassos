@@ -44,7 +44,7 @@ width: 100%;
   background: #dbdbdb; 
 }
 
-.serveis::before{
+/*.serveis::before{
   z-index: -10;
   position: absolute;
   top: 0;
@@ -57,20 +57,15 @@ width: 100%;
 
   clip-path: circle( 20% at left 50%);
 
-}
-/*.boles::after{
-  z-index: -10;
-  position: absolute;
-  top: 0;
-  height: 0;
-  width: 100%;
-  height: 100%;
-  content: " ";
-  background: linear-gradient(rgb(76, 0, 255),rgb(255, 30, 0));
-  clip-path: circle(30% at left 90%);
 }*/
-/*FOOTER PRINCIPAL*/
+.cercle{
+  width: 100%;
 
+  clip-path: circle( 40% at left 50%);
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+}
 
 /*CALENDARI*/
 .ccmes{
@@ -201,11 +196,11 @@ transition: 0.5s;
   justify-content: center;
   width: 100%;
   
-  background-color:rgba(255, 255, 255, 0);
+  background-color:transparent;
 }
 .habitacions{
   width: 100%;
-  background-color: rgb(76, 76, 78);
+  background-color: transparent;
   height: 50px;
   color: whitesmoke;
   text-align: center;
@@ -274,10 +269,10 @@ hr{
   
 }
 .sobrenos{
- 
   width: 50%;
   padding: 30px;
   border-radius: 20px;
+  backdrop-filter: blur(5px);
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.5),
   inset -5px -5px 15px rgba(255, 255, 255, 0.5),
    5px 5px 15px rgba(0, 0, 0, 0.5),
@@ -300,8 +295,8 @@ hr{
   
 }
 .servei{
-  
-  width: 300px;
+
+  width: 25%;
   height: 400px;
   margin: auto;
   background-position: center;
@@ -315,18 +310,6 @@ hr{
   overflow: hidden;
 
 }
-/*#servei{
-  background-image: url(img/serveis/piscina.jpg);
-}
-#servei1{
-  background-image: url(img/serveis/parking.jpg);
-}
-#servei2{
-  background-image: url(img/serveis/bar.jpg);
-}
-#servei3{
-  background-image: url(img/serveis/spa.jpg);
-}*/
 .piscina{
   width: 100%;
   height: 100%;
@@ -344,8 +327,8 @@ hr{
 
 /*SUBMENU PG PRINCIPAL*/
 .sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  /*position: -webkit-sticky;
+  position: sticky;*/
   top: -1px;
   background-color: rgb(77, 77, 77);
   height: 50px;
@@ -573,15 +556,16 @@ a{
     justify-content: center;
     width: 100%;
     height: 400px;
-    background-color:rgb(76, 76, 78);
+    background-color:rgb(94, 94, 94);
 }
 .tipus_habitacions{
-    margin-top: 4%;
+    margin-top: 30px;
     width: 80%;
     height: 350px;
     background-color: rgb(143, 143, 146);
-    padding-left: 50px;
-    padding-top: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 20px;
     
 }
 .tipus_habitacions h3{
@@ -595,6 +579,7 @@ a{
     padding-right: 10px;
 }
 .container_imatges_habitacions{
+  height: 85%;
     display: flex;
     flex-direction: column row;
     gap: 15px;
@@ -603,7 +588,7 @@ a{
 .text{
     font-size: 1.2em;
     width: 90%;
-    height: 400px;
+    height: 100%;
     text-align: justify;
     justify-content: flex-end;
 }
@@ -615,7 +600,10 @@ a{
     position: relative;
     border-radius: 10px 10px;
     align-items: center; 
+    justify-content: center;
     gap:10px; 
+    bottom: 0px;
+    margin-bottom: 5px;
 }
 
 .especificacions img{
@@ -629,31 +617,54 @@ a{
 .preu{
     background-color: rgb(4, 116, 19);
     width: 100px;
-    height: 100px;
+    height: auto;
     float: right;
     text-align: center;
-    border-radius: 10px 10px;  
+    border-radius: 5px;  
     color: black;
     font-size: 1.5em;
     font-weight: bold;
+    margin: 5px;
 }
 .boto{
-    float: left;
+    float: right;
     width: 120px;
-    height: 50px;
+    height: auto;
     text-align: center;
     color: black;
     font-size: 1.5em;
     font-weight: bold;
-    margin-left: 10%;
-    margin-top: 3%;
     background-color: rgb(117, 17, 4);
-    border-radius: 10px;
+    border-radius: 5px;
+    margin: 5px;
 }
-.boto:hover{
-    width: 140px;
-    height: 60px;
+.esp_habitacions{
+bottom: 0px;
 }
+#separador-habitacions{
+  margin-top: 20px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: -100px;
+  background-color: rgba(94, 94, 94,0.3);
+  clip-path: ellipse(50% 90% at 50% 100%);
+}
+#separador-habitacions1{
+  width: 100%;
+  height: 100px;
+  margin-bottom: -100px;
+  background-color: rgb(94, 94, 94,0.6);
+  clip-path: ellipse(50% 60% at 50% 100%);
+}
+#separador-habitacions2{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(94, 94, 94);
+  clip-path: ellipse(50% 30% at 50% 100%);
+}
+
+
+
 .grid-gallery {
     display: grid;
     grid-auto-rows: 200px;
@@ -859,22 +870,37 @@ button:hover {
 }
 .cambicontrasenya{
   display: none;
-  width: 10%;
-  height: 100px;
-  background-color: rgb(255, 255, 248);
-  float: right;
+  height: auto;
+  background-color: transparent;
   z-index: 1;
   position: absolute;
   right: 0px;
-  top:40px;
+  top:10px;
   margin-right: 10px;
-  border: solid 1px black;
+  padding: 0px;
+}
+.visible_logout{
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.61);
+  border: 1px solid rgb(179, 179, 179);
+  padding: 0px;
+
 }
 .boto_contrasenya{
   border-radius: 10px;
 
 }
-
+.user:hover{
+  color: black;
+}
+.log{
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+.log:hover{
+  background-color: rgba(255, 255, 255, 0.61);
+  color: black;
+}
 .registre{
   width: auto;
   background-color: #686868;
@@ -970,7 +996,6 @@ padding-top: 30%;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 /*GALERIA*/
 .grid-gallery {
   margin-top: 20px;
@@ -999,31 +1024,31 @@ padding-top: 30%;
   }
 }
 
-.grid-gallery__item:nth-child(11n+1) {
+.grid-galleryitem:nth-child(11n+1) {
   grid-column: span 1;
 }
 
-.grid-gallery__item:nth-child(11n+4) {
+.grid-galleryitem:nth-child(11n+4) {
   grid-column: span 2;
   grid-row: span 1;
 }
 
-.grid-gallery__item:nth-child(11n+6) {
+.grid-galleryitem:nth-child(11n+6) {
   grid-column: span 3;
   grid-row: span 1;
 }
 
-.grid-gallery__item:nth-child(11n+7) {
+.grid-galleryitem:nth-child(11n+7) {
   grid-column: span 1;
   grid-row: span 2;
 }
 
-.grid-gallery__item:nth-child(11n+8) {
+.grid-galleryitem:nth-child(11n+8) {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-.grid-gallery__item:nth-child(11n+9) {
+.grid-galleryitem:nth-child(11n+9) {
   grid-row: span 3;
 }
 
@@ -1043,5 +1068,12 @@ padding-top: 30%;
   width: 40px;
   background-color: #ffffffb4;
   border: 1px solid white;
+}
+
+/*habitacions inici*/
+.habitacionsinici{
+  height: 200px;
+  width: 100%;
+  background-color: rgb(18, 18, 24);
 }
 

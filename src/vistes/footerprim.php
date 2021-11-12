@@ -1,4 +1,4 @@
-<footer class="footer_login">
+<!--<footer class="footer_login">
 PLITICA DE COOCKIES    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  PLITICA DE PRIVACITAT
 
     <div class="logos_login">
@@ -8,4 +8,4 @@ PLITICA DE COOCKIES    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  PLITIC
         <img src="logos\footer\instagram_logo.png" alt="..." width="20" height="20">
         </div>
 
-</footer>
+</footer>-->

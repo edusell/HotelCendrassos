@@ -1,6 +1,6 @@
 <?php
    include 'roladmin.php';
-   ?>
+   ?> 
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -16,7 +16,7 @@
       <div class='pagina'>
         <div class='estructura' style='padding-top: 70px; margin-left:20px; width:98%;'>
                <h3>RESERVES</h3>
-               <form id="reserves" action="index.php" method="get" class='reserves' style='max-height: 600px'>
+               <form id="reserves" action="index.php" method="get" class='reserves' style='height: 300px'>
                <input type="hidden" name='r' value='borrreserva'>
                   <table id='taulareserves' style=' max-heigth: 600px;'>
                      <tr class='header'A>
@@ -44,10 +44,12 @@
                   </table>
                </form>
                <button type='submit' form='reserves'>Borrar</button>
-               <form></form>
-               <input type="file" id="myFile" name="imatge" class='hidebut' required>
                </form>
-               <button onclick='addimage()' type='submit'>PENJA</button>
+               <form id='addimage' action='index.php' method='POST'  enctype="multipart/form-data">
+                  <input type="hidden" name=r value='afegirimatge'>
+                  <input type="file" id="myFile" name="imatge" class='hidebut' required>
+               </form>
+               <button form='addimage' type='submit'>PENJA</button>
                <br><br>
                     </div>
 

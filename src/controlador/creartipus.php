@@ -5,7 +5,7 @@ function ctrlcreartipus($peticio, $resposta, $imatges){
 
     $reserva = new \Daw\adminpdo($config["db"]);
     //$img = $_REQUEST['imatge'];
-    $directori = $_FILES['imatge']['name'];
+    $directori = $_FILES['imatge']['name']; 
     $m = $_REQUEST['m'];
     $omax = $_REQUEST['omax'];
     $preu = $_REQUEST['preu'];

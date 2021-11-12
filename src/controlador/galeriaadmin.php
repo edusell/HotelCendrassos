@@ -6,4 +6,4 @@ function ctrlgaleriaadmin($peticio, $resposta, $imatges){
     $resposta->SetTemplate("galeriaadmin.php");
 
     return $resposta; 
-}
+} 

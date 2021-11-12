@@ -29,6 +29,10 @@ include "../src/controlador/retornar_valors_client.php";
 include "../src/controlador/festa.php";
 include "../src/controlador/registre.php";
 include "../src/controlador/galeriaadmin.php";
+include "../src/controlador/pdf.php";
+include "../src/controlador/afegirimatge.php";
+
+include "../src/middleware/middleware.php";
 
 
 
@@ -45,17 +49,17 @@ $resposta = new Daw\Resposta();
 if ($r == "") {
     $resposta = ctrlPortada($peticio, $resposta, $imatges);
 } else if($r == "admin"){
-    $resposta = ctrlAdmin($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdmin");
 } else if($r == "habitacions"){
     $resposta = ctrlHabitacio($peticio, $resposta, $imatges);
 }else if($r == "adminusuari"){
-    $resposta = ctrlAdminusuari($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdminusuari");
 }else if($r == "adminreserva"){
-    $resposta = ctrlAdminreserva($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdminreserva");
 }else if($r == "admincalendari"){
-    $resposta = ctrlAdmincalendari($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdmincalendari");
 }else if($r == "adminhabitacio"){
-    $resposta = ctrlAdminhabitacio($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdminhabitacio");
 }else if($r == "galeria"){
     $resposta = ctrlGaleria($peticio, $resposta, $imatges);
 }else if($r == "login"){
@@ -63,40 +67,45 @@ if ($r == "") {
 } else if($r == "recerca"){
     $resposta = ctrlRecerca($peticio, $resposta, $imatges);
 }  else if($r == "borrreserva"){
-    $resposta = ctrlborrreserva($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlborrreserva");
 } else if($r == "borrartipus"){
-    $resposta = ctrlborrtipus($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlborrtipus");
 }  else if($r == "creartipus"){
-    $resposta = ctrlcreartipus($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlcreartipus");
 } else if($r == "crearusuariadmin"){
-    $resposta = ctrlcrearusuariadmin($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlcrearusuariadmin");
 }else if($r == "dologin"){
     $resposta = ctrLogin($peticio, $resposta, $imatges);
 }else if($r == "usuari"){
     $resposta = ctrPanellusuari($peticio, $resposta, $imatges);
 }else if($r == "rmuser"){
-    $resposta = ctrrmuser($peticio, $resposta, $imatges);
-} else if($r == "creardept"){
-    $resposta = ctradddept($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrrmuser");
+} else if($r == "creardept"){ 
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctradddept");
 }else if($r == "borrardept"){
-    $resposta = ctrldropdept($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrldropdept");
 }else if($r == "tanca_sesio"){
     $resposta = ctrltancasesio($peticio, $resposta, $imatges);
 }else if($r == "borrarhabitacio"){
-    $resposta = ctrldrophabitacio($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrldrophabitacio");
 }else if($r == "crearhabitacio"){
-    $resposta = ctrladdhabitacio($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrladdhabitacio");
 }else if($r == "cambiacontrasenya"){
     $resposta = ctrlcambiacontrasenya($peticio, $resposta, $imatges);
 }else if($r == "modificadades"){
     $resposta = ctrlmodificadades($peticio, $resposta, $imatges);
 }else if($r == "festa"){
-    $resposta = ctrlfesta($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlfesta");
 }else if($r == "registre"){
     $resposta = ctrlregistre($peticio, $resposta, $imatges);
 }else if($r == "galeriaadmin"){
-    $resposta = ctrlgaleriaadmin($peticio, $resposta, $imatges);
-}
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlgaleriaadmin");
+}else if($r == "pdf"){
+    $resposta = ctrlpdf($peticio, $resposta, $imatges);
+} else if($r == "afegirimatge"){
+    $resposta = ctrladdimage($peticio, $resposta, $imatges);
+} 
+
 
 
 $resposta->resposta();

@@ -196,7 +196,13 @@ if(!isset($tmp) || $tmp==0){
        element.classList.toggle('llum');
        $('#clar').attr('src','logos/admin_icon/moon.svg');
        $('.ligth').attr('onclick','fosc()');
-       $('h1').css('color','black')";
+       $('h1').css('color','black');
+   $('h2').css('color','black');
+   $('a').css('color','white');
+   $('.sticky').css('background-color','rgb(137, 137, 137)');
+   $('.sobrenos').css('color','black');
+   $('.cmes').css('color','black');
+   $('td').css('border','1px solid black');";
        
    }
     ?>
@@ -212,6 +218,8 @@ function clar() {
    $('a').css('color','white');
    $('.sticky').css('background-color','rgb(137, 137, 137)');
    $('.sobrenos').css('color','black');
+   $('.cmes').css('color','black');
+   $('td').css('border','1px solid black');
    document.cookie = "mode=1";
   
 
@@ -222,10 +230,12 @@ function fosc(){
    $('#clar').attr('src','logos/admin_icon/sun-fill.svg');
    $('.ligth').attr('onclick','clar()');
    $('h1').css('color','white');
-   $('h2').css('color','black');
+   $('h2').css('color','white');
    $('a').css('color','white');
    $('.sticky').css('background-color','rgb(77, 77, 77)');
    $('.sobrenos').css('color','white');
+   $('.cmes').css('color','white');
+   $('td').css('border','1px solid white');
    document.cookie = "mode=0";
 
 }

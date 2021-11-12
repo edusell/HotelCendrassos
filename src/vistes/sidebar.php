@@ -8,4 +8,5 @@
         <a href="index.php?r=adminreserva" class='menuesquerra <?php if($r=='adminreserva'){print 'actiu';} ?>'>&nbsp&nbsp<img src="logos/admin_icon/reserves.png" width='25px'><div>&nbsp&nbsp RESERVES</div></a>
         <a href="index.php?r=admincalendari" class='menuesquerra <?php if($r=='admincalendari'){print 'actiu';} ?>'>&nbsp&nbsp<img src="logos/admin_icon/calendari.png" width='25px'><div>&nbsp&nbsp CALENDARI</div></a>
         <a href="index.php?r=adminhabitacio" class='menuesquerra <?php if($r=='adminhabitacio'){print 'actiu';} ?>'>&nbsp&nbsp<img src="logos/admin_icon/room.png" width='25px'><div>&nbsp&nbsp HABITACIONS</div></a>
+        <a href="index.php?r=galeriaadmin" class='menuesquerra <?php if($r=='galeriaadmin'){print 'actiu';} ?>'>&nbsp&nbsp<img src="logos/admin_icon/images.png" width='25px'><div>&nbsp&nbsp GALERIA</div></a>
       </div>

@@ -7,6 +7,9 @@ $arribada=$_REQUEST['arribada_hotel'];
 $sortida=$_REQUEST['sortida_hotel'];*/
 $data = $_REQUEST['daterange'];
 $ocupants=$_REQUEST['ocupants'];
+$dates=explode('-',$data);
+print_r($dates);
+die();
 ?>
 <!DOCTYPE html>
 <html lang="en">

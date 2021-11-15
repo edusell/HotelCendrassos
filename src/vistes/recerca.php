@@ -1,10 +1,11 @@
 <?php
-if(!isset($_REQUEST['arribada_hotel'],$_REQUEST['sortida_hotel'],$_REQUEST['ocupants'])){
-    header('Location: pagina_principal.php');
+/*if(!isset($_REQUEST['arribada_hotel'],$_REQUEST['sortida_hotel'],$_REQUEST['ocupants'])){
+    header('Location: index.php');
 }
 
 $arribada=$_REQUEST['arribada_hotel'];
-$sortida=$_REQUEST['sortida_hotel'];
+$sortida=$_REQUEST['sortida_hotel'];*/
+$data = $_REQUEST['daterange'];
 $ocupants=$_REQUEST['ocupants'];
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ $ocupants=$_REQUEST['ocupants'];
 <body class='recerca'>
 <?php include 'menu.php'; ?>
         <div class="habitacions"> 
-            <?= 'DATA ENTRADA:'.$arribada.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
+            <?= $data.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
         </div>
         <div>
 

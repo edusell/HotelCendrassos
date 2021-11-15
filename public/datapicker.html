@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+
+.container {
+    padding-top: 120px;
+    padding-bottom: 120px
+}
+
+label {
+    font-size: 18px
+}
+
+input {
+    padding: 10px 15px !important;
+    border: 1px solid #CFD8DC !important;
+    border-radius: 4px !important;
+    box-sizing: border-box;
+    background-color: #fff !important;
+    color: #000 !important;
+    font-size: 16px !important;
+    letter-spacing: 1px;
+    position: relative;
+    width: 20%
+}
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #FFA000 !important;
+    outline-width: 0
+}
+
+.daterangepicker {
+    background-color: #fff;
+    border-radius: 0 !important;
+    align-content: center !important;
+    padding: 0 !important
+}
+
+thead tr:nth-child(2) {
+    color: #BDBDBD !important
+}
+
+tbody tr td {
+    padding: 5px 0px 7px !important
+}
+
+.month {
+    font-size: 16px !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important
+}
+
+.start-date,
+.end-date {
+    border-radius: 0px !important
+}
+
+.available:hover {
+    border-radius: 0px !important
+}
+
+.off {
+    color: #EEEEEE !important
+}
+
+.off:hover {
+    background-color: #EEEEEE !important;
+    color: #fff !important
+}
+
+.drp-buttons {
+    display: none !important
+}
+</style>
+<body>
+   
+    <div class="container px-1 px-sm-5 mx-auto">
+        <form autocomplete="off">
+            <div class="flex-row d-flex justify-content-center">
+                <div class="col-xl-5 col-lg-6 col-11 px-1">
+                    <div class="input-group input-daterange"> <label class="">Select Date Range :</label> <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly /> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+$(function() {
+$('input[name="daterange"]').daterangepicker({
+"startDate": "01/01/2020",
+"endDate": "17/01/2020",
+opens: 'center',
+locale: {
+format: 'DD/MM/YYYY'
+}
+});
+});
+});
+</script>
+</html>

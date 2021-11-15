@@ -35,6 +35,8 @@ include "../src/controlador/galeriaadmin.php";
 include "../src/controlador/pdf.php";
 include "../src/controlador/afegirimatge.php";
 include "../src/controlador/chatadmin.php";
+include "../src/controlador/edita.php";
+include "../src/controlador/contacte.php";
 
 include "../src/middleware/middleware.php";
 
@@ -114,6 +116,10 @@ if ($r == "") {
     $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrldelimage");
 }  else if($r == "chatadmin"){
     $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlchat");
+} else if($r == "edita"){
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "edita");
+} else if($r == "contacte"){
+    $resposta = ctrlcontacte($peticio, $resposta, $imatges);
 } 
 
 

@@ -1,11 +1,21 @@
-<!--<footer class="footer_login">
-PLITICA DE COOCKIES    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  PLITICA DE PRIVACITAT
-
-    <div class="logos_login">
-        <img src="logos\footer\twiter_logo.png" alt="..." width="20" height="20">
-        <img src="logos\footer\facebook_logo.png" alt="..." width="20" height="20">
-        <img src="logos\footer\youtube_logo.png" alt="..." width="20" height="20">
-        <img src="logos\footer\instagram_logo.png" alt="..." width="20" height="20">
-        </div>
-
-</footer>-->
+<footer>
+    <div class='footerprimer'>
+        <img src="logos/logo-hotel.png" alt="" width='60px'><br>
+        <b>HOTELCENDRASSOS.COM</b>
+    </div>
+    <div class='footersegon'>
+        <a href="index.php">INICI</a>
+        <a href="index.php?r=habitacions">HABITACIONS</a>
+        <a href="index.php?r=galeria">GALERIA</a>
+        <a href="index.php?r=contacte">CONTACTE</a>
+    </div>
+    <div class='footertres'>
+        <a href="s"></a><div class='ins'></div>
+        <a href="s"></a><div class='fc'></div>
+        <a href="s"></a><div class='tw'></div>
+        <a href="s"></a><div class='wp'></div>
+    </div>
+    <div class='footerlast'>
+        <p>Eimantas Milkintas i Eduard Sellas, 2DAW</p>
+    </div>
+</footer>

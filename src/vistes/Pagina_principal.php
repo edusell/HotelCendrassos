@@ -1,3 +1,9 @@
+<?php
+      $data_avui = date("d/m/Y");
+      $Date = date("d-m-Y");
+      $tmp= date('d-m-Y', strtotime($Date. ' + 5 days'));
+      $datasort = date("d/m/Y", strtotime($tmp)); 
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -8,17 +14,24 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       <link href="css.css"rel="stylesheet" type="text/css">
       <link href="mcss.css"rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
       <title>Document</title>
-      <?php $data_avui = date("Y-m-d");?>
    </head>
-   <body  class='boles'>
+
+
+   <body>
+      <!--menu-->
       <?php include('menu.php'); ?>
+
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-inner">
-            <div class="carousel-item active" style='transition: transform 3s ease, opacity .8s ease-out'>
+            <div class="carousel-item active" style='transition: transform 3s ease, opacity .3s ease-out'>
             <img src="logos\slider_menu_principal\piscina1.jpg" class="d-block w-100 slider" alt="...">
             </div>
-            <div class="carousel-item" style='transition: transform 3s ease, opacity .8s ease-out'>
+            <div class="carousel-item" style='transition: transform 3s ease, opacity .3s ease-out'>
             <img src="logos\slider_menu_principal\hotel1.jpg" class="d-block w-100 slider" alt="...">
             </div>
          </div>
@@ -27,8 +40,9 @@
                <input type="hidden" name="r" value='recerca'>
                <span id='hotel'>HOTEL</span><br>
                <span id='hotel'>CENDRASSOS</span>
-               <label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" onchange='datasortida()' required></label>
-               <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>"  max="2100-12-31"></label>
+               <label>Dates:<br> <input id='datarange' type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly/></label>
+               <!--<label> Data arribada <br><input type="date" id="arribada" name="arribada_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>" max="2100-12-31" onchange='datasortida()' required></label>
+               <label> Data sortida  <br><input type="date" id="sortida" name="sortida_hotel" value="<?php echo $data_avui?>" min="<?php echo $data_avui?>"  max="2100-12-31"></label>-->
                <label> Ocupants  <br><input type="number" id="ocupants" name="ocupants"min="1" max="6" required></label>
                <button >Reserva</button>
             </form>
@@ -57,7 +71,7 @@ if(!isset($tmp) || $tmp==0){
          <div class='nosaltres'>
             <div class='sobrenos'>
                <br>
-            <h2>BENVINGUT A HOTEL CENDRASSOS</h2>
+            <h2 class='logo-1'>BENVINGUT A HOTEL CENDRASSOS</h2>
            
             <p>
             Tot el que fem a cada espai dels nostres hotels està dissenyat per donar-li la benvinguda per part de la nostra comunitat. 
@@ -104,9 +118,7 @@ if(!isset($tmp) || $tmp==0){
             </div>
          </div>
          <hr style='margin-top:30px;margin-bottom:30px'>
-         
-
-         <h2 id=calendari>CALENDARI 2021</h2>
+          <h2 id=calendari>CALENDARI 2021</h2>
          <div class='ccmes'>
             <div class='cmes'>
                          <P>GENER</P>
@@ -182,19 +194,17 @@ if(!isset($tmp) || $tmp==0){
          </div>
 
 
-
+<?= $data_avui ?>
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2257547387367!2d2.962496515453574!3d42.27370407919278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1ses!2ses!4v1636656220172!5m2!1ses!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <br><br><br><br><br>
       </div>
-      <div class="footerpr">
-        
-      </div>
-      <?php include 'footerprim.php';?>
+      
+      
+</div>
+<?php include 'footerprim.php';?>
    </body>
-   
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>
+    
+
           <?php
 if(!isset($tmp) || $tmp==0){
     
@@ -209,7 +219,9 @@ if(!isset($tmp) || $tmp==0){
    $('.sticky').css('background-color','rgb(137, 137, 137)');
    $('.sobrenos').css('color','black');
    $('.cmes').css('color','black');
-   $('td').css('border','1px solid black');";
+   $('td').css('border','1px solid black');
+   $('.sobrenos').css('border','2px solid grey');
+   $('hr').css('background-color','black');";
        
    }
     ?>
@@ -222,9 +234,11 @@ function clar() {
    $('.ligth').attr('onclick','fosc()');
    $('h1').css('color','black');
    $('h2').css('color','black');
+   $('hr').css('background-color','black');
    $('a').css('color','white');
    $('.sticky').css('background-color','rgb(137, 137, 137)');
    $('.sobrenos').css('color','black');
+   $('.sobrenos').css('border','2px solid grey');
    $('.cmes').css('color','black');
    $('td').css('border','1px solid black');
    document.cookie = "mode=1";
@@ -241,12 +255,27 @@ function fosc(){
    $('a').css('color','white');
    $('.sticky').css('background-color','rgb(77, 77, 77)');
    $('.sobrenos').css('color','white');
+   $('.sobrenos').css('border','2px solid white');
    $('.cmes').css('color','white');
-   $('td').css('border','1px solid white');
+   $('hr').css('background-color','white');
+   $('td').css('border','1px solid rgb(168, 168, 168)');
    document.cookie = "mode=0";
 
 }
 
+$(document).ready(function(){
+$(function() {
+$('input[name="daterange"]').daterangepicker({
+"startDate": "<?= $data_avui ?>",
+"endDate": "<?= $datasort ?>",
+"minDate": "<?= $data_avui ?>",
+opens: 'center',
+locale: {
+format: 'DD/MM/YYYY'
+}
+});
+});
+});
 
 
 
@@ -383,32 +412,32 @@ function fosc(){
 <script type="text/javascript">
 
 	VanillaTilt.init(document.querySelector("#servei"), {
-		max: 10,
-		speed: 400,
+		max: 20,
+		speed: 300,
         reverse:  true,
         glare: true,
         "max-glare": 0.2,
        
 	});
    VanillaTilt.init(document.querySelector("#servei1"), {
-		max: 10,
-		speed: 400,
+		max: 20,
+		speed: 300,
         reverse:  true,
         glare: true,
         "max-glare": 0.2,
        
 	});
    VanillaTilt.init(document.querySelector("#servei2"), {
-		max: 10,
-		speed: 400,
+		max: 20,
+		speed: 300,
         reverse:  true,
         glare: true,
         "max-glare": 0.2,
        
 	});
    VanillaTilt.init(document.querySelector("#servei3"), {
-		max: 10,
-		speed: 400,
+		max: 20,
+		speed: 300,
         reverse:  true,
         glare: true,
         "max-glare": 0.2,

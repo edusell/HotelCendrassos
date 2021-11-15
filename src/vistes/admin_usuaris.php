@@ -26,7 +26,11 @@
                   <div id='habitacions' class='reserves'>                 
                      <table style='overflow-y: scroll;' id='taulareserves'>
                      <form id="rmusuari" action="index.php" method="post" class='reserves'>
-                     <input type='hidden' name='r' value='rmuser'>
+                     <input id='formuser' type='hidden' name='r' value='rmuser'>
+                     <input type='hidden' name='e' value='usuari'>
+                     <input type='hidden' name='o' value='adminusuari'>
+                     
+
                         <tr class='header'A>
                            <td></td>
                            <td>DNI</td>
@@ -39,21 +43,24 @@
                            <td>contrasenya</td>
                         </tr>
                         <?php
+                        $i=1;
                            foreach($llistar_usuaris as $row){
                                print "<tr>";
-                               print "<td><input type='checkbox' name='usuaris[]' value='".$row['DNI']."'></td>";
+                               print "<td><input id='i".$i."' type='checkbox' name='usuaris[]' value='".$row['DNI']."' class='Checked'></td>";
                                print "<td>".$row['DNI']."</td>";
-                               print "<td>".$row['Nom']."</td>";
-                               print "<td>".$row['Cognom']."</td>";
-                               print "<td>".$row['tel']."</td>";
-                               print "<td>".$row['correu']."</td>";
+                               print "<td><input class='i".$i."' type='text' name='nom[]' value='".$row['Nom']."' disabled></td>";
+                               print "<td><input class='i".$i."' type='text' name='cognom[]' value='".$row['Cognom']."' disabled></td>";
+                               print "<td><input class='i".$i."' type='number' maxlength='9' minlength='9' name='tel[]' value='".$row['tel']."' disabled></td>";
+                               print "<td><input class='i".$i."' type='text' name='correu[]' value='".$row['correu']."' disabled></td>";
                                print "<td>".$row['nom_departament']."</td>";
                                print "<td>".$row['username']."</td>";
                                print "<td>**********</td>";
                                print "<tr>";
+                               $i++;
                            }
                            
                            ?>
+
                   </form>
                   <!--FROMULARI INTRODUIR USUARI -->
                   <form id='registre' action="index.php" method='post' novalidate>
@@ -96,6 +103,7 @@
                   </form>
                   </table>
                     </div>
+                    <button onclick='editausuari()' form='rmusuari'>Edita</button>
                   <button form='rmusuari' type='submit'>Borrar</button>
                   <button id='crearusuariinput' onclick='crearusuari()'>Crear</button>
                   <button onclick="validar()" id='hidebut'>Enviar</button>
@@ -114,15 +122,20 @@
                            <td>descripcio</td>
                         </tr>
                         <form id='borrardept' action='index.php' method='post'>
-                          <input type="hidden" name='r' value='borrardept' >
+                          <input id='formdept' type="hidden" name='r' value='borrardept' >
+                          <input type='hidden' name='e' value='dept'>
+                          <input type='hidden' name='o' value='adminusuari'>
+
                            <?php
+                           $i=0;
                               foreach($llistar_depts as $row){
                                  print "<tr>";
-                                 print "<td><input type='checkbox' name='ids[]' value='".$row['id_departament']."'></td>";
+                                 print "<td><input id='p".$i."' type='checkbox' name='ids[]' value='".$row['id_departament']."' class='Checked'></td>";
                                  print "<td>".$row['id_departament']."</td>";
-                                 print "<td>".$row['nom_departament']."</td>";
-                                 print "<td>".$row['descripcio_departament']."</td>";
+                                 print "<td><input class='p".$i."' type='text' name='nom[]' value='".$row['nom_departament']."' disabled></td>";
+                                 print "<td><input class='p".$i."' type='text' name='desc[]' value= \" ".$row['descripcio_departament']." \"  disabled></td>";
                                  print "<tr>";
+                                 $i++;
                               }
                               
                               ?>
@@ -137,6 +150,7 @@
                         </form>
                      </table>
                   </div>
+                  <button onclick='editadept()' form='borrardept'>Edita</button>
                   <button type='submit' form='borrardept'>Borrar</button>
                   <button id='creardeptbut' onclick='creardept()'>Crear</button>
                   <button form='creardept' id='hidebutdept'>Enviar</button>
@@ -155,6 +169,32 @@
       $("#hidedept").css("visibility", "hidden");
       $("#hidebutdept").css("visibility", "hidden");
       $("#creardeptbut").css("visibility", "visible");
+
+      function editausuari(){
+        $("#formuser").val("edita");
+      }
+      function editadept(){
+        $("#formdept").val("edita");
+      }
+
+
+
+
+      $checkbox = $('.Checked');
+
+    $checkbox.click(checkArray);
+
+    function checkArray(){
+    var chkArray = [];
+    chkArray = $.map($checkbox, function(el){
+        if(el.checked) { 
+          $("."+el.id).prop('disabled', false);
+          return el.id }
+        else{ 
+          $("."+el.id).prop('disabled', true);
+          return el.id };
+    });
+    }
        
        
         function crearusuari(){

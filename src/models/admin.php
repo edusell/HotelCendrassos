@@ -345,6 +345,43 @@ class adminpdo
 
         return $stm->fetchALL(\PDO::FETCH_ASSOC);
     }
+
+    public function editausuari($dni,$nom,$cognom,$tel,$correu){
+        $query = 'update usuari set Nom= :nom , Cognom= :cognom , tel= :tel, correu= :correu where DNI= :dni ;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':dni'=> $dni,
+            ':nom'=> $nom,
+            ':cognom'=> $cognom,
+            ':tel'=> $tel,
+            ':correu'=> $correu
+        ]);
+
+        return '';
+    }
+    public function editdept($id,$nom,$desc){
+        $query = 'update departament set nom_departament= :nom , descripcio_departament= :desc where id_departament= :id ;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id'=> $id,
+            ':nom'=> $nom,
+            ':desc'=> $desc
+        ]);
+        return '';
+    }
+    public function edittipus($id,$m,$ocup,$preu,$nom,$desc){
+        $query = 'update tipushabitacio set m_tipus= :m , ocupants_tipus= :ocup , preu= :preu , nom_tipus= :nom , desc_tipus= :desc where id_tipus= :id ;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id'=> $id,
+            ':nom'=> $nom,
+            ':desc'=> $desc,
+            ':m'=> $m,
+            ':ocup'=> $ocup,
+            ':preu'=> $preu
+        ]);
+        return '';
+    }
     
 
   

@@ -14,8 +14,13 @@ function ctrlRecerca($peticio, $resposta, $imatges){
         
         
     }else{*/
-    $entrada = $_REQUEST['arribada_hotel'];
-    $sortida = $_REQUEST['sortida_hotel'];
+    
+    $data = $_REQUEST['daterange'];
+    
+    $dates =explode("-",$data);
+
+    $entrada = $dates[0];
+    $sortida = $dates[1];
     $ocupants = $_REQUEST['ocupants'];
 
     $hab = $tip_habs->reserves($entrada,$sortida,$ocupants);

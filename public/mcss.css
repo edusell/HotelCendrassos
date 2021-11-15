@@ -1,4 +1,7 @@
 @media only screen and (max-width: 500px) {
+    .mobile{
+        display: block;
+    }
     
 .containerservei {
 display: block;
@@ -92,4 +95,28 @@ hr{
 .container_tipus_habitacions {
 height: auto;
 }
+.reserva{
+    bottom: 0px;
+}
+.footerprimer{
+    padding-top: 30px;
+   text-align: center;
+   font-size: 1ch;
+  }
+
+  /*CONTACTE*/
+  .descktop{
+      display: none;
+  }
+  .contacte-m{
+      width: 90%;
+      color: white;
+  }
+
+  /*USUARI*/
+  .infousuari{
+    color: white;
+      width: 100%;
+      text-align: center;
+  }
 }

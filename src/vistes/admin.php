@@ -4,15 +4,17 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="logos/logo-hotel.png" type="image/x-icon">
       <!-- CSS only -->
       <link href="admin.css"rel="stylesheet" type="text/css">
       
       <title>Admin</title>
-   </head>
+   </head> 
    <body>
+   <?php include('sidebar.php') ?>
       <?php include('menu.php') ?>
-      <?php include('sidebar.php') ?>
-      <div class='pagina'>
+     
+      <div class='pagina'> 
       <table class='panell'>
          <tr>
             <td class='estructura'colspan='2'>
@@ -65,7 +67,7 @@
                <div id='habitacions' class='reserves'>
                      <table id='taulahabitacions'>
                         <tr class='header'>
-                           <td>
+                           <td></td>
                            <td>id</td>
                            <td>m<sup>2</sup></td>
                            <td>ocupants max</td>

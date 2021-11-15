@@ -28,8 +28,8 @@
 <div class="cambicontrasenya " id="contrasenya1">
   <div class='visible_logout'>
           <a class='user' href="index.php?r=tanca_sesio"><div class='log'><img src="logos\admin_icon\sortir.svg" width="30px" heigth="30px">&nbsp;&nbsp;Tancasesio </div></a>
-         <a class='user' href="index.php?r=tanca_sesio"> <div class='log'><img src="logos\admin_icon\infouser.svg" width="30px" heigth="30px">&nbsp;&nbsp;Perfil </div></a>
-          <a  class='user' href="index.php?r=tanca_sesio"><div class='log'><img src="logos\admin_icon\key-fill.svg" width="30px" heigth="30px">&nbsp;&nbsp;Cambiar Contrasenya</div> </a>
+         <a class='user' href="index.php?r=usuari"> <div class='log'><img src="logos\admin_icon\infouser.svg" width="30px" heigth="30px">&nbsp;&nbsp;Perfil </div></a>
+          <a  class='user' href="index.php?r=usuari"><div class='log'><img src="logos\admin_icon\key-fill.svg" width="30px" heigth="30px">&nbsp;&nbsp;Cambiar Contrasenya</div> </a>
   </div>      
 </div>
       <script>

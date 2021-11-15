@@ -402,4 +402,40 @@ P{
     float: right !important;  
    
   }
+
+  .cambicontrasenya{
+    display: none;
+    height: auto;
+    background-color: transparent;
+    z-index: 1;
+    position: absolute;
+    right: 0px;
+    top:10px;
+    margin-right: 10px;
+    padding: 0px;
+  }
+  .visible_logout{
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.61);
+    border: 1px solid rgb(179, 179, 179);
+    padding: 0px;
   
+  }
+  .boto_contrasenya{
+    border-radius: 10px;
+  
+  }
+  .user:hover{
+    color: black;
+  }
+  .log{
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+  }
+  .log:hover{
+    background-color: rgba(255, 255, 255, 0.61);
+    color: black;
+  }
+  
+  /*chat*/
+ 

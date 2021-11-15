@@ -28,14 +28,13 @@ include "../src/controlador/cambiacontrasenya.php";
 include "../src/controlador/retornar_valors_client.php";
 //include "../src/controlador/retornar_valors_client.php";
 include "../src/controlador/resumreserva.php";
-
-
-
+include "../src/controlador/borrfoto.php";
 include "../src/controlador/festa.php";
 include "../src/controlador/registre.php";
 include "../src/controlador/galeriaadmin.php";
 include "../src/controlador/pdf.php";
 include "../src/controlador/afegirimatge.php";
+include "../src/controlador/chatadmin.php";
 
 include "../src/middleware/middleware.php";
 
@@ -103,7 +102,6 @@ if ($r == "") {
     $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlfesta");
 }else if($r == "registre"){
     $resposta = ctrlregistre($peticio, $resposta, $imatges);
-
 }else if($r == "dadesreserva"){
     $resposta = ctrlresumreserva($peticio, $resposta, $imatges);
 }else if($r == "galeriaadmin"){
@@ -111,7 +109,11 @@ if ($r == "") {
 }else if($r == "pdf"){
     $resposta = ctrlpdf($peticio, $resposta, $imatges);
 } else if($r == "afegirimatge"){
-    $resposta = ctrladdimage($peticio, $resposta, $imatges);
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrladdimage");
+} else if($r == "borrfoto"){
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrldelimage");
+}  else if($r == "chatadmin"){
+    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlchat");
 } 
 
 

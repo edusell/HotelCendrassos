@@ -31,62 +31,7 @@ $ocupants=$_REQUEST['ocupants'];
         </div>
         <div>
 
-        <div id="pop_up" class="pop_up_pago">
-     
-                            <div  class="container bg-light d-md-flex align-items-center" >
-                        <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
-                            <div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span><span class="ps-1">599,00</span></div>
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center justify-content-between text mb-4"> <span>Total</span> <span class="fas fa-dollar-sign"><span class="ps-1">600.99</span></span> </div>
-                                <div class="border-bottom mb-4"></div>
-                                <div class="d-flex flex-column mb-4"> <span class="far fa-file-alt text"><span class="ps-2">Invoice ID:</span></span> <span class="ps-3">SN8478042099</span> </div>
-                                <div class="d-flex align-items-center justify-content-between text mt-5">
-                                    <div class="d-flex flex-column text"> <span>Customer Support:</span> <span>online chat 24/7</span> </div>
-                                    <div class="btn btn-primary rounded-circle"><span class="fas fa-comment-alt"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card box2 shadow-sm">
-                            <div class="d-flex align-items-center justify-content-between p-md-5 p-4"> <span class="h5 fw-bold m-0">Pagament</span>
-                                <div class="btn btn-primary bar"><span class="fas fa-bars"></span></div>
-                            </div>
-                            <ul class="nav nav-tabs mb-3 px-md-4 px-2">
-                                <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page" href="#">Tarjeta Bancaria</a> </li>
-                            </ul>
-                            <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
-                                <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div>
-                            </div>
-                            <form action="">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Tarjeta Bancaria</span>
-                                            <div class="inputWithIcon"> <input class="form-control" type="text" value="5136 1845 5468 3894"> <span class=""> <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png" alt=""></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4"> <span>Caducitat<span class="ps-1">Date</span></span>
-                                            <div class="inputWithIcon"> <input type="text" class="form-control" value="05/20"> <span class="fas fa-calendar-alt"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4"> <span>Codi CVV</span>
-                                            <div class="inputWithIcon"> <input type="password" class="form-control" value="123"> <span class="fas fa-lock"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Nom i cognom</span>
-                                            <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="valdimir berezovkiy"> <span class="far fa-user"></span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 px-md-5 px-4 mt-3">
-                                        <div class="btn btn-primary w-100">Pay $599.00</div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-            </div>
-
+        
 
 
 
@@ -168,6 +113,8 @@ $ocupants=$_REQUEST['ocupants'];
             
             foreach($disponibles as $row){
 
+               
+
                 $img = 'habitacio_familiar.jpg';
 
             
@@ -196,15 +143,9 @@ $ocupants=$_REQUEST['ocupants'];
 
                             print "<form action='index.php?r=dadesreserva' method='post'>";
                             print "<input type='hidden' name='id_tipus_habitacio' value='".$row['id_tipus_habitacio']."'>";
+                            print "<input type='hidden' name='data-entrada' value='".$arribada."'>";
+                            print "<input type='hidden' name='data-sortida' value='".$sortida."'>";
                             print"<button type='submit'><div class='boto_reserva' id='reserva1'>Reserva</div></button>";
-                            print"</form>";
-                            if(isset($resum_reserva)){
-                                print "<script>const metodo_pago = document.querySelector('#pop_up'); metodo_pago.style.display = 'block '; </script>";
-                            }
-                            
-                            
-
-
                         }
                     print"</div>";
               print"</div>";
@@ -213,11 +154,6 @@ $ocupants=$_REQUEST['ocupants'];
           }
         }catch(Exeption $e ){}
 
-        ?>
-        <?php print_r($resum_reserva)
-
-        
-        
         ?>
         </div>
         </div>

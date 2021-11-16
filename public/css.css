@@ -109,7 +109,7 @@ transition: 0.5s;
 }
 
 .preu_recerca{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(165, 165, 165);
   min-width: 100px;
   height: 50px;
   bottom: 10px;
@@ -133,7 +133,7 @@ transition: 0.5s;
   width: 100%;
   height: 2em;
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(165, 165, 165);
   position: relative;
   border-radius: 10px 10px;
   align-items: center; 
@@ -142,8 +142,8 @@ transition: 0.5s;
 }
 
 .imatges_recerca{
-  width: 90%;
-  transform: translateZ(50px);
+  width: 30%;
+  height: 100%;
 }
 
 .container_imatges_recerca{
@@ -153,11 +153,11 @@ transition: 0.5s;
 }
 .recerca_habitacions{
   margin-top: 4%;
-  width: 30%;
+  width: 90%;
   min-width: 400px;
-  height: 600px;
-  background-color: rgba(255, 255, 255, 0.555);  
-  /*backdrop-filter: blur(5px);*/
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.603);  
+  backdrop-filter: blur(5px);
   padding-left: 50px;
   padding-top: 10px;
   border-radius: 20px;
@@ -169,7 +169,7 @@ transition: 0.5s;
   scale: 0.7;
 }
 .recerca_habitacions h1{
-  transform: translateZ(50px);
+  text-align: center;
 }
 .recerca{
   background-color:rgb(76, 76, 78);
@@ -178,7 +178,6 @@ transition: 0.5s;
   background-attachment: fixed;
 }
 .container_reserva_habitacions{
-  min-height: 90vh;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -542,8 +541,10 @@ a{
     
 }
 .text{
+  float: right;
     font-size: 1.2em;
-    width: 90%;
+    width: 65%;
+    margin: auto 2% auto 2%;
     height: 100%;
     text-align: justify;
     justify-content: flex-end;

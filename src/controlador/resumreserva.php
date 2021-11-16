@@ -10,6 +10,7 @@ function ctrlresumreserva($peticio, $resposta, $imatges){
    // $id_seleccionat=$_POST['id_tipus_habitacio'];
     $arribada=$_POST['data-entrada'];
     $sortida=$_REQUEST['data-sortida'];
+    $ocupants =$_REQUEST['ocupants'];
     //$arribada1=date_format($date,'Y/m/d');
     //$sortida1=date_format($date1,'Y/m/d');
 
@@ -25,6 +26,7 @@ function ctrlresumreserva($peticio, $resposta, $imatges){
     $dades = $dades_reserva->resumreserva($reserva_id_tipus_habitacio);
     $preu_total=$dades[0]['preu']*($dias_reserva-1);
 
+    $resposta->set("ocupants", $ocupants);
     $resposta->set("arribada", $arribada);
     $resposta->set("sortida", $sortida);
     $resposta->set("total", $preu_total);

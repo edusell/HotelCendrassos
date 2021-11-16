@@ -37,6 +37,7 @@ include "../src/controlador/afegirimatge.php";
 include "../src/controlador/chatadmin.php";
 include "../src/controlador/edita.php";
 include "../src/controlador/contacte.php";
+include "../src/controlador/reserva.php";
 
 include "../src/middleware/middleware.php";
 
@@ -120,6 +121,8 @@ if ($r == "") {
     $resposta = middleAdmin($peticio, $resposta, $contenidor, "edita");
 } else if($r == "contacte"){
     $resposta = ctrlcontacte($peticio, $resposta, $imatges);
+} else if($r == "validacio_pagament"){
+    $resposta = ctrlreserva($peticio, $resposta, $imatges);
 } 
 
 

@@ -220,5 +220,18 @@ class llistartipushab
        
     }
 
+    public function reserva($arribada,$sortida,$id)
+    {
+        $query = 'INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arribada`, `data_sortida`, `DNI`, `preu`) VALUES (NULL, '', '', '', '', '')';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id' => $id
+        ]);
+
+
+        return $stm->fetchall(\PDO::FETCH_ASSOC);
+       
+    }
+
 
 }

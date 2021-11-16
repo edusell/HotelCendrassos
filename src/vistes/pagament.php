@@ -67,8 +67,9 @@
                                     <div class="col-12 px-md-5 px-4 mt-3">
                                         <form action="index.php" method="post">
                                             <input type="hidden" name="r" value="validacio_pagament">
-                                            <input type="hidden" name="entrada" value="validacio_pagament">
-                                            <input type="hidden" name="sortida" value="validacio_pagament">
+                                            <input type="hidden" name="entrada" value="<?=$arribada ?>">
+                                            <input type="hidden" name="sortida" value="<?=$sortida ?>">
+                                            <input type="hidden" name="id" value="<?=$resum_reserva[0]['id_tipus'] ?>">
                                         <button class="btn btn-primary w-100"><?php print $total?>€</button>
                                         </form>
                                     </div>

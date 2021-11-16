@@ -5,9 +5,10 @@ function ctrlpdf($peticio, $resposta, $imatges){
 
     $model = new \Daw\adminpdo($config["db"]);
 
-    $id=2;
+    $id=3;
 
     $info = $model->pdf($id);
+    
 
     $resposta->set("in", $info);
 

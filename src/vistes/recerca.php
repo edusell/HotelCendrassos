@@ -7,6 +7,7 @@ $arribada=$_REQUEST['arribada_hotel'];
 $sortida=$_REQUEST['sortida_hotel'];*/
 $data = $_REQUEST['daterange'];
 $ocupants=$_REQUEST['ocupants'];
+$dates=explode('-',$data);
 $dates=explode(' - ',$data);
 $a = $dates[0];
 $s = $dates[1];
@@ -51,6 +52,7 @@ $sortida = date_format($date,'Y/m/d');
         try{
 
             foreach($disponibles as $row){
+             
 
                
 
@@ -61,7 +63,7 @@ $sortida = date_format($date,'Y/m/d');
                 print '<div class="recerca_habitacions">';
                 print"<h1>".$row['nom_tipus']."</h1>";
                 print'<div class="container_imatges_recerca">';
-                    print'<img class="imatges_recerca" src="img/habitacio_doble.jpg">';
+                    print'<img class="imatges_recerca" src="img/uploads/'.$row["imatge"].'">';
                     print'<div class="text">';
                         print"<p>".$row['desc_tipus']."</p>";
                         print"<div class='especificacions_recerca'>";
@@ -83,6 +85,7 @@ $sortida = date_format($date,'Y/m/d');
                             print "<input type='hidden' name='id_tipus_habitacio' value='".$row['id_tipus_habitacio']."'>";
                             print "<input type='hidden' name='data-entrada' value='".$entrada."'>";
                             print "<input type='hidden' name='data-sortida' value='".$sortida."'>";
+                            print "<input type='hidden' name='ocupants' value='".$ocupants."'>";
                             print"<button  class='boto_reserva' type='submit'>Reserva</button>";
                             print "</form>";
                         }

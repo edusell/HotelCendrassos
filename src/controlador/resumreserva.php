@@ -4,8 +4,10 @@ function ctrlresumreserva($peticio, $resposta, $imatges){
     include '../src/config.php';
     $resposta->SetTemplate("pagament.php");
 
+
+    
     $reserva_id_tipus_habitacio = $_POST['id_tipus_habitacio'];
-    $id_seleccionat=$_POST['id_tipus_habitacio'];
+   // $id_seleccionat=$_POST['id_tipus_habitacio'];
     $arribada=$_POST['data-entrada'];
     $sortida=$_REQUEST['data-sortida'];
     //$arribada1=date_format($date,'Y/m/d');

@@ -14,7 +14,7 @@
         <img src="logos/logo-hotel.png" alt="img" width='100mm'>
         <p>Carrer Pelai Martínez, 1, 17600 Figueres, Girona</p>
         <p>tel. 000 000 000</p>
-        <p>info@hotelcendrassos.com</p>
+        <p>infohotelcendrassos.com</p>
     </div>
     <hr>
     <p>RESERVA N<sup>o </sup><?= $in[0]['id_reserva']; ?></p>
@@ -72,13 +72,32 @@
 
         </div>
     </div>
+    <textarea id="text">DelftStack</textarea>
+      <br />
+      <input type="button" id="btn" value="Download" />
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>var doc = new jsPDF();
+
+//var specialElementHandlers = {
+    //'#elementH': function (element, renderer) {
+     //   return true;
+    //}
+//};
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
 <script>
-    //window.print();
- /*
+    window.onload = function() {
+        download("hello.txt","This is the content of my file :)");
+};
+
+
+
+
+
+    window.print();
+ 
 $('#createPDF').click(function () {
 
 var pdf = new jsPDF();
@@ -87,9 +106,11 @@ var options = {
 };
 
 pdf.addHTML(document.getElementById('pagina'),0, 0, options,function() {
-    pdf.save("document.pdf");
+    //pdf.download="document1.pdf";
+    printPDF(pdf);
+    //pdf.save("document.pdf");
 });
 });
-*/
+
 </script>
 </html>

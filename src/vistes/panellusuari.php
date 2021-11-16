@@ -160,12 +160,12 @@ close.addEventListener('click', () => {
 });
 
 
-/*popup.addEventListener('click', e => {
+popup.addEventListener('click', e => {
     // console.log(e);
     if(e.target.className === 'popup-wrapper') {
         popup.style.display = 'none';
     }
-});*/
+});
 
 </script>
 </html>

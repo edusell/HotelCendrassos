@@ -81,6 +81,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+   
+    
     <?php
 if(!isset($tmp) || $tmp==0){
     
@@ -116,6 +118,7 @@ function fosc(){
    $('a').css('color','white');
   
    document.cookie = "mode=0";
+   
 
 }
     jQuery(document).ready(function(){

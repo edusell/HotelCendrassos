@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,13 @@
     <link href="metodo-pago.css"rel="stylesheet" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"rel="stylesheet" type="text/css">
+    <link href="css.css"rel="stylesheet" type="text/css">
+    <link href="metodo-pago.css"rel="stylesheet" type="text/css">
 </head>
 <body>
 <?php include 'menu.php'; ?>
 
-<div id="pop_up" class="pop_up_pago">
+<!--<div id="pop_up" class="pop_up_pago">-->
      
                             <div  class="container bg-light d-md-flex align-items-center" >
                         <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
@@ -61,7 +63,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Nom i cognom</span>
-                                            <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="valdimir berezovkiy"> <span class="far fa-user"></span> </div>
+                                            <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="Nom Cognom"> <span class="far fa-user"></span> </div>
                                         </div>
                                     </div>
                                     <div class="col-12 px-md-5 px-4 mt-3">
@@ -69,6 +71,8 @@
                                             <input type="hidden" name="r" value="validacio_pagament">
                                             <input type="hidden" name="entrada" value="<?=$arribada ?>">
                                             <input type="hidden" name="sortida" value="<?=$sortida ?>">
+                                            <input type="hidden" name="ocupants" value="<?=$ocupants ?>">
+                                            <input type="hidden" name="dias" value="<?=$dias ?>">
                                             <input type="hidden" name="id" value="<?=$resum_reserva[0]['id_tipus'] ?>">
                                         <button class="btn btn-primary w-100"><?php print $total?>€</button>
                                         </form>
@@ -77,7 +81,7 @@
                             </form>
                         </div>
                     </div>
-            </div>
+
 
 
 

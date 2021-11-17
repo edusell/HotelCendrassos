@@ -211,8 +211,20 @@ body > div:nth-child(5){
     margin-top: 0;
     
 }
-
-
+.bg-light{
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px !important;
+    margin: 0px;
+    width: 100% !important;
+    max-width: 100%;
+    background-color: #d8d8d8 !important;
+}
+body{
+    background-color: black !important;
+}
 /*.prova{
   width: 100%;
 height: 500px;

@@ -173,9 +173,108 @@ class llistartipushab
     }
     public function reserves($entrada,$sortida,$ocupants)
     {
+        $query = 'select count(h.id_habitacio) as num,h.id_tipus_habitacio FROM habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus AND t.ocupants_tipus>= :ocupants group by h.id_tipus_habitacio;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':ocupants' => $ocupants
+        ]);
+
+        $hd = $stm->fetchall(\PDO::FETCH_ASSOC);
+
+        //select count(r.id_reserva),r.id_tipus_reserva from reserva r, tipushabitacio t where r.id_tipus_reserva=t.id_tipus AND ((r.data_arribada> '2021-11-17' AND r.data_arribada< '2021-11-22') OR (r.data_sortida> '2021-11-17' AND r.data_sortida< '2021-11-22') OR (r.data_arribada <= '2021-11-17' AND r.data_sortida>= '2021-11-22')) group by id_tipus_reserva;
+        $query1 = "select count(r.id_reserva) as ocupades,r.id_tipus_reserva from reserva r, tipushabitacio t where r.id_tipus_reserva=t.id_tipus AND ((r.data_arribada> :entrada AND r.data_arribada< :sortida ) OR (r.data_sortida> :entrada AND r.data_sortida< :sortida ) OR (r.data_arribada <= :entrada AND r.data_sortida>= :sortida )) group by id_tipus_reserva;";
+        $stm1 = $this->sql->prepare($query1);
+        $result1 = $stm1->execute([
+            ':entrada' => $entrada,
+            ':sortida' => $sortida
+        ]);
+
+        $ho = $stm1->fetchall(\PDO::FETCH_ASSOC);
+
+        $query = 'select id_tipus_habitacio ,count( id_habitacio) as numd,t.m_tipus,t.serveis_tipus,t.ocupants_tipus,t.desc_tipus,t.nom_tipus,preu,imatge from habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus  group by id_tipus_habitacio;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+
+        $info = $stm->fetchall(\PDO::FETCH_ASSOC);
+
+        //print_r ($info);
+        print_r ($hd);
+        print "---------------";
+        print_r ($ho);
+
+        $index =0;
+        for($i =0;$i<count($hd);$i++){
+            if($ho != NULL){
+
+            for($y =0;$y<count($ho);$y++){
+//fer-ho al reves
+                if($hd[$i]['id_tipus_habitacio'] == $ho[$y]['id_tipus_reserva']){
+
+                    $tmp = $hd[$i]['num']-$ho[$y]['ocupades'];
+
+                    if($tmp>0){
+                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                        $index++;
+                    }
+
+                } else{
+                    if($hd[$i]['num']>0){
+                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                        $index++;
+                    }
+                }
+                //$fin[$i]['id'] = $hd[$i]['id_tipus_habitacio'];
+            }
+
+        }else {
+           $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+           $index++;
+        }
+    }
+    
+       /* $index =0;
+        for($i =0;$i<count($hd);$i++){
+            if($ho != NULL){
+            for($y =0;$y<count($ho);$y++){
+
+                if($hd[$i]['id_tipus_habitacio'] == $ho[$y]['id_tipus_reserva']){
+
+                    $tmp = $hd[$i]['num']-$ho[$y]['ocupades'];
+
+                    if($tmp>0){
+                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                        $index++;
+                    }
+
+                } else{
+                    if($hd[$i]['num']>0){
+                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                        $index++;
+                    }
+                }
+                //$fin[$i]['id'] = $hd[$i]['id_tipus_habitacio'];
+            }
+        }else {
+           $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+           $index++;
+        }
+    }*/
+
+
+        print_r($fin);
+
+        for($i =0;$i<count($fin);$i++){
+            $ret[$i] = $info[$fin[$i]-1];
+        }
+
+
+
+        //print "---------------";
+        //print_r ($ret);
+        //die();
         
         
-        $query = 'select id_tipus_habitacio ,count( id_habitacio) as numd,t.m_tipus,t.serveis_tipus,t.ocupants_tipus,t.desc_tipus,t.nom_tipus,preu,imatge from habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus AND t.ocupants_tipus >= :ocupants  group by id_tipus_habitacio;';
+        /*$query = 'select id_tipus_habitacio ,count( id_habitacio) as numd,t.m_tipus,t.serveis_tipus,t.ocupants_tipus,t.desc_tipus,t.nom_tipus,preu,imatge from habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus AND t.ocupants_tipus >= :ocupants  group by id_tipus_habitacio;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':ocupants' => $ocupants]);
 
@@ -195,12 +294,12 @@ class llistartipushab
             if($ho[$i]['id_tipus_habitacio']==$hd[$y]['id_tipus_habitacio']){
                 $hd[$y]['numd'] = $hd[$y]['numd'] - $ho[$i]['num'];
             }
-        }
+        }*/
 
 
-        return $hd;
+        return $ret;
        
-    }}
+    }
 
     public function resumreserva($id)
     {
@@ -220,14 +319,42 @@ class llistartipushab
        
     }
 
-    public function reserva($arribada,$sortida,$id)
+    public function reserva($dias,$arribada,$sortida,$id,$dni,$ocupants)
     {
-        $query = 'INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arribada`, `data_sortida`, `DNI`, `preu`) VALUES (NULL, '', '', '', '', '')';
+
+        $query = "select preu from tipushabitacio where id_tipus= :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':id' => $id
         ]);
+        
+        $preu = $stm->fetch(\PDO::FETCH_ASSOC)['preu']*($dias-1);
 
+        $query = 'select h.id_habitacio FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND h.id_tipus_habitacio= :id AND ( :entrada >=r.data_sortida OR ( :entrada <r.data_arribada AND :sortida <=data_arribada));';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':entrada' => $arribada,
+            ':sortida' => $sortida,
+            ':id' => $id
+        ]);
+
+        $idh = $stm->fetch(\PDO::FETCH_ASSOC)['id_habitacio'];
+
+       $query = "INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arribada`, `data_sortida`, `DNI`, `preu`, `id_tipus_reserva`) VALUES ( NULL , :ocupants , :arribada , :sortida , :dni , :preu , :id);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+            ':id' => $id,
+            ':dni' => $dni,
+            ':preu' => $preu,
+            ':ocupants' => $ocupants,
+            ':arribada' => $arribada,
+            ':sortida' => $sortida
+        ]);
+
+        $query = "select id_reserva from reserva order by id_reserva desc limit 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([
+        ]);
 
         return $stm->fetchall(\PDO::FETCH_ASSOC);
        

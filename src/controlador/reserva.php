@@ -9,12 +9,24 @@ function ctrlreserva($peticio, $resposta, $contenidor)
     $arribada=$_REQUEST['entrada'];
     $sortida=$_REQUEST['sortida'];
     $id=$_REQUEST['id'];
+    $ocupants =$_REQUEST['ocupants'];
+    $dias =$_REQUEST['dias'];
+
     
     $model = new \Daw\llistartipushab($config["db"]);
 
-    $model->reserva($arribada,$sortida,$id,$dni);
+    $id_reserva = $model->reserva($dias,$arribada,$sortida,$id,$dni,$ocupants);
+    
 
-   
+    $model = new \Daw\adminpdo($config["db"]);
+
+    $info = $model->pdf($id_reserva[0]['id_reserva']);
+    
+
+    $resposta->set("in", $info);
+
+
+    $resposta->SetTemplate("pdf.php");
 
     return $resposta;
 }

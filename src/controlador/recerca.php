@@ -17,13 +17,21 @@ function ctrlRecerca($peticio, $resposta, $imatges){
     
     $data = $_REQUEST['daterange'];
     
-    $dates =explode("-",$data);
+    $dates =explode(" - ",$data);
 
-    $entrada = $dates[0];
+    $arribada = $dates[0];
+    $parts = explode("/",$arribada);
+    $arribada= $parts[2].'-'.$parts[1].'-'.$parts[0];
+
     $sortida = $dates[1];
+    $parts = explode("/",$sortida);
+    $sortida= $parts[2].'-'.$parts[1].'-'.$parts[0];
+
+
+
     $ocupants = $_REQUEST['ocupants'];
 
-    $hab = $tip_habs->reserves($entrada,$sortida,$ocupants);
+    $hab = $tip_habs->reserves($arribada,$sortida,$ocupants);
 
     $resposta->set("disponibles", $hab);
     $resposta->SetTemplate("recerca.php");

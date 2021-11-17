@@ -10,7 +10,7 @@ function ctrlresumreserva($peticio, $resposta, $imatges){
    // $id_seleccionat=$_POST['id_tipus_habitacio'];
     $arribada=$_POST['data-entrada'];
     $sortida=$_REQUEST['data-sortida'];
-    $ocupants =$_REQUEST['ocupants'];
+    $ocupants=$_REQUEST['ocupants'];
     //$arribada1=date_format($date,'Y/m/d');
     //$sortida1=date_format($date1,'Y/m/d');
 

@@ -34,7 +34,6 @@ include "../src/controlador/registre.php";
 include "../src/controlador/galeriaadmin.php";
 include "../src/controlador/pdf.php";
 include "../src/controlador/afegirimatge.php";
-include "../src/controlador/chatadmin.php";
 include "../src/controlador/edita.php";
 include "../src/controlador/contacte.php";
 include "../src/controlador/reserva.php";

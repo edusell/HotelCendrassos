@@ -20,8 +20,7 @@ function ctrlreserva($peticio, $resposta, $contenidor)
 
     $model = new \Daw\adminpdo($config["db"]);
 
-    $info = $model->pdf($id_reserva[0]['id_reserva']);
-    
+    $info = $model->pdf($id_reserva);   
 
     $resposta->set("in", $info);
 

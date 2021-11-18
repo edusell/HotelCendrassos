@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per controlar el registre dels usuaris, si el registre es correcte guardem les dades de l'usuari a la session per no haber d'accedir aquestes per la base de dedes.
+***************************/
+
 function ctrLogin($peticio, $resposta, $contenidor)
 {
     include '../src/config.php';

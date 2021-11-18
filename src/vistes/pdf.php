@@ -72,9 +72,6 @@
 
         </div>
     </div>
-    <textarea id="text">DelftStack</textarea>
-      <br />
-      <input type="button" id="btn" value="Download" />
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>var doc = new jsPDF();

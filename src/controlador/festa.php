@@ -1,5 +1,12 @@
 <?php 
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per realitzar els dies festius en el calendari, tambe permet cancalar aquests dies festius.
+***************************/
+
 function ctrlfesta($peticio, $resposta, $imatges){
     include '../src/config.php';
 

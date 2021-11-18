@@ -6,7 +6,7 @@ function ctrlRecerca($peticio, $resposta, $imatges){
     $tip_habs = new \Daw\llistartipushab($config["db"]);
     /*if(isset($_POST['id_tipus_habitacio'])){
         $reserva_id_tipus_habitacio = $_POST['id_tipus_habitacio'];
-        $dades = $tip_habs->resumreserva($reserva_id_tipus_habitacio);
+        $dades = $tip_habs->resumreserva($reserva_id_tipus_habitacio); 
         
         $resposta->set("resum_reserva", $dades);
         $resposta->SetTemplate("recerca.php");

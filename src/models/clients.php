@@ -198,32 +198,32 @@ class llistartipushab
         $info = $stm->fetchall(\PDO::FETCH_ASSOC);
 
         //print_r ($info);
-        print_r ($hd);
-        print "---------------";
-        print_r ($ho);
+        //print_r ($hd);
+        //print "---------------";
+        //print_r ($ho);
 
         $index =0;
         for($i =0;$i<count($hd);$i++){
             if($ho != NULL){
+                $tmpid=-1;                
 
             for($y =0;$y<count($ho);$y++){
-//fer-ho al reves
-                if($hd[$i]['id_tipus_habitacio'] == $ho[$y]['id_tipus_reserva']){
-
-                    $tmp = $hd[$i]['num']-$ho[$y]['ocupades'];
-
-                    if($tmp>0){
-                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
-                        $index++;
-                    }
-
-                } else{
-                    if($hd[$i]['num']>0){
-                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
-                        $index++;
-                    }
+                if($ho[$y]['id_tipus_reserva']==$hd[$i]['id_tipus_habitacio']){
+                    $tmpid=$y;
+                    break;
                 }
-                //$fin[$i]['id'] = $hd[$i]['id_tipus_habitacio'];
+            }
+            if($tmpid!=-1){
+                $tmp = $hd[$i]['num']-$ho[$tmpid]['ocupades'];
+                if($tmp>0){
+                    $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                    $index++;
+                }
+            } else {
+                if($hd[$i]['num']>0){
+                    $fin[$index] = $hd[$i]['id_tipus_habitacio'];
+                    $index++;
+                }
             }
 
         }else {
@@ -260,8 +260,10 @@ class llistartipushab
         }
     }*/
 
+    //print_r('------------');
+    //print_r($fin);
 
-        print_r($fin);
+
 
         for($i =0;$i<count($fin);$i++){
             $ret[$i] = $info[$fin[$i]-1];
@@ -356,7 +358,15 @@ class llistartipushab
         $result = $stm->execute([
         ]);
 
-        return $stm->fetchall(\PDO::FETCH_ASSOC);
+        $return = $stm->fetchall(\PDO::FETCH_ASSOC)[0]['id_reserva'];
+
+        $query = "INSERT INTO `reservahabitacio` (`id_reserva`, `id_habitacio`) VALUES ( :id, NULL);";
+        $stm1 = $this->sql->prepare($query);
+        $result = $stm1->execute([
+            ':id' => $return 
+        ]);
+
+        return $return;
        
     }
 

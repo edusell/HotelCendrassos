@@ -83,16 +83,10 @@
 //};
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>-->
 
 <script>
-    window.onload = function() {
-        download("hello.txt","This is the content of my file :)");
-};
-
-
-
-
-
+ 
     window.print();
  
 $('#createPDF').click(function () {
@@ -103,9 +97,9 @@ var options = {
 };
 
 pdf.addHTML(document.getElementById('pagina'),0, 0, options,function() {
-    //pdf.download="document1.pdf";
-    printPDF(pdf);
-    //pdf.save("document.pdf");
+    pdf.download="document1.pdf";
+    //printPDF(pdf);
+    pdf.save("document.pdf");
 });
 });
 

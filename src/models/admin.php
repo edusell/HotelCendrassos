@@ -382,10 +382,80 @@ class adminpdo
         ]);
         return '';
     }
+
+    public function adduser($mail,$nom,$cnom,$dni,$tel,$usuari,$pass){
+        $i =0;
+        $err = array();
+        $caracters_dni=strlen($dni);
+        $caracts_numero_tlf=false;
+        $errvalid=false;
+        $permitidos = "0123456789";
+        for ($a=0; $a<strlen($tel); $a++){
+            if (strpos($permitidos, substr($tel,$a,1))==false){
+                $err['tel']=1;
+                //$err[$i]='Numero telefon incorrecte';
+               // $i++;
+            }
+        }
+
+       
+        $stm1 = $this->sql->prepare("select COUNT(*) from usuari where DNI = :dni;");
+        $sql1 = $stm1->execute([
+          ':dni' => $dni
+        ]);
+
+        $stm1 = $this->sql->prepare("select COUNT(*) from usuari where usuari = :user;");
+        $sql2 = $stm1->execute([
+          ':user' => $usuari
+        ]);
+            
+
+        if(strlen($dni)<9){
+            $err[$i]='El dni es incorrecte';
+            $i++;
+            print("Error");
+            die();
+        }
+    
+        if(strlen($tel)!=9){
+            $err[$i]='El telefon es incorrecte';
+            $i++;
+            print("Error telefon");
+            die();
+           
+        
+        }
+        if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+            $err[$i]='El Correu electronic es incorrecte';
+             $i++;
+             print("Error email");
+            die();
+        }
+        if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
+            $err['mail']=1;
+            $err[$i]='El Correu electronic es incorrecte 1';
+            print("Error domini");
+            die();
+
+        }
+        if(count($err)== 0){
+            $insert = $this->sql->prepare("INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES ( :dni , :nom, :cognom, :tel , :mail , '0' , :usuari , :pass , '0');");
+            $sql = $insert->execute([
+                ':dni' => $dni,
+                ':nom' => $nom,
+                ':cognom' => $cnom,
+                ':usuari' => $usuari,
+                ':mail' => $mail,
+                ':tel' => $tel,
+                ':pass' => $pass
+            ]);
+        }
+    }
+}       
     
 
   
-}
+
 
 
 

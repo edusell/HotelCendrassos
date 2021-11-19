@@ -90,7 +90,7 @@ class llistartipushab
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
 
-        $marcar = $stm->fetchAll();;
+        $marcar = $stm->fetchAll();
         
 
 
@@ -200,7 +200,11 @@ class llistartipushab
         //print_r ($info);
         //print_r ($hd);
         //print "---------------";
+
+        //rint_r ($ho);
+
         //print_r ($ho);
+
 
         $index =0;
         for($i =0;$i<count($hd);$i++){
@@ -262,6 +266,10 @@ class llistartipushab
 
     //print_r('------------');
     //print_r($fin);
+
+
+
+        //print_r($fin);
 
 
 

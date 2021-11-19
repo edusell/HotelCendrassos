@@ -18,9 +18,9 @@
     <div class="container-login">
 
     <div class='registre'>
-    <form id='registre' class='formregistre' action="index.php" method='post' novalidate>
-      <input type="hidden" name='r' value='crearusuariadmin'>
-      <input type="hidden" name='orig' value='usuari'>
+    <form id='registre' class='formregistre' action="index.php" method='post' >
+      <input type="hidden" name='r' value='crearusuari'>
+      <!--<input type="hidden" name='orig' value='usuari'>-->
       <table class='estructuraregistre'>
         <tr>
           <td></td>
@@ -89,8 +89,9 @@
           </td>
         </tr>
       </table>
-      </form>
       <button id='env' onclick="validar()">Enviar</button>
+      </form>
+      
       </div>
 
 
@@ -99,6 +100,9 @@
        <?php include 'footerprim.php' ?>
       <script>
 
+     /*  document.querySelector("#env").click(){
+         
+       }*/
  
  
           function validar(){
@@ -202,6 +206,8 @@
             }
             return 0;
           }
+        
+        
       </script>
 </body>
 </html>

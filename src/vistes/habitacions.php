@@ -57,7 +57,8 @@ if(!isset($tmp) || $tmp==0){
             foreach($llistar_tiphab as $row){
                 print "<div class='container_reserva_habitacions' id='tipus_habitacio'>";
                 print '<div class="recerca_habitacions">';
-                print"<h1>".$row['nom_tipus']."</h1>";
+                print"<h1><b>".$row['nom_tipus']."</b></h1>";
+                print'<img class="imatges_recerca_mbil" src="img/uploads/'.$row["imatge"].'">';
                 print'<div class="container_imatges_recerca">';
                     print'<img class="imatges_recerca" src="img/uploads/'.$row["imatge"].'">';
                     print'<div class="text">';
@@ -68,22 +69,11 @@ if(!isset($tmp) || $tmp==0){
                             print "<img src='logos\habitacions_logos\information.png'>";
                             print"<p><b>".$row['m_tipus']."m<sup>2 </sup></b></p>";
                         print"</div>";
-                        print"<div class='preu_recerca'>".$row['preu']."€ </div>";
-                        if( !isset($_SESSION["DNI"]) ){
-                            print"<a  href='index.php?r=login'><div class='boto_reserva' id='reserva'>Reserva</div></a>";
-                        }else{
+                        print"<div class='preu_recerca'>".$row['preu']."€ /nit</div>";
                             //print "<form action='index.php?r=recerca' method='post'>";
                             //print "<input type='hidden' name='id_tipus_habitacio' value='".$row['id_tipus_habitacio']."'> </input>";
                             //print"<button type='submit'><div class='boto_reserva' id='reserva1'>Reserva</div></button>";
-                            //print"</form>";
-
-                            print "<form action='index.php?r=dadesreserva' method='post'>";
-                            print "<input type='hidden' name='id_tipus_habitacio' value='".$row['id_tipus_habitacio']."'>";
-                            print "<input type='hidden' name='data-entrada' value='".$entrada."'>";
-                            print "<input type='hidden' name='data-sortida' value='".$sortida."'>";
-                            print"<button  class='boto_reserva' type='submit'>Reserva</button>";
-                            print "</form>";
-                        }
+                            //print"</form>"
                         print"</div>";
                     print"</div>";
                  print"</div>";
@@ -110,7 +100,8 @@ if(!isset($tmp) || $tmp==0){
                         print"</div>";
                   print"</div>";
                 print"</div>";
-                print "</div>";}*/
+                print "</div>";*/
+            }
 
             
     

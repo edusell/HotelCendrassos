@@ -12,7 +12,7 @@
             if($_SESSION['rol']==1){
             print  '<a href="index.php?r=admin">ADMINISTRACIO</a>';
             }
-            print '<a class=iniciinici id="logat"><img src="logos/admin_icon/loged.png" alt="" width=40px></a>';
+            print '<a class=iniciinici id="logat" onclick="redireccionarPagina()""><img src="logos/admin_icon/loged.png"  alt="" width=40px></a>';
             
 
           }else{

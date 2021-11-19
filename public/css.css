@@ -154,7 +154,7 @@ transition: 0.5s;
 .recerca_habitacions{
   margin-top: 4%;
   width: 90%;
-  min-width: 400px;
+
   height: 400px;
   background-color: rgba(255, 255, 255, 0.603);  
   backdrop-filter: blur(5px);
@@ -168,6 +168,51 @@ transition: 0.5s;
   transform: perspective(1000px);
   scale: 0.7;
 }
+
+.imatges_recerca_mbil{
+  display: none;
+}
+
+  @media screen and (max-width: 600px) {
+           
+    .recerca_habitacions {
+      margin-top: 50px;
+      max-width: 500px !important;
+      width: 100%;
+      height: auto;
+    }
+    .imatges_recerca_mbil{
+      display: flex;
+      width:100%;
+      max-width:400px;
+      max-width: 400px;
+      height: 300px;
+     
+    }
+    .imatges_recerca{
+      display: none!important;
+      padding-bottom: 10px;
+    }
+    .text{
+      float: left !important;
+      width: 100% !important;
+    }
+    .recerca_habitacions h1 {
+      text-align: center !important;
+      padding-left: 5px !important;
+  }
+    .recerca_habitacions{
+      padding-left: 5px !important;
+      padding-right: 10px !important;
+      max-width: 500px !important;
+    }
+  
+  }
+
+
+
+
+
 .recerca_habitacions h1{
   text-align: center;
 }

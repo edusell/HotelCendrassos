@@ -198,9 +198,9 @@ class llistartipushab
         $info = $stm->fetchall(\PDO::FETCH_ASSOC);
 
         //print_r ($info);
-        print_r ($hd);
-        print "---------------";
-        print_r ($ho);
+        //print_r ($hd);
+        //print "---------------";
+        //rint_r ($ho);
 
         $index =0;
         for($i =0;$i<count($hd);$i++){
@@ -261,7 +261,7 @@ class llistartipushab
     }*/
 
 
-        print_r($fin);
+        //print_r($fin);
 
         for($i =0;$i<count($fin);$i++){
             $ret[$i] = $info[$fin[$i]-1];

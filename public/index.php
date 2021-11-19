@@ -38,6 +38,7 @@ include "../src/controlador/chatadmin.php";
 include "../src/controlador/edita.php";
 include "../src/controlador/contacte.php";
 include "../src/controlador/reserva.php";
+include "../src/controlador/crearusuari.php";
 
 include "../src/middleware/middleware.php";
 
@@ -123,7 +124,9 @@ if ($r == "") {
     $resposta = ctrlcontacte($peticio, $resposta, $imatges);
 } else if($r == "validacio_pagament"){
     $resposta = ctrlreserva($peticio, $resposta, $imatges);
-} 
+} else if($r == "crearusuari"){
+    $resposta = ctrlcrearusuari($peticio, $resposta, $imatges);
+}
 
 
 

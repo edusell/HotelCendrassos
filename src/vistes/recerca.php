@@ -62,6 +62,7 @@ $sortida = date_format($date,'Y/m/d');
             print "<div class='container_reserva_habitacions' id='tipus_habitacio'>";
                 print '<div class="recerca_habitacions">';
                 print"<h1>".$row['nom_tipus']."</h1>";
+                print'<img class="imatges_recerca_mbil" src="img/uploads/'.$row["imatge"].'">';
                 print'<div class="container_imatges_recerca">';
                     print'<img class="imatges_recerca" src="img/uploads/'.$row["imatge"].'">';
                     print'<div class="text">';

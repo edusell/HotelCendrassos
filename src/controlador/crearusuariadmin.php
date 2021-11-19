@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per crear usuaris desde el panell administrador, aquests poden ser de cualsevol departament existent.
+***************************/
+
 function ctrlcrearusuariadmin($peticio, $resposta, $imatges){
     include '../src/config.php';
 

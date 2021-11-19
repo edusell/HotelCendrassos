@@ -1,5 +1,11 @@
 <?php
 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per esborrar reserves.
+***************************/
+
 function ctrlborrreserva($peticio, $resposta, $imatges){
     include '../src/config.php';
 

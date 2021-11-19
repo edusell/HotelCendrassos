@@ -1,5 +1,11 @@
 <?php
 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per realitzar el canvi de contrasenya.
+***************************/
+
 function ctrlcambiacontrasenya($peticio, $resposta, $imatges){
     include '../src/config.php';
     $cambi_contra = new \Daw\llistartipushab($config["db"]);

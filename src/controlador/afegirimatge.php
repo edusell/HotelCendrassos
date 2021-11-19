@@ -1,5 +1,11 @@
 <?php 
 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per affegir una imatge a la galeria de la web, aquesta no s'enmagatzema a la base de dades, només es guarda la imatge a la carpeta galeria 
+***************************/
+
 function ctrladdimage($peticio, $resposta, $imatges){
 
     $r=$_POST['r'];

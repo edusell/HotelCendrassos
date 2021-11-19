@@ -1,5 +1,11 @@
 <?php
 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per esborrar una habitacio, rep les dedes de adminhabitacions.php(panell habitacions del menu administrador) i et retorna a la mateixa pagina.
+***************************/
+
 function ctrldrophabitacio($peticio, $resposta, $imatges){
     include '../src/config.php';
 

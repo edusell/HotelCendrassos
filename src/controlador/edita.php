@@ -1,5 +1,12 @@
 <?php 
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per realitzar canvis en les difenets dades del panell d'administracio, es poden cambiar dedes dels usuaris,departaments i tipus d'habitacions. Per seguretat no es poden cambiar dades de les reserves ni de les habitacions.
+***************************/
+
 function edita($peticio, $resposta, $imatges){
     include '../src/config.php';
 

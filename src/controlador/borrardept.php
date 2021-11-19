@@ -1,5 +1,11 @@
 <?php
 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per esborrar un departament rep la id del departament desde adminhabitacions (panel d'habitacions del menu administrador) i et rederigeix un altre cop a la pagina.
+***************************/
+
 function ctrldropdept($peticio, $resposta, $imatges){
     include '../src/config.php';
 

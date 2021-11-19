@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per creasr una habitacio desde el panel d'habitacions d'administrador.
+***************************/
+
 function ctrladdhabitacio($peticio, $resposta, $imatges){
     include '../src/config.php';
 

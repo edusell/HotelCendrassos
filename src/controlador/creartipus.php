@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per crear tipus d'habitacions.
+***************************/
+
 function ctrlcreartipus($peticio, $resposta, $imatges){
     include '../src/config.php';
 

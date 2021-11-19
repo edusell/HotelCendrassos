@@ -77,11 +77,17 @@
                         <td>habitacio</td>
                      </tr>
                      <?php
-                     $avui = getdate();
+                     $date = new DateTime();
+                     $avui= $date->format('Y-m-d');
+                    
+                     
 
 
                          foreach($llistar_reserves as $row){
-                           if($row['data_entrada']>$avui){
+                           $date =  new DateTime($row['data_sortida']);
+                           $sortida = $date->format('Y-m-d');
+
+                           if($sortida >= $avui){
 
                             print "<tr>";
                             print "<td id='seleccio'><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";
@@ -93,7 +99,8 @@
                             print "<td>".$row['data_sortida']."</td>";
                             print "<td>".$row['id_habitacio']."</td>";
                             print "<tr>";
-                         }}
+                         }
+                        }
                         
                         ?>
                   </table>
@@ -121,8 +128,10 @@
 
 
                          foreach($llistar_reserves as $row){
+                          $date =  new DateTime($row['data_sortida']);
+                          $sortida = $date->format('Y-m-d');
                            
-                           if($row['data_sortida']<$avui){
+                           if($sortida<$avui){
 
                             print "<tr>";
                             print "<td><input type='checkbox' name='reserves[]' value='".$row['id_reserva']."'></td>";

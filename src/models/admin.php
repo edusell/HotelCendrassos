@@ -413,29 +413,32 @@ class adminpdo
         if(strlen($dni)<9){
             $err[$i]='El dni es incorrecte';
             $i++;
-            print("Error");
-            die();
+            
+            //print_r('error');
+           /* die();
+            return $err;*/
         }
     
         if(strlen($tel)!=9){
             $err[$i]='El telefon es incorrecte';
             $i++;
-            print("Error telefon");
-            die();
+            
+            
            
         
         }
         if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
             $err[$i]='El Correu electronic es incorrecte';
-             $i++;
-             print("Error email");
-            die();
+            $i++;
+             
+             
         }
         if(!checkdnsrr(array_pop(explode("@",$mail)),"MX")){
-            $err['mail']=1;
             $err[$i]='El Correu electronic es incorrecte 1';
-            print("Error domini");
-            die();
+            $i++;
+            
+            
+            
 
         }
         if(count($err)== 0){
@@ -450,6 +453,8 @@ class adminpdo
                 ':pass' => $pass
             ]);
         }
+        return $err;
+        
     }
 }       
     

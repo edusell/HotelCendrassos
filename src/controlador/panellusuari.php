@@ -1,6 +1,6 @@
 <?php
 
-
+ 
 /**************************
 Hotel Cendrassos
 Autors: Eimantas Milkintas i Eduard Sellas

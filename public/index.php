@@ -32,12 +32,14 @@ include "../src/controlador/borrfoto.php";
 include "../src/controlador/festa.php";
 include "../src/controlador/registre.php";
 include "../src/controlador/galeriaadmin.php";
-include "../src/controlador/pdf.php";
+//include "../src/controlador/pdf.php";
 include "../src/controlador/afegirimatge.php";
 include "../src/controlador/edita.php";
 include "../src/controlador/contacte.php";
 include "../src/controlador/reserva.php";
 include "../src/controlador/crearusuari.php";
+include "../src/controlador/reservacomp.php";
+include "../src/controlador/notrobada.php";
 
 include "../src/middleware/middleware.php";
 
@@ -125,6 +127,10 @@ if ($r == "") {
     $resposta = ctrlreserva($peticio, $resposta, $imatges);
 } else if($r == "crearusuari"){
     $resposta = ctrlcrearusuari($peticio, $resposta, $imatges);
+} else if($r == "reservacomp"){
+    $resposta = ctrlreservacomp($peticio, $resposta, $imatges);
+} else {
+    $resposta = notrobada($peticio, $resposta, $imatges);
 }
 
 

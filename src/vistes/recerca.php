@@ -39,10 +39,10 @@ $sortida = date_format($date,'Y/m/d');
 </head>
 <body class='recerca'>
 <?php include 'menu.php'; ?>
-        <div class="habitacions"> 
+        <div class="habitacions" style='backdrop-filter: brightness(60%);'> 
             <?= $entrada.'-'.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA SORTIDA: '.$sortida.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OCUPANTS:'.$ocupants ?>
         </div>
-       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         
         <div id="tipus_habitacions">
@@ -50,6 +50,30 @@ $sortida = date_format($date,'Y/m/d');
         <?php
         
         try{
+            //print_r($disponibles[0]);
+            //die();
+            if(!isset($disponibles)){
+                print "<div class='container_reserva_habitacions' id='tipus_habitacio' style='margin-top:100px;'>";
+                print "<div class=reservacomp>";
+                print "<img src='img/logo.jpg' alt='' width=50px> <br><br>";
+                print "<b>NO HI HA COINCIDENCIES</b><br><br>";
+                print "<p>No hi ha coincidencies amb les dades entrades, prova amb altres dades o contacte amb nosaltres per teni-te en conte en cas de alguna cancelació.</p>";
+                print "<a href='index.php'><div class=boto_e>D'ACORD</div></a>";
+                print "</div>";
+                print "</div>";
+                print '<script>$("body").css("backdrop-filter", "brightness(40%)")</script>';
+            
+            }else if(isset($disponibles[0]['errfest'])){
+                print "<div class='container_reserva_habitacions' id='tipus_habitacio' style='margin-top:100px;'>";
+                print "<div class=reservacomp>";
+                print "<img src='img/logo.jpg' alt='' width=50px> <br><br>";
+                print "<b>NO HI HA COINCIDENCIES</b><br><br>";
+                print "<p>Les dates introduides coinsideixen amb dies festius per part de l'hotel, siusplau intenteu-ho amb unes altres dates</p>";
+                print "<a href='index.php'><div class=boto_e>D'ACORD</div></a>";
+                print "</div>";
+                print "</div>";
+                print '<script>$("body").css("backdrop-filter", "brightness(40%)")</script>';
+            } else{
 
             foreach($disponibles as $row){
              
@@ -95,6 +119,7 @@ $sortida = date_format($date,'Y/m/d');
                  print"</div>";
             print "</div>";
           }
+        }
         }catch(Exeption $e ){}
 
         ?>
@@ -114,7 +139,7 @@ $sortida = date_format($date,'Y/m/d');
 <script>
 //const boto = document.querySelector("#reserva1");
 
-const id_habitacio = document.getElementById('id_tipus_habitacio').value;
+const id_habitacio = document.getElementById('id_tipus_habitacio').value();
 
 const boto = document.getElementById('reserva1');
 const fondo=document.querySelector("body > div:nth-child(5)");

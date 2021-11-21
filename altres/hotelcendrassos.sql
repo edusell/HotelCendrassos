@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Temps de generació: 18-11-2021 a les 15:14:56
+-- Temps de generació: 21-11-2021 a les 15:08:33
 -- Versió del servidor: 5.7.31
 -- Versió de PHP: 7.4.9
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `calendari` (
   `id_hotel_calendari` int(10) NOT NULL,
   PRIMARY KEY (`id_calendari`),
   KEY `id_hotel_calendari` (`id_hotel_calendari`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Bolcament de dades per a la taula `calendari`
@@ -144,22 +144,17 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   KEY `DNI_2` (`DNI`),
   KEY `DNI_3` (`DNI`),
   KEY `id_tipus_reserva` (`id_tipus_reserva`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Bolcament de dades per a la taula `reserva`
 --
 
 INSERT INTO `reserva` (`id_reserva`, `num_ocupants`, `data_arribada`, `data_sortida`, `DNI`, `preu`, `id_tipus_reserva`) VALUES
-(1, 2, '2021-11-01', '2021-11-05', '11111111S', 10, 1),
-(2, 2, '2021-11-01', '2021-11-05', '11111111S', 10, 2),
-(45, 1, '2021-11-17', '2021-11-22', '11111111S', 200, 1),
-(46, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2),
-(47, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2),
-(48, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2),
-(49, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2),
-(50, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2),
-(51, 1, '2021-11-18', '2021-11-23', '11111111S', 284, 2);
+(57, 1, '2021-11-21', '2021-11-26', '11111111S', 284, 2),
+(58, 1, '2021-11-21', '2021-11-26', '11111111S', 200, 1),
+(59, 1, '2021-11-21', '2021-11-26', '11111111S', 100, 3),
+(62, 1, '2021-11-21', '2021-11-26', '11111111S', 100, 3);
 
 -- --------------------------------------------------------
 
@@ -180,15 +175,10 @@ CREATE TABLE IF NOT EXISTS `reservahabitacio` (
 --
 
 INSERT INTO `reservahabitacio` (`id_reserva`, `id_habitacio`) VALUES
-(1, 1),
-(2, 2),
-(45, NULL),
-(46, NULL),
-(47, NULL),
-(48, NULL),
-(49, NULL),
-(50, NULL),
-(51, NULL);
+(57, NULL),
+(58, NULL),
+(59, NULL),
+(62, NULL);
 
 -- --------------------------------------------------------
 
@@ -217,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `tipushabitacio` (
 
 INSERT INTO `tipushabitacio` (`id_tipus`, `m_tipus`, `serveis_tipus`, `ocupants_tipus`, `desc_tipus`, `nom_tipus`, `id_hotel_tipus`, `preu`, `imatge`) VALUES
 (1, 25, 'servei de nateja i esmorzar', 5, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO DOBLE', 1, 50, ''),
-(2, 30, 'servei de nateja  i esmorzar', 2, 'Aquesta habitaciï¿½, igual que la resta, estï¿½ dissenyada perquï¿½ no et falti de res tant si vï¿½ns de vacances com per negocis. Condicionada amb tot el necessari perquï¿½ tinguis una estada d', 'ATIC', 1, 71, ''),
+(2, 30, 'servei de nateja  i esmorzar', 2, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si vens de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d', 'ATIC', 1, 71, ''),
 (3, 15, 'Servei d\'esmorzar', 2, 'Aquesta habitació, igual que la resta, està dissenyada perquè no et falti de res tant si véns de vacances com per negocis. Condicionada amb tot el necessari perquè tinguis una estada d\'allò més agradable.', 'HABITACIO BASICA', 1, 25, 'c:\\');
 
 -- --------------------------------------------------------
@@ -248,8 +238,9 @@ CREATE TABLE IF NOT EXISTS `usuari` (
 INSERT INTO `usuari` (`DNI`, `Nom`, `Cognom`, `tel`, `correu`, `rol`, `username`, `password`, `id_departament_usuari`) VALUES
 ('11111111S', 'Eduard', 'Sellas Lleo', 111111112, 'esellas@cendrassos.net', 1, 'edusell', '123456', 1),
 ('11111112a', 'Usuari', 'Prova', 999999999, 'usuari@gmail.com', 0, 'prova1', 'Hola1234', 0),
-('41563450s', 'Oriol', 'bech', 123456789, 'eduardsellaslleo@gmail.com', 0, 'oriolbech', 'Hola123456', 0),
-('45645645u', 'b', 'a', 111111111, 'eduardsellaslleo@gmail.com', 0, 'sfasdsfsda', 'Hola123456', 0);
+('41563450s', 'Oriol', 'becho', 123456787, 'eduardsellaslleo@gmail.com', 0, 'oriolbech', 'Hola123456', 0),
+('45645645u', 'b', 'a', 111111111, 'eduardsellaslleo@gmail.com', 0, 'sfasdsfsda', 'Hola123456', 0),
+('99999999o', 'prova', 'prova', 999999999, 'eduardsellaslleo@gmail.com', 0, 'prova-5', 'Hola123456', 0);
 
 --
 -- Restriccions per a les taules bolcades

@@ -55,7 +55,7 @@ if(!isset($tmp) || $tmp==0){
         <?php 
         
             foreach($llistar_tiphab as $row){
-                print "<div class='container_reserva_habitacions' id='tipus_habitacio'>";
+                print "<div class='container_reserva_habitacionss' id='tipus_habitacio'>";
                 print '<div class="recerca_habitacions">';
                 print"<h1><b>".$row['nom_tipus']."</b></h1>";
                 print'<img class="imatges_recerca_mbil" src="img/uploads/'.$row["imatge"].'">';

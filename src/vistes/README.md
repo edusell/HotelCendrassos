@@ -5,4 +5,4 @@
 *****BD*****
 nom:hotelcendrassos
 user:root
-pass: '' (cambiar)
+pass: ''

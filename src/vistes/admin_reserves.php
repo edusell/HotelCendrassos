@@ -33,7 +33,6 @@
                         <td>Tipus</td>
                      </tr>
                      <?php
-
                          foreach($llistar_reserves as $row){
 
                             print "<tr>";

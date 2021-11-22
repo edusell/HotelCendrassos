@@ -20,9 +20,18 @@ function ctrlcrearusuari($peticio, $resposta, $imatges){
     $pass =$_POST['contrasenya'];
    // $rol=0;
 
-    
-    $model ->adduser($mail,$nom,$cnom,$dni,$tel,$usuari,$pass);
-    $resposta->SetTemplate("login.php");
+    //$error= $model ->adduser($mail,$nom,$cnom,$dni,$tel,$usuari,$pass);
+   // print_r($error);
+   // die();
+    $error=$model ->adduser($mail,$nom,$cnom,$dni,$tel,$usuari,$pass);
+    $resposta->set("error", $error);
+    //print_r($error);
+    //die();
+    if(sizeof($error)>0){
+        $resposta->SetTemplate("registre.php");
+    }else{
+        $resposta->SetTemplate("login.php");
+    }
     
    
     return $resposta;

@@ -1252,6 +1252,15 @@ padding: 20px 0 20px 0;
 }
 .mobile{display: none;}
 
+
+#error{
+  display: none;
+}
+#error{
+  background-color: rgba(189, 66, 66, 1)!important;
+  color: #121212;
+}
+
 .reservacomp{
   text-align: center;
   padding: 20px;
@@ -1278,3 +1287,4 @@ padding: 20px 0 20px 0;
   background-size: cover;
   backdrop-filter: brightness(60%);
 }
+

@@ -91,6 +91,11 @@
       </table>
       <button id='env' onclick="validar()">Enviar</button>
       </form>
+      <br><br>
+      <div class="alert alert-warning alert-dismissable" id="error">
+        <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
+        <strong>¡Error!</strong> Dades incorrectes
+      </div>
       
       </div>
 
@@ -99,6 +104,16 @@
        <!-- FOOTER-->
        <?php include 'footerprim.php' ?>
       <script>
+      
+       
+        <?php 
+       
+        if(isset($error)){
+          print "const error = document.getElementById('error');
+          error.style.display = 'block';
+          ";
+        }
+        ?>
 
      /*  document.querySelector("#env").click(){
          

@@ -12,12 +12,12 @@ function ctrlreserva($peticio, $resposta, $contenidor)
     $ocupants =$_REQUEST['ocupants'];
     $dias =$_REQUEST['dias'];
 
-    
+
     $model = new \Daw\llistartipushab($config["db"]);
 
     $id_reserva = $model->reserva($dias,$arribada,$sortida,$id,$dni,$ocupants);
     
-
+/*
     $model = new \Daw\adminpdo($config["db"]);
 
     $info = $model->pdf($id_reserva);   
@@ -25,7 +25,8 @@ function ctrlreserva($peticio, $resposta, $contenidor)
     $resposta->set("in", $info);
 
 
-    $resposta->SetTemplate("pdf.php");
-
+    $resposta->SetTemplate("pdf.php");*/
+    header('Location: index.php?r=reservacomp');
+    $resposta->SetTemplate("reservacomp.php");
     return $resposta;
 }

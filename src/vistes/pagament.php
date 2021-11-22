@@ -13,7 +13,7 @@
     <link href="css.css"rel="stylesheet" type="text/css">
     <link href="metodo-pago.css"rel="stylesheet" type="text/css">
 </head>
-<body>
+<body class='pagamentb'>
 <?php include 'menu.php'; ?>
 
 <!--<div id="pop_up" class="pop_up_pago">-->

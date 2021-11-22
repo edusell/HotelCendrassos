@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per dirigir a admin_calendari.php amb els dies festius.
+***************************/
+
 function ctrlAdmincalendari($peticio, $resposta, $imatges){
 
     include '../src/config.php';

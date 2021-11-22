@@ -1,5 +1,12 @@
 <?php 
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per realitzar la recerca de les habitacions disponibles.
+***************************/
+
 function ctrlRecerca($peticio, $resposta, $imatges){
     include '../src/config.php';
 

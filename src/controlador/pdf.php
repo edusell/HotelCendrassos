@@ -1,5 +1,12 @@
 <?php 
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per enviar la informacio al pdf final de reserva.
+***************************/
+
 function ctrlpdf($peticio, $resposta, $imatges){
     include '../src/config.php';
 

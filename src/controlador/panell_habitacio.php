@@ -1,5 +1,12 @@
 <?php
 
+
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador llistar les habitacions amb la informacio del tipus d'habitacio i els tipus d'ahbitacions.
+***************************/
+
 function ctrlAdminhabitacio($peticio, $resposta, $imatges){
     include '../src/config.php';
 

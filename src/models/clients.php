@@ -130,7 +130,7 @@ class llistartipushab
     }
     public function getpanellreserva($dni)
     {
-        $query = 'select  id_reserva,num_ocupants,data_arribada,data_sortida,DNI from reserva where DNI=:dni;';
+        $query = 'select  r.id_reserva,r.num_ocupants,r.data_arribada,r.data_sortida,r.DNI,r.preu,t.nom_tipus,t.imatge,t.m_tipus,t.desc_tipus from reserva r, tipushabitacio t where r.id_tipus_reserva = id_tipus AND DNI=:dni;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([
             ':dni' => $dni ]);
@@ -236,76 +236,24 @@ class llistartipushab
         }
     }
     
-       /* $index =0;
-        for($i =0;$i<count($hd);$i++){
-            if($ho != NULL){
-            for($y =0;$y<count($ho);$y++){
 
-                if($hd[$i]['id_tipus_habitacio'] == $ho[$y]['id_tipus_reserva']){
-
-                    $tmp = $hd[$i]['num']-$ho[$y]['ocupades'];
-
-                    if($tmp>0){
-                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
-                        $index++;
-                    }
-
-                } else{
-                    if($hd[$i]['num']>0){
-                        $fin[$index] = $hd[$i]['id_tipus_habitacio'];
-                        $index++;
-                    }
-                }
-                //$fin[$i]['id'] = $hd[$i]['id_tipus_habitacio'];
-            }
-        }else {
-           $fin[$index] = $hd[$i]['id_tipus_habitacio'];
-           $index++;
-        }
-    }*/
-
-    //print_r('------------');
-    //print_r($fin);
-
-
-
-        //print_r($fin);
-
-
-
+    if($fin !=NULL){
         for($i =0;$i<count($fin);$i++){
             $ret[$i] = $info[$fin[$i]-1];
         }
+    }
 
-
-
-        //print "---------------";
-        //print_r ($ret);
-        //die();
-        
-        
-        /*$query = 'select id_tipus_habitacio ,count( id_habitacio) as numd,t.m_tipus,t.serveis_tipus,t.ocupants_tipus,t.desc_tipus,t.nom_tipus,preu,imatge from habitacio h, tipushabitacio t where h.id_tipus_habitacio=t.id_tipus AND t.ocupants_tipus >= :ocupants  group by id_tipus_habitacio;';
+        $query = 'select data_in_tencament as tenc from calendari;';
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':ocupants' => $ocupants]);
+        $result = $stm->execute();
 
-        $query1 = "select count(h.id_habitacio) as num,h.id_tipus_habitacio from habitacio h,reserva r,reservahabitacio rh where h.id_habitacio=rh.id_habitacio and r.id_reserva=rh.id_reserva and ( :entrada >=r.data_arribada) and ( :sortida <=r.data_sortida);";
-        $stm1 = $this->sql->prepare($query1);
-        $result1 = $stm1->execute([
-            ':entrada' => $entrada,
-            ':sortida' => $sortida
-        ]);
+        $festius = $stm->fetchall(\PDO::FETCH_ASSOC);
 
-        $hd = $stm->fetchall(\PDO::FETCH_ASSOC);
-        $ho = $stm1->fetchall(\PDO::FETCH_ASSOC);
-        //print_r($hd);
-
-        for($i=0;$i<count($ho);$i++){
-            for($y=0;$y<count($hd);$y++){
-            if($ho[$i]['id_tipus_habitacio']==$hd[$y]['id_tipus_habitacio']){
-                $hd[$y]['numd'] = $hd[$y]['numd'] - $ho[$i]['num'];
+        for($i=0;$i<count($festius);$i++){
+            if($festius[$i]['tenc'] <= $sortida && $festius[$i]['tenc'] >= $entrada){
+                $ret[0]['errfest']='si';
             }
-        }*/
-
+        }
 
         return $ret;
        
@@ -320,6 +268,7 @@ class llistartipushab
         $result = $stm->execute([
             ':id' => $id
         ]);
+
 
         
 
@@ -338,7 +287,7 @@ class llistartipushab
             ':id' => $id
         ]);
         
-        $preu = $stm->fetch(\PDO::FETCH_ASSOC)['preu']*($dias-1);
+        $preu = $stm->fetch(\PDO::FETCH_ASSOC)['preu']*($dias);
 
         $query = 'select h.id_habitacio FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND h.id_tipus_habitacio= :id AND ( :entrada >=r.data_sortida OR ( :entrada <r.data_arribada AND :sortida <=data_arribada));';
         $stm = $this->sql->prepare($query);

@@ -1,5 +1,12 @@
 <?php
 
+ 
+/**************************
+Hotel Cendrassos
+Autors: Eimantas Milkintas i Eduard Sellas
+Controlador per el panell d'informacio dels usuaris.
+***************************/
+
 function ctrPanellusuari($peticio, $resposta, $imatges){
     session_start();
   

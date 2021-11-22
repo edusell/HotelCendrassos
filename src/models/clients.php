@@ -287,7 +287,7 @@ class llistartipushab
             ':id' => $id
         ]);
         
-        $preu = $stm->fetch(\PDO::FETCH_ASSOC)['preu']*($dias);
+        $preu = $stm->fetch(\PDO::FETCH_ASSOC)['preu']*($dias-1);
 
         $query = 'select h.id_habitacio FROM habitacio h , tipushabitacio t, reservahabitacio i, reserva r where t.id_tipus=h.id_tipus_habitacio AND h.id_habitacio=i.id_habitacio AND i.id_reserva=r.id_reserva AND h.id_tipus_habitacio= :id AND ( :entrada >=r.data_sortida OR ( :entrada <r.data_arribada AND :sortida <=data_arribada));';
         $stm = $this->sql->prepare($query);
